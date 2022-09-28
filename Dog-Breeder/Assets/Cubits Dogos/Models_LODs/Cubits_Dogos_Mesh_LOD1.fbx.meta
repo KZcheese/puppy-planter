@@ -1,0 +1,668 @@
+fileFormatVersion: 2
+guid: 9f4797efd88b0654ca0d77e5be6d17d2
+timeCreated: 1481158753
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backLeg1_L
+    100002: backLeg1_R
+    100004: backLeg2_L
+    100006: backLeg2_R
+    100008: backPaw_L
+    100010: backPaw_R
+    100012: Cubits_Dogos_Body
+    100014: Cubits_Dogos_Ears_A
+    100016: Cubits_Dogos_Ears_B
+    100018: Cubits_Dogos_Ears_C
+    100020: Cubits_Dogos_Ears_D
+    100022: Cubits_Dogos_Ears_E
+    100024: Cubits_Dogos_Ears_F
+    100026: Cubits_Dogos_Ears_G
+    100028: //RootNode
+    100030: Cubits_Dogos_Skeleton
+    100032: frontLeg1_L
+    100034: frontLeg1_R
+    100036: frontLeg2_L
+    100038: frontLeg2_R
+    100040: frontPaw_L
+    100042: frontPaw_R
+    100044: Head
+    100046: mouthbone
+    100048: RootBone
+    100050: Spine_002
+    100052: Tail
+    100054: Tail_001
+    100056: Tail_003
+    400000: backLeg1_L
+    400002: backLeg1_R
+    400004: backLeg2_L
+    400006: backLeg2_R
+    400008: backPaw_L
+    400010: backPaw_R
+    400012: Cubits_Dogos_Body
+    400014: Cubits_Dogos_Ears_A
+    400016: Cubits_Dogos_Ears_B
+    400018: Cubits_Dogos_Ears_C
+    400020: Cubits_Dogos_Ears_D
+    400022: Cubits_Dogos_Ears_E
+    400024: Cubits_Dogos_Ears_F
+    400026: Cubits_Dogos_Ears_G
+    400028: //RootNode
+    400030: Cubits_Dogos_Skeleton
+    400032: frontLeg1_L
+    400034: frontLeg1_R
+    400036: frontLeg2_L
+    400038: frontLeg2_R
+    400040: frontPaw_L
+    400042: frontPaw_R
+    400044: Head
+    400046: mouthbone
+    400048: RootBone
+    400050: Spine_002
+    400052: Tail
+    400054: Tail_001
+    400056: Tail_003
+    4300000: Cubits_Dogos_Ears_G
+    4300002: Cubits_Dogos_Ears_E
+    4300004: Cubits_Dogos_Ears_C
+    4300006: Cubits_Dogos_Ears_D
+    4300008: Cubits_Dogos_Ears_F
+    4300010: Cubits_Dogos_Ears_B
+    4300012: Cubits_Dogos_Ears_A
+    4300014: Cubits_Dogos_Body
+    7400000: Cubits_Dog_Barking
+    7400002: Cubits_Dog_Default_Pose
+    7400004: Cubits_Dog_Idle
+    7400006: Cubits_Dog_Jump
+    7400008: Cubits_Dog_Run
+    7400010: Cubits_Dog_Walk
+    9500000: //RootNode
+    13700000: Cubits_Dogos_Body
+    13700002: Cubits_Dogos_Ears_A
+    13700004: Cubits_Dogos_Ears_B
+    13700006: Cubits_Dogos_Ears_C
+    13700008: Cubits_Dogos_Ears_D
+    13700010: Cubits_Dogos_Ears_E
+    13700012: Cubits_Dogos_Ears_F
+    13700014: Cubits_Dogos_Ears_G
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Cubits_Dog_Barking
+      takeName: Cubits_Dog_Barking
+      firstFrame: -1
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cubits_Dogos_Body
+        weight: 1
+      - path: Cubits_Dogos_Ears_A
+        weight: 1
+      - path: Cubits_Dogos_Ears_B
+        weight: 1
+      - path: Cubits_Dogos_Ears_C
+        weight: 1
+      - path: Cubits_Dogos_Ears_D
+        weight: 1
+      - path: Cubits_Dogos_Ears_E
+        weight: 1
+      - path: Cubits_Dogos_Ears_F
+        weight: 1
+      - path: Cubits_Dogos_Ears_G
+        weight: 1
+      - path: Cubits_Dogos_Skeleton
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Cubits_Dog_Default_Pose
+      takeName: Cubits_Dog_Default_Pose
+      firstFrame: -1
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cubits_Dogos_Body
+        weight: 1
+      - path: Cubits_Dogos_Ears_A
+        weight: 1
+      - path: Cubits_Dogos_Ears_B
+        weight: 1
+      - path: Cubits_Dogos_Ears_C
+        weight: 1
+      - path: Cubits_Dogos_Ears_D
+        weight: 1
+      - path: Cubits_Dogos_Ears_E
+        weight: 1
+      - path: Cubits_Dogos_Ears_F
+        weight: 1
+      - path: Cubits_Dogos_Ears_G
+        weight: 1
+      - path: Cubits_Dogos_Skeleton
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Cubits_Dog_Idle
+      takeName: Cubits_Dog_Idle
+      firstFrame: -1
+      lastFrame: 159
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cubits_Dogos_Body
+        weight: 1
+      - path: Cubits_Dogos_Ears_A
+        weight: 1
+      - path: Cubits_Dogos_Ears_B
+        weight: 1
+      - path: Cubits_Dogos_Ears_C
+        weight: 1
+      - path: Cubits_Dogos_Ears_D
+        weight: 1
+      - path: Cubits_Dogos_Ears_E
+        weight: 1
+      - path: Cubits_Dogos_Ears_F
+        weight: 1
+      - path: Cubits_Dogos_Ears_G
+        weight: 1
+      - path: Cubits_Dogos_Skeleton
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Cubits_Dog_Jump
+      takeName: Cubits_Dog_Jump
+      firstFrame: -1
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cubits_Dogos_Body
+        weight: 1
+      - path: Cubits_Dogos_Ears_A
+        weight: 1
+      - path: Cubits_Dogos_Ears_B
+        weight: 1
+      - path: Cubits_Dogos_Ears_C
+        weight: 1
+      - path: Cubits_Dogos_Ears_D
+        weight: 1
+      - path: Cubits_Dogos_Ears_E
+        weight: 1
+      - path: Cubits_Dogos_Ears_F
+        weight: 1
+      - path: Cubits_Dogos_Ears_G
+        weight: 1
+      - path: Cubits_Dogos_Skeleton
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Cubits_Dog_Run
+      takeName: Cubits_Dog_Run
+      firstFrame: -1
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cubits_Dogos_Body
+        weight: 1
+      - path: Cubits_Dogos_Ears_A
+        weight: 1
+      - path: Cubits_Dogos_Ears_B
+        weight: 1
+      - path: Cubits_Dogos_Ears_C
+        weight: 1
+      - path: Cubits_Dogos_Ears_D
+        weight: 1
+      - path: Cubits_Dogos_Ears_E
+        weight: 1
+      - path: Cubits_Dogos_Ears_F
+        weight: 1
+      - path: Cubits_Dogos_Ears_G
+        weight: 1
+      - path: Cubits_Dogos_Skeleton
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Cubits_Dog_Walk
+      takeName: Cubits_Dog_Walk
+      firstFrame: -1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cubits_Dogos_Body
+        weight: 1
+      - path: Cubits_Dogos_Ears_A
+        weight: 1
+      - path: Cubits_Dogos_Ears_B
+        weight: 1
+      - path: Cubits_Dogos_Ears_C
+        weight: 1
+      - path: Cubits_Dogos_Ears_D
+        weight: 1
+      - path: Cubits_Dogos_Ears_E
+        weight: 1
+      - path: Cubits_Dogos_Ears_F
+        weight: 1
+      - path: Cubits_Dogos_Ears_G
+        weight: 1
+      - path: Cubits_Dogos_Skeleton
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Cubits_Dogos_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
