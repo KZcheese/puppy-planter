@@ -1,0 +1,6 @@
+{
+    "name": "C",
+    "hp": 100,
+    "father": "A",
+    "mother": "B"
+}
