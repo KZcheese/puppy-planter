@@ -24,10 +24,14 @@ public class DogRandom : MonoBehaviour
         {
             RandomDogBreeder();
         }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            PrintAllDogs();
+        }
         DogSellor();
     }
 
-    public void RandomDogGenerator()
+    void RandomDogGenerator()
     {
         DogData dog = new DogData();
         dog.eyeShape = Random.Range(4, 8);
@@ -59,14 +63,38 @@ public class DogRandom : MonoBehaviour
         if (count == 2)
         {
             DogData dog = new DogData();
-            dog.eyeShape = Mathf.Clamp(Random.Range(Mathf.Min(par1.eyeShape, par2.eyeShape) - 1, Mathf.Max(par1.eyeShape, par2.eyeShape) + 1), 0, 10);
-            dog.noseShape = Mathf.Clamp(Random.Range(Mathf.Min(par1.noseShape, par2.noseShape) - 1, Mathf.Max(par1.noseShape, par2.noseShape) + 1), 0, 10);
-            dog.muscle = Mathf.Clamp(Random.Range(Mathf.Min(par1.muscle, par2.muscle) - 1, Mathf.Max(par1.muscle, par2.muscle) + 1), 0, 10);
-            dog.legLength = Mathf.Clamp(Random.Range(Mathf.Min(par1.legLength, par2.legLength) - 1, Mathf.Max(par1.legLength, par2.legLength) + 1), 0, 10);
+            dog.eyeShape = Mathf.Clamp(Random.Range(Mathf.Min(par1.eyeShape, par2.eyeShape) - 1, Mathf.Max(par1.eyeShape, par2.eyeShape) + 2), 0, 10);
+            dog.noseShape = Mathf.Clamp(Random.Range(Mathf.Min(par1.noseShape, par2.noseShape) - 1, Mathf.Max(par1.noseShape, par2.noseShape) + 2), 0, 10);
+            dog.muscle = Mathf.Clamp(Random.Range(Mathf.Min(par1.muscle, par2.muscle) - 1, Mathf.Max(par1.muscle, par2.muscle) + 2), 0, 10);
+            dog.legLength = Mathf.Clamp(Random.Range(Mathf.Min(par1.legLength, par2.legLength) - 1, Mathf.Max(par1.legLength, par2.legLength) + 2), 0, 10);
             dogDatas.Add(dog);
             par1.pair = false;
             par2.pair = false;
+            string str = "Parents' traits here:\n";
+            str += string.Format("{0}: eyeShape--{1} noseShape--{2} muscle--{3} legLength--{4}\n", par1.name, par1.eyeShape, par1.noseShape, par1.muscle, par1.legLength);
+            str += string.Format("{0}: eyeShape--{1} noseShape--{2} muscle--{3} legLength--{4}\n", par2.name, par2.eyeShape, par2.noseShape, par2.muscle, par2.legLength);
+            str += "New dog breeded. Make sure to give it a name.\n";
+            str += string.Format("New dog's traits here: eyeShape--{0} noseShape--{1} muscle--{2} legLength--{3}", dog.eyeShape, dog.noseShape, dog.muscle, dog.legLength);
+            Debug.Log(str);
             count = 0;
+        }
+        else
+        {
+            Debug.LogError("Make sure choose only 2 dogs to pair!");
+            count = 0;
+        }
+    }
+
+    void PrintAllDogs()
+    {
+        if (dogDatas.Count > 0)
+        {
+            string str = "";
+            foreach (DogData data in dogDatas)
+            {
+                str += string.Format("{0}: eyeShape--{1} noseShape--{2} muscle--{3} legLength--{4}\n", data.name, data.eyeShape, data.noseShape, data.muscle, data.legLength);
+            }
+            Debug.Log(str);
         }
     }
 
@@ -77,7 +105,7 @@ public class DogRandom : MonoBehaviour
             if (dogDatas[i].sell)
             {
                 int profit = 40 - Mathf.Abs(eyeShape - dogDatas[i].eyeShape) - Mathf.Abs(noseShape - dogDatas[i].noseShape) - Mathf.Abs(muscle - dogDatas[i].muscle) - Mathf.Abs(legLength - dogDatas[i].legLength);
-                Debug.Log("profit from selling " + dogDatas[i].name + ": " + profit);
+                Debug.Log("Profit from selling <" + dogDatas[i].name + ">: " + profit);
                 dogDatas.RemoveAt(i);
             }
         }
@@ -85,7 +113,7 @@ public class DogRandom : MonoBehaviour
 }
 
 [System.Serializable]
-public struct DogData
+public class DogData
 {
     public bool pair;
     public bool sell;
