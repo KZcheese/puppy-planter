@@ -92,7 +92,8 @@ public class DogRandom : MonoBehaviour
             string str = "";
             foreach (DogData data in dogDatas)
             {
-                str += string.Format("{0}: eyeShape--{1} noseShape--{2} muscle--{3} legLength--{4}\n", data.name, data.eyeShape, data.noseShape, data.muscle, data.legLength);
+                int profit = 40 - Mathf.Abs(eyeShape - data.eyeShape) - Mathf.Abs(noseShape - data.noseShape) - Mathf.Abs(muscle - data.muscle) - Mathf.Abs(legLength - data.legLength);
+                str += string.Format("{0}: eyeShape--{1} noseShape--{2} muscle--{3} legLength--{4}, profit if sell it--{5}\n", data.name, data.eyeShape, data.noseShape, data.muscle, data.legLength, profit);
             }
             Debug.Log(str);
         }
