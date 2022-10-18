@@ -44,12 +44,16 @@ public class CameraMovement : MonoBehaviour
             transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
         }
 
-        float rh = Input.GetAxis("Mouse X");
-        float rv = Input.GetAxis("Mouse Y");
+        if (Input.GetMouseButton(1))
+        {
+            float _horizontal = Input.GetAxis("Mouse X");
+            float _vertical = Input.GetAxis("Mouse Y");
 
-        Vector3 _cameraAngles = transform.eulerAngles;
-        _cameraAngles.x -= rv * RotateSpeed;
-        _cameraAngles.y += rh * RotateSpeed;
-        Camera.main.transform.eulerAngles = _cameraAngles;
+            Vector3 _cameraAngles = transform.eulerAngles;
+            _cameraAngles.x -= _vertical * RotateSpeed;
+            _cameraAngles.y += _horizontal * RotateSpeed;
+            Camera.main.transform.eulerAngles = _cameraAngles;
+        }
+
     }
 }

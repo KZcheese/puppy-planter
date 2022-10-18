@@ -25,10 +25,12 @@ public class DaySwitchControl : MonoBehaviour
         TransportScene.SetActive(true);
         GameManager.Instance.DayCount += 1;
         DayCountText.text = ""+ GameManager.Instance.DayCount;
+        Time.timeScale = 0;
     }
 
     public void GoContinueButton()
     {
+        Time.timeScale = 1;
         TransportScene.SetActive(false);
     }
 }
