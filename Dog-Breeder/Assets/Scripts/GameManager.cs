@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public int DayCount = 0; // The day of the game, add 1 every day 
 
+    public GameObject dogPrefab;
+
     public GameObject DayUI;
     public GameObject PhoneUI,StatusUI;
     public GameObject Lines;
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
 
-
+    public int money;
     
     private void Awake()
     {

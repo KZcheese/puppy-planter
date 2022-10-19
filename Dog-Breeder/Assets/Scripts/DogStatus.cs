@@ -10,6 +10,9 @@ public class DogStatus : MonoBehaviour
     public bool IsPair = false;
     public string PairDogName;
     public int DogID;
+
+    public Dictionary<string, float> traits = new Dictionary<string, float>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,8 @@ public class DogStatus : MonoBehaviour
         DogID = GameManager.Instance.DogIDNow;
         GameManager.Instance.DogIDNow += 1;
         this.GetComponentInChildren<Text>().text = Name;
+
+        //Initialize();
     }
 
     // Update is called once per frame
