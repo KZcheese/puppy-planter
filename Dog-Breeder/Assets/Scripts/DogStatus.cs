@@ -12,6 +12,7 @@ public class DogStatus : MonoBehaviour
     public string PairDogName;
     public int DogID;
     public bool CanBeChecked = false;
+    public bool CheckStatusNow = false;
     public GameObject CheckText;
     public Dictionary<string, float> traits = new Dictionary<string, float>();
 
@@ -34,5 +35,9 @@ public class DogStatus : MonoBehaviour
         else
             CheckText.SetActive(false);
 
+        if (CanBeChecked && GameManager.Instance.IsStatusActive)
+            CheckStatusNow = true;
+        else
+            CheckStatusNow = false;
     }
 }
