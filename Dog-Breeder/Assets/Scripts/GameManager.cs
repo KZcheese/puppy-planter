@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     public int DayCount = 0; // The day of the game, add 1 every day 
+    public int WeakCount = 0;
+    public int MonthCount = 0;
 
     public GameObject dogPrefab;
 
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
 
-    public int money;
+    public int Money;
     
     private void Awake()
     {
@@ -54,10 +56,24 @@ public class GameManager : MonoBehaviour
         if (IsPairLineActive)
             LinePairDogs();
 
+        if(DayCount == 5)
+        {
+            WeakCount += 1;
+            DayCount = 0;
+        }
+
+        if (WeakCount == 5)
+        {
+            MonthCount += 1;
+            WeakCount = 0;
+        }
+
     }
 
     void LinePairDogs()
     {
+        ClearLine();
+
         LineRenderer[] _lineRenderer =  new LineRenderer[DogPairDic.Count];
 
         int _index = 0;
@@ -68,6 +84,17 @@ public class GameManager : MonoBehaviour
             _lineRenderer[_index].SetPosition(0, DogList[FindDogIndex(key)].transform.position);
             _lineRenderer[_index].SetPosition(1, DogList[FindDogIndex(DogPairDic[key])].transform.position);
             _index += 1;
+        }
+    }
+
+    void ClearLine()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            string _lineName = "Lines/Lines" + i;
+            LineRenderer _lineRenderer = GameObject.Find(_lineName).GetComponent<LineRenderer>();
+            _lineRenderer.SetPosition(0, Vector3.zero);
+            _lineRenderer.SetPosition(1, Vector3.zero);
         }
     }
     void CheckDogs() // DogsStatusUI
@@ -119,7 +146,6 @@ public class GameManager : MonoBehaviour
         Instance.DogList[_firstDogIndex].PairDogName = DogList[_secondDogIndex].Name;
         Instance.DogList[_secondDogIndex].PairDogName = DogList[_firstDogIndex].Name;
 
-        PhoneControl.Instance.ShowPairList();
     }
 
     public int FindDogIndex(int DogId) // Find the dog index in Dog list from pair dictionary
@@ -144,7 +170,7 @@ public class GameManager : MonoBehaviour
         return 0;
     }
 
-    void RemovePairFromDic(int FirstDogId, int SecondDogId) // Remove pair first, incase the dog has already paired.
+    public void RemovePairFromDic(int FirstDogId, int SecondDogId) // Remove pair first, incase the dog has already paired.
     {
         int FirstDogIndex = FindDogIndex(FirstDogId);
         int SecondDogIndex = FindDogIndex(SecondDogId);

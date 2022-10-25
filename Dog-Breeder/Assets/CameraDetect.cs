@@ -35,11 +35,16 @@ public class CameraDetect : MonoBehaviour
         if (Physics.Raycast(_cameraRay, out _cameraHit, DetectDistance, LayerDetect))
         {
             IsDogThere = true;
-            Debug.Log("Dogs Here"); // For test is dog in the view
+            _cameraHit.collider.gameObject.GetComponent<DogStatus>().CanBeChecked = true;
         }
         else
         {
             IsDogThere = false;
+
+            for(int i = 0; i < GameManager.Instance.DogList.Count; i++)
+            {
+                GameManager.Instance.DogList[i].CanBeChecked = false;
+            }
         }
     }
 }

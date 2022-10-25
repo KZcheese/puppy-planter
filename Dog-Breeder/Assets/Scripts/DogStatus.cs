@@ -8,9 +8,11 @@ public class DogStatus : MonoBehaviour
     public string Name;
     public int HP;
     public bool IsPair = false;
+    public bool IsBabe = true;
     public string PairDogName;
     public int DogID;
-
+    public bool CanBeChecked = false;
+    public GameObject CheckText;
     public Dictionary<string, float> traits = new Dictionary<string, float>();
 
     // Start is called before the first frame update
@@ -27,9 +29,10 @@ public class DogStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsPair)
-            this.GetComponentInChildren<Image>().color = Color.red;
+        if (CanBeChecked)
+            CheckText.SetActive(true);
         else
-            this.GetComponentInChildren<Image>().color = new Color(0, 0, 0, 0);
+            CheckText.SetActive(false);
+
     }
 }

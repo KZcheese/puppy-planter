@@ -23,7 +23,7 @@ public class PhoneControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ShowPairList();
     }
 
     public void OnCheckDogListButton()
