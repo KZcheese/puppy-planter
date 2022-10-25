@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogManager : MonoBehaviour
+public class DogManager
 {
-
-    public static DogManager Instance;
-
-    private void Awake()
+    public static DogManager instance;
+    public static DogManager Instance
     {
-        if (!Instance) Instance = this;
+        get
+        {
+            if (instance == null)
+                instance = new DogManager();
+            return instance;
+        }
     }
 
     public void GenerateNewDogs()
     {
         foreach (var parents in GameManager.Instance.DogPairDic)
         {
-            SkinnedMeshRenderer newSkin = Instantiate(GameManager.Instance.dogPrefab).GetComponent<SkinnedMeshRenderer>();
+            SkinnedMeshRenderer newSkin = Object.Instantiate(GameManager.Instance.dogPrefab).GetComponent<SkinnedMeshRenderer>();
             SkinnedMeshRenderer parSkin1 = GameManager.Instance.GetDog(parents.Key).GetComponent<SkinnedMeshRenderer>();
             SkinnedMeshRenderer parSkin2 = GameManager.Instance.GetDog(parents.Value).GetComponent<SkinnedMeshRenderer>();
             for (int i = 0; i < newSkin.sharedMesh.blendShapeCount; i++)
@@ -49,7 +52,7 @@ public class DogManager : MonoBehaviour
     public void SellDog(int id)
     {
         GameManager.Instance.Money += CalculateProfit(id);
-        Destroy(GameManager.Instance.GetDog(id).gameObject);
+        Object.Destroy(GameManager.Instance.GetDog(id).gameObject);
         GameManager.Instance.DogList.Remove(GameManager.Instance.GetDog(id));
     }
 }
