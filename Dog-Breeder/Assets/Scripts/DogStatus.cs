@@ -13,7 +13,8 @@ public class DogStatus : MonoBehaviour
     public int DogID;
     public bool CanBeChecked = false;
     public GameObject CheckText;
-    public Dictionary<string, float> traits = new Dictionary<string, float>();
+    public bool gender; // true for male, false for female
+    public int birthday;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +35,18 @@ public class DogStatus : MonoBehaviour
         else
             CheckText.SetActive(false);
 
+    }
+
+    public string GetDescription()
+    {
+        string description = Name + " is a " + (GameManager.Instance.DayCount - birthday) + "-day old " + (gender ? "male" : "female") + " dog.\n";
+        description += $"HP: {HP}\n\n";
+        SkinnedMeshRenderer skin = GetComponent<SkinnedMeshRenderer>();
+        for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
+        {
+            description += skin.sharedMesh.GetBlendShapeName(i) + ": " + skin.GetBlendShapeWeight(i) + "\n";
+        }
+        description += $"\nProfit if sell: {DogManager.Instance.CalculateProfit(DogID)}";
+        return description;
     }
 }

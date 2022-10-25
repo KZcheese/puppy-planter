@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StatusUpdate : MonoBehaviour
 {
+    public int index = -1;
+    public Text statusText;
     public static StatusUpdate Instance;
 
     // Start is called before the first frame update
@@ -20,10 +22,33 @@ public class StatusUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < GameManager.Instance.DogList.Count; i++)
+        for (int i = 0; i < GameManager.Instance.DogList.Count; i++)
         {
             if (GameManager.Instance.DogList[i].CanBeChecked)
-                this.GetComponent<Text>().text = GameManager.Instance.DogList[i].Name;
+            {
+                statusText.text = GameManager.Instance.DogList[i].GetDescription();
+                index = i;
+            }
+        }
+    }
+
+    public void Reset()
+    {
+        index = -1;
+    }
+
+    public void SellDog()
+    {
+        if (GameManager.Instance.DogList.Count > 2)
+        {
+            DogManager.Instance.SellDog(GameManager.Instance.DogList[index].DogID);
+            GameManager.Instance.IsStatusActive = !GameManager.Instance.IsStatusActive;
+            index = -1;
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Only 2 dog left, you should not sell them");
         }
     }
 }

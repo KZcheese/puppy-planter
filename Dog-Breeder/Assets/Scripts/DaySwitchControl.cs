@@ -24,21 +24,14 @@ public class DaySwitchControl : MonoBehaviour
     {
         TransportScene.SetActive(true);
         GameManager.Instance.DayCount += 1;
-        DayCountText.text = "Day: "+ GameManager.Instance.DayCount + " Weak: " + GameManager.Instance.WeakCount + " Month: " + GameManager.Instance.MonthCount;
+        DayCountText.text = "Day: "+ GameManager.Instance.DayCount%5 + " Week: " + GameManager.Instance.DayCount/5 + " Month: " + GameManager.Instance.DayCount/20;
         Time.timeScale = 0;
-
-        GameManager.Instance.DogPairDic.Clear();
-        for(int i=0;i< GameManager.Instance.DogList.Count; i++)
-        {
-            GameManager.Instance.DogList[i].IsPair = false;
-            GameManager.Instance.DogList[i].PairDogName = "";
-        }
-        
     }
 
     public void GoContinueButton()
     {
         Time.timeScale = 1;
         TransportScene.SetActive(false);
+        GameManager.Instance.NewDay();
     }
 }

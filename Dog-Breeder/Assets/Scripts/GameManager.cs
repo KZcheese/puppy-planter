@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public int DayCount = 0; // The day of the game, add 1 every day 
-    public int WeakCount = 0;
+    public int WeekCount = 0;
     public int MonthCount = 0;
 
     public GameObject dogPrefab;
+    public Transform bornSpot;
 
     public GameObject DayUI;
     public GameObject PhoneUI,StatusUI;
     public GameObject Lines;
+
+    public Text moneyText;
 
     public int DogCapMax = 10;
 
@@ -28,9 +32,11 @@ public class GameManager : MonoBehaviour
 
     public int DogIDNow = 1000;
 
+    //public List<PairInfo> pairInfos = new List<PairInfo>();
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
 
-    public int Money;
+    public float[] demands = new float[11];
+    public float Money;
     
     private void Awake()
     {
@@ -39,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -56,18 +63,7 @@ public class GameManager : MonoBehaviour
         if (IsPairLineActive)
             LinePairDogs();
 
-        if(DayCount == 5)
-        {
-            WeakCount += 1;
-            DayCount = 0;
-        }
-
-        if (WeakCount == 5)
-        {
-            MonthCount += 1;
-            WeakCount = 0;
-        }
-
+        moneyText.text = $"Money: {Money}";
     }
 
     void LinePairDogs()
@@ -105,6 +101,7 @@ public class GameManager : MonoBehaviour
             {
                 IsStatusActive = !IsStatusActive;
                 StatusUI.SetActive(IsStatusActive);
+                StatusUpdate.Instance.Reset();
             }
             else
             {
@@ -159,6 +156,16 @@ public class GameManager : MonoBehaviour
         return 0;
     }
 
+    public DogStatus GetDog(int DogId)
+    {
+        for (int i = 0; i < DogList.Count; i++)
+        {
+            if (DogList[i].DogID == DogId)
+                return DogList[i];
+        }
+        return null;
+    }
+
     int FindKey(int value) // Find the key in pair dictionary
     {
         foreach(int key in DogPairDic.Keys)
@@ -210,5 +217,14 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+    public void NewDay()
+    {
+        DogManager.Instance.GenerateNewDogs();
+        DogPairDic.Clear();
+        for (int i = 0; i < Instance.DogList.Count; i++)
+        {
+            Instance.DogList[i].IsPair = false;
+            Instance.DogList[i].PairDogName = "";
+        }
+    }
 }
