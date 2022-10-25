@@ -24,6 +24,7 @@ public class PhoneControl : MonoBehaviour
     void Update()
     {
         ShowPairList();
+
     }
 
     public void OnCheckDogListButton()

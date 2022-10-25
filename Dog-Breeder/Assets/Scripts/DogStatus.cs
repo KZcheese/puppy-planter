@@ -12,6 +12,7 @@ public class DogStatus : MonoBehaviour
     public string PairDogName;
     public int DogID;
     public bool CanBeChecked = false;
+    public bool CheckStatusNow = false;
     public GameObject CheckText;
     public bool gender; // true for male, false for female
     public int birthday;
@@ -35,6 +36,10 @@ public class DogStatus : MonoBehaviour
         else
             CheckText.SetActive(false);
 
+        if (CanBeChecked && GameManager.Instance.IsStatusActive)
+            CheckStatusNow = true;
+        else
+            CheckStatusNow = false;
     }
 
     public string GetDescription()
