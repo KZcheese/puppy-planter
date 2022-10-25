@@ -4,25 +4,12 @@ using UnityEngine;
 
 public class DogManager : MonoBehaviour
 {
-    private static DogManager instance = null;
-    private static readonly object padlock = new object();
 
-    public static DogManager Instance
+    public static DogManager Instance;
+
+    private void Awake()
     {
-        get
-        {
-            if (instance == null)
-            {
-                lock (padlock)
-                {
-                    if (instance == null)
-                    {
-                        instance = new DogManager();
-                    }
-                }
-            }
-            return instance;
-        }
+        if (!Instance) Instance = this;
     }
 
     public void GenerateNewDogs()
