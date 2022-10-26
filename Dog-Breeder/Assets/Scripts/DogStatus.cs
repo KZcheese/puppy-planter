@@ -24,7 +24,8 @@ public class DogStatus : MonoBehaviour
         DogID = GameManager.Instance.DogIDNow;
         GameManager.Instance.DogIDNow += 1;
         this.GetComponentInChildren<Text>().text = Name;
-
+        if(GameManager.Instance.DayCount - birthday != 0)
+            RandomPosition();
         //Initialize();
     }
 
@@ -53,5 +54,17 @@ public class DogStatus : MonoBehaviour
         }
         description += $"\nProfit if sell: {DogManager.Instance.CalculateProfit(DogID)}";
         return description;
+    }
+
+
+    public void RandomPosition()
+    {
+        float _randomX = Random.Range(-3.5f, 3.5f);
+        float _randomZ = Random.Range(-3.5f, 3.5f);
+        float _randomEulerY = Random.Range(0f, 360f);
+
+        transform.position = new Vector3(_randomX, 0.36f, _randomZ);
+        transform.rotation = Quaternion.Euler(new Vector3(0, _randomEulerY, 0));
+
     }
 }

@@ -28,9 +28,20 @@ public class DaySwitchControl : MonoBehaviour
         GameManager.Instance.DayCount += 1;
         DayCountText.text = "Day: "+ GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
 
+        CostCalculate();
+
+        for(int i = 0;i< GameManager.Instance.DogList.Count; i++)
+            GameManager.Instance.DogList[i].RandomPosition();
+        
+
+        Time.timeScale = 0;
+    }
+
+    void CostCalculate()
+    {
         GameManager.Instance.Money -= GameManager.Instance.CostPerDay;
 
-        if(GameManager.Instance.DayCount == 5)
+        if (GameManager.Instance.DayCount == 5)
         {
             GameManager.Instance.DayCount = 0;
             GameManager.Instance.WeekCount += 1;
@@ -43,12 +54,7 @@ public class DaySwitchControl : MonoBehaviour
             GameManager.Instance.WeekCount = 0;
             GameManager.Instance.Money -= GameManager.Instance.CostPerMonth;
         }
-
-
-
-        Time.timeScale = 0;
     }
-
     public void GoContinueButton()
     {
         Time.timeScale = 1;
