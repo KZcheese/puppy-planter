@@ -30,6 +30,7 @@ public class DemandController : MonoBehaviour
             float val = Random.Range(0, 100);
             GameManager.Instance.demands[i] = val;
         }
+        UpdateDemand();
     }
 
     void UpdateDemand()
