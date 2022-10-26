@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         if (IsPairLineActive)
             LinePairDogs();
 
-        moneyText.text = $"Money: {Money}";
+        moneyText.text = Money.ToString("c2"); // 2dp currency;
     }
 
     void LinePairDogs()
