@@ -575,9 +575,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50b98828ff87534c851ec09910fe3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayCount: 0
-  WeekCount: 0
-  MonthCount: 0
+  DayCount: 1
+  WeekCount: 1
+  MonthCount: 1
   dogPrefab: {fileID: 5934593116816733217, guid: ee9dcc17f18ebcb469051f6b354651cd,
     type: 3}
   bornSpot: {fileID: 163471377}
@@ -605,6 +605,9 @@ MonoBehaviour:
   - 0
   - 0
   Money: 500
+  CostPerDay: 10
+  CostPerWeak: 0
+  CostPerMonth: 0
 --- !u!4 &130765173
 Transform:
   m_ObjectHideFlags: 0

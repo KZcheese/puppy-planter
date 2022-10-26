@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public int DayCount = 0; // The day of the game, add 1 every day 
-    public int WeekCount = 0;
-    public int MonthCount = 0;
+    public int DayCount = 1; // The day of the game, add 1 every day 
+    public int WeekCount = 1;
+    public int MonthCount = 1;
+
+    
 
     public GameObject dogPrefab;
     public Transform bornSpot;
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public float[] demands = new float[11];
     public float Money;
-    
+    public int CostPerDay, CostPerWeak, CostPerMonth;
     private void Awake()
     {
         if (!Instance) Instance = this;
