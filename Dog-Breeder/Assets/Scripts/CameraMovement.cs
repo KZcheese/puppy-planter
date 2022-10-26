@@ -15,6 +15,8 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         Movement();
+        
+        transform.position = new Vector3(transform.position.x,1.25f, transform.position.z);
     }
 
     void Movement()
@@ -35,14 +37,14 @@ public class CameraMovement : MonoBehaviour
         {
             transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
         }
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            transform.Translate(0, -MoveSpeed * Time.deltaTime, 0);
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
-        }
+        //if (Input.GetKey(KeyCode.LeftControl))
+        //{
+        //    transform.Translate(0, -MoveSpeed * Time.deltaTime, 0);
+        //}
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
+        //}
 
         if (Input.GetMouseButton(1))
         {

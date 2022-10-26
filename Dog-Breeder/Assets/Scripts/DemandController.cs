@@ -6,6 +6,13 @@ using UnityEngine.UI;
 public class DemandController : MonoBehaviour
 {
     public Text demandText;
+    public static DemandController Instance;
+
+    private void Awake()
+    {
+        if (!Instance) Instance = this;
+    }
+
 
     void Update()
     {
@@ -16,7 +23,7 @@ public class DemandController : MonoBehaviour
         }
     }
 
-    void ShuffleDemands()
+    public void ShuffleDemands()
     {
         for (int i = 0; i < GameManager.Instance.demands.Length; i++)
         {

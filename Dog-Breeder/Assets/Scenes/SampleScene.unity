@@ -556,6 +556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130765173}
   - component: {fileID: 130765172}
+  - component: {fileID: 130765174}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -622,6 +623,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &130765174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130765171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb8166063178344aa1d910a6398eb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &132214390
 GameObject:
   m_ObjectHideFlags: 0
@@ -10291,6 +10304,7 @@ MonoBehaviour:
   CheckText: {fileID: 918480773}
   gender: 1
   birthday: 1
+  Debuffs: []
 --- !u!65 &1355370359986706010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11972,6 +11986,7 @@ MonoBehaviour:
   CheckText: {fileID: 1756609982}
   gender: 0
   birthday: 1
+  Debuffs: []
 --- !u!1 &6355801976363370686
 GameObject:
   m_ObjectHideFlags: 0

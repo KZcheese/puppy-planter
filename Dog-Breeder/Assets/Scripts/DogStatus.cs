@@ -16,7 +16,7 @@ public class DogStatus : MonoBehaviour
     public GameObject CheckText;
     public bool gender; // true for male, false for female
     public int birthday;
-
+    public List<Debuff> Debuffs = new List<Debuff>();
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +41,11 @@ public class DogStatus : MonoBehaviour
             CheckStatusNow = true;
         else
             CheckStatusNow = false;
+
+
     }
+
+
 
     public string GetDescription()
     {

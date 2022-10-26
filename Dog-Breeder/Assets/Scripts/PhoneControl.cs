@@ -78,16 +78,23 @@ public class PhoneControl : MonoBehaviour
 
         int _firstDogID = int.Parse(PairScreen.transform.GetChild(0).GetComponent<Dropdown>().options[_firstDropDownValue].text.Split(' ')[1]);
         int _secondDogID = int.Parse(PairScreen.transform.GetChild(1).GetComponent<Dropdown>().options[_secondDropDownValue].text.Split(' ')[1]);
-
-        if (_firstDogID == _secondDogID || GameManager.Instance.GetDog(_firstDogID) == null || GameManager.Instance.GetDog(_secondDogID) == null)
-            Debug.Log("Invalid pair");
+        if(GameManager.Instance.DogList.Count > 5)
+        {
+            Debug.Log("You only can have 5 dogs, cant pair now, sell some dogs");
+        }
         else
         {
-            Debug.Log("Pair Succeed");
-            GameManager.Instance.DogPaired(_firstDogID, _secondDogID);
-            GameManager.Instance.GetDog(_firstDogID).PairDogName = DogName.text;
-            GameManager.Instance.GetDog(_secondDogID).PairDogName = DogName.text;
+            if (_firstDogID == _secondDogID || GameManager.Instance.GetDog(_firstDogID) == null || GameManager.Instance.GetDog(_secondDogID) == null)
+                Debug.Log("Invalid pair");
+            else
+            {
+                Debug.Log("Pair Succeed");
+                GameManager.Instance.DogPaired(_firstDogID, _secondDogID);
+                GameManager.Instance.GetDog(_firstDogID).PairDogName = DogName.text;
+                GameManager.Instance.GetDog(_secondDogID).PairDogName = DogName.text;
+            }
         }
+
 
     }
 

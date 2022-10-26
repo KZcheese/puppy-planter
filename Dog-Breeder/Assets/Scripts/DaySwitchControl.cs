@@ -32,11 +32,24 @@ public class DaySwitchControl : MonoBehaviour
 
         for(int i = 0;i< GameManager.Instance.DogList.Count; i++)
             GameManager.Instance.DogList[i].RandomPosition();
-        
 
+        DemandController.Instance.ShuffleDemands();
+        DebuffEffectNow();
         Time.timeScale = 0;
     }
-
+    void DebuffEffectNow()
+    {
+        for (int i = 0; i < GameManager.Instance.DogList.Count; i++)
+        {
+            if(GameManager.Instance.DogList[i].Debuffs.Count != 0)
+            {
+                for(int z =0;z< GameManager.Instance.DogList[i].Debuffs.Count;z++) 
+                {
+                    GameManager.Instance.DogList[i].Debuffs[z].Effective(GameManager.Instance.DogList[i]);
+                }
+            }
+        }
+    }
     void CostCalculate()
     {
         GameManager.Instance.Money -= GameManager.Instance.CostPerDay;

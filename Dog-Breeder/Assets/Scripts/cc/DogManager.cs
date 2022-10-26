@@ -19,7 +19,8 @@ public class DogManager
     {
         foreach (var parents in GameManager.Instance.DogPairDic)
         {
-            SkinnedMeshRenderer newSkin = Object.Instantiate(GameManager.Instance.dogPrefab).GetComponent<SkinnedMeshRenderer>();
+            GameObject newDog = Object.Instantiate(GameManager.Instance.dogPrefab);
+            SkinnedMeshRenderer newSkin = newDog.GetComponent<SkinnedMeshRenderer>();
             SkinnedMeshRenderer parSkin1 = GameManager.Instance.GetDog(parents.Key).GetComponent<SkinnedMeshRenderer>();
             SkinnedMeshRenderer parSkin2 = GameManager.Instance.GetDog(parents.Value).GetComponent<SkinnedMeshRenderer>();
             for (int i = 0; i < newSkin.sharedMesh.blendShapeCount; i++)
@@ -34,6 +35,26 @@ public class DogManager
             newSkin.GetComponent<DogStatus>().birthday = GameManager.Instance.DayCount;
             newSkin.GetComponent<DogStatus>().Name = GameManager.Instance.GetDog(parents.Key).PairDogName;
             newSkin.transform.position = GameManager.Instance.bornSpot.position;
+            CheckDebuff(newDog);
+        }
+    }
+
+    void CheckDebuff(GameObject Dogs)
+    {
+        SkinnedMeshRenderer skin = Dogs.GetComponent<SkinnedMeshRenderer>();
+        for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
+        {
+            if (skin.GetBlendShapeWeight(i)/10%10 >=6)
+            {
+                foreach (var debuff in DebuffManager.Instance.DebuffList)
+                {
+                    if ((skin.sharedMesh.GetBlendShapeName(i) == debuff.DebuffFromAttribute) && ((int)skin.GetBlendShapeWeight(i) / 10 % 10 >= debuff.AttributeNumber))
+                    {
+                        Dogs.GetComponent<DogStatus>().Debuffs.Add(debuff);
+                    }
+                }
+            }
+
         }
     }
 
