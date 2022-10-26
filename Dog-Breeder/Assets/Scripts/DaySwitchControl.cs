@@ -9,6 +9,8 @@ public class DaySwitchControl : MonoBehaviour
 
     public GameObject TransportScene;
     public Text DayCountText;
+
+    
     void Start()
     {
         
@@ -24,7 +26,26 @@ public class DaySwitchControl : MonoBehaviour
     {
         TransportScene.SetActive(true);
         GameManager.Instance.DayCount += 1;
-        DayCountText.text = "Day: "+ GameManager.Instance.DayCount%5 + " Week: " + GameManager.Instance.DayCount/5 + " Month: " + GameManager.Instance.DayCount/20;
+        DayCountText.text = "Day: "+ GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
+
+        GameManager.Instance.Money -= GameManager.Instance.CostPerDay;
+
+        if(GameManager.Instance.DayCount == 5)
+        {
+            GameManager.Instance.DayCount = 0;
+            GameManager.Instance.WeekCount += 1;
+            GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
+        }
+
+        if (GameManager.Instance.WeekCount == 4)
+        {
+            GameManager.Instance.MonthCount += 1;
+            GameManager.Instance.WeekCount = 0;
+            GameManager.Instance.Money -= GameManager.Instance.CostPerMonth;
+        }
+
+
+
         Time.timeScale = 0;
     }
 
