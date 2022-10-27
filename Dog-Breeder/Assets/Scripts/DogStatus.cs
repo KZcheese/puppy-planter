@@ -56,7 +56,12 @@ public class DogStatus : MonoBehaviour
         {
             description += skin.sharedMesh.GetBlendShapeName(i) + ": " + skin.GetBlendShapeWeight(i) + "\n";
         }
-        description += $"\nProfit if sell: {DogManager.Instance.CalculateProfit(DogID)}";
+        description += $"\nProfit if sell: {DogManager.Instance.CalculateProfit(DogID)}\n";
+        for(int i = 0;i < Debuffs.Count; i++)
+        {
+            description += (Debuffs[i].DebuffName + "\n");
+        }
+         
         return description;
     }
 
