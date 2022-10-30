@@ -42,7 +42,7 @@ public class DogStatus : MonoBehaviour
         else
             CheckStatusNow = false;
 
-
+        
     }
 
 

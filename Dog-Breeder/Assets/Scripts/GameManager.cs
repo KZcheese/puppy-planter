@@ -97,24 +97,34 @@ public class GameManager : MonoBehaviour
             _lineRenderer.SetPosition(1, Vector3.zero);
         }
     }
-    void CheckDogs() // Use Button to check the click dog
+    void CheckDogs() // Use Click to check the click dog
     {
-        if (Input.GetMouseButton(0))
-        {
-            // HighLight the dog
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
+        
             Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit _hit;
             if(Physics.Raycast(_ray, out _hit, Mathf.Infinity, LayerDetect))
             {
-                IsStatusActive = !IsStatusActive;
-                StatusUI.SetActive(IsStatusActive);
-                StatusUpdate.Instance.UpdateStatusText(_hit.collider.gameObject.GetComponent<DogStatus>());
-                //_hit.collider.gameObject.GetComponent<DogStatus>().CanBeChecked = true;
+                
+                _hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;
+                
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    IsStatusActive = !IsStatusActive;
+                    StatusUI.SetActive(IsStatusActive);
+                    StatusUpdate.Instance.UpdateStatusText(_hit.collider.gameObject.GetComponent<DogStatus>());
+                    //_hit.collider.gameObject.GetComponent<DogStatus>().CanBeChecked = true;
+                }
+
+        }
+        else
+        {
+            foreach (var dogs in DogList)
+            {
+                dogs.GetComponent<Outline>().OutlineWidth = 0;
             }
         }
+        
     }
 
 
