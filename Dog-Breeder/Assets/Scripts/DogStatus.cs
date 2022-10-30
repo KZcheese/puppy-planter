@@ -49,8 +49,12 @@ public class DogStatus : MonoBehaviour
 
     public string GetDescription()
     {
-        string description = Name + " is a " + (GameManager.Instance.DayCount - birthday) + "-day old " + (gender ? "male" : "female") + " dog.\n";
-        description += $"HP: {HP}\n\n";
+        string description = Name + " is a " + (GameManager.Instance.DayCount - birthday) + "-day old " + (gender ? "male" : "female") + " dog.\n\n";
+        description += $"HP: {HP}\nDebuffs:\n";
+        foreach (var debuff in Debuffs)
+        {
+            description += debuff.DebuffName + "\n";
+        }
         SkinnedMeshRenderer skin = GetComponent<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {

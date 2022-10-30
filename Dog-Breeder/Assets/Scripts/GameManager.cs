@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
     //public List<PairInfo> pairInfos = new List<PairInfo>();
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
 
-    public float[] demands = new float[11];
+    [HideInInspector]
+    public float[] demands = new float[5];
     public float Money;
     public int CostPerDay, CostPerWeak, CostPerMonth;
     private void Awake()

@@ -19,7 +19,6 @@ public class DemandController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ShuffleDemands();
-            UpdateDemand();
         }
     }
 
@@ -28,7 +27,7 @@ public class DemandController : MonoBehaviour
         for (int i = 0; i < GameManager.Instance.demands.Length; i++)
         {
             float val = Random.Range(0, 100);
-            GameManager.Instance.demands[i] = val;
+            GameManager.Instance.demands[i] = (int)val;
         }
         UpdateDemand();
     }
@@ -36,6 +35,6 @@ public class DemandController : MonoBehaviour
     void UpdateDemand()
     {
         float[] demands = GameManager.Instance.demands;
-        demandText.text = $"demands: \ncheek_droopy: {demands[0]}\neye_small: {demands[1]}\neye_big: {demands[2]}\near_droopy: {demands[3]}\near_pointy: {demands[4]}\nleg_shorter: {demands[5]}\nleg_longer: {demands[6]}\nmuscle_small: {demands[7]}\nmuscle_big: {demands[8]}\nnose_small: {demands[9]}\nnose_big: {demands[10]}";
+        demandText.text = $"DEMANDs: \nLeg_Length: {demands[0]}\nMuscle: {demands[1]}\nEar_Shape: {demands[2]}\nEye_Shape: {demands[3]}";
     }
 }

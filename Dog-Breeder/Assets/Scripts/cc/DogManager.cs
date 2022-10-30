@@ -28,7 +28,7 @@ public class DogManager
                 float min = Mathf.Min(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) - 10;
                 float max = Mathf.Max(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) + 10;
                 float value = Mathf.Clamp(Random.Range(min, max), 0, 100);
-                newSkin.SetBlendShapeWeight(i, value);
+                newSkin.SetBlendShapeWeight(i, (int)value);
             }
 
             //TODO
@@ -44,7 +44,7 @@ public class DogManager
         SkinnedMeshRenderer skin = Dogs.GetComponent<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
-            if (skin.GetBlendShapeWeight(i)/10%10 >=6)
+            if (skin.GetBlendShapeWeight(i) / 10 % 10 >= 6)
             {
                 foreach (var debuff in DebuffManager.Instance.DebuffList)
                 {
