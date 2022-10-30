@@ -10,7 +10,11 @@ public class DaySwitchControl : MonoBehaviour
     public GameObject TransportScene;
     public Text DayCountText;
 
-    
+    public Text TransSceenText;
+
+    public string TransText = "";
+    public string DebuffText = "";
+
     void Start()
     {
         
@@ -24,10 +28,13 @@ public class DaySwitchControl : MonoBehaviour
 
     public void GoNextDayButton()
     {
+        TransText = "";
+        DebuffText = "";
         TransportScene.SetActive(true);
         GameManager.Instance.DayCount += 1;
         DayCountText.text = "Day: "+ GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
 
+        TransText = "Today is a new day. You cost is : Day Cost: " + GameManager.Instance.CostPerDay + "\n";
         CostCalculate();
 
         for(int i = 0;i< GameManager.Instance.DogList.Count; i++)
@@ -35,6 +42,7 @@ public class DaySwitchControl : MonoBehaviour
 
         DemandController.Instance.ShuffleDemands();
         DebuffEffectNow();
+        TransSceenText.text = TransText + "\n" + DebuffText;
         Time.timeScale = 0;
     }
     void DebuffEffectNow()
@@ -43,9 +51,11 @@ public class DaySwitchControl : MonoBehaviour
         {
             if(GameManager.Instance.DogList[i].Debuffs.Count != 0)
             {
-                for(int z =0;z< GameManager.Instance.DogList[i].Debuffs.Count;z++) 
+                DebuffText += GameManager.Instance.DogList[i].Name + "Debuffs effect: \n";
+                for (int z =0;z< GameManager.Instance.DogList[i].Debuffs.Count;z++) 
                 {
                     GameManager.Instance.DogList[i].Debuffs[z].Effective(GameManager.Instance.DogList[i]);
+                    DebuffText += GameManager.Instance.DogList[i].Debuffs[z].DebuffName;
                 }
             }
         }
@@ -59,6 +69,7 @@ public class DaySwitchControl : MonoBehaviour
             GameManager.Instance.DayCount = 0;
             GameManager.Instance.WeekCount += 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
+            TransText += "Week Cost: " + GameManager.Instance.CostPerWeak + "\n";
         }
 
         if (GameManager.Instance.WeekCount == 4)
@@ -66,6 +77,7 @@ public class DaySwitchControl : MonoBehaviour
             GameManager.Instance.MonthCount += 1;
             GameManager.Instance.WeekCount = 0;
             GameManager.Instance.Money -= GameManager.Instance.CostPerMonth;
+            TransText += "Month Cost: " + GameManager.Instance.CostPerMonth + "\n";
         }
     }
     public void GoContinueButton()
@@ -73,5 +85,10 @@ public class DaySwitchControl : MonoBehaviour
         Time.timeScale = 1;
         TransportScene.SetActive(false);
         GameManager.Instance.NewDay();
+
+
+        
+        
+        
     }
 }

@@ -24,7 +24,7 @@ public class CameraDetect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Detect();
+        //Detect();
 
     }
 

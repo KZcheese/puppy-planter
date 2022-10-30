@@ -22,16 +22,13 @@ public class StatusUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < GameManager.Instance.DogList.Count; i++)
-        {
-            if (GameManager.Instance.DogList[i].CanBeChecked)
-            {
-                statusText.text = GameManager.Instance.DogList[i].GetDescription();
-                index = i;
-            }
-        }
+
     }
 
+    public void UpdateStatusText(DogStatus Dog)
+    {
+        statusText.text = Dog.GetDescription();
+    }
     public void Reset()
     {
         index = -1;

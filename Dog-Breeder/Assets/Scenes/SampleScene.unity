@@ -544,7 +544,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1100, y: 600}
+  m_SizeDelta: {x: 1200, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &130765171
 GameObject:
@@ -586,6 +586,9 @@ MonoBehaviour:
   PhoneUI: {fileID: 1648922691}
   StatusUI: {fileID: 1436151604}
   Lines: {fileID: 266553420}
+  LayerDetect:
+    serializedVersion: 2
+    m_Bits: 256
   moneyText: {fileID: 794412542}
   DogCapMax: 10
   DogList: []
@@ -1480,6 +1483,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransportScene: {fileID: 87409852}
   DayCountText: {fileID: 658800208}
+  TransSceenText: {fileID: 845511032}
+  TransText: 
+  DebuffText: 
 --- !u!114 &305346346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3769,7 +3775,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -275, y: 96}
-  m_SizeDelta: {x: 400, y: 500}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845511032
 MonoBehaviour:

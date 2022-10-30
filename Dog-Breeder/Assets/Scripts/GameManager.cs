@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public GameObject PhoneUI,StatusUI;
     public GameObject Lines;
 
+    public LayerMask LayerDetect;
+
     public Text moneyText;
 
     public int DogCapMax = 10;
@@ -95,27 +97,22 @@ public class GameManager : MonoBehaviour
             _lineRenderer.SetPosition(1, Vector3.zero);
         }
     }
-    void CheckDogs() // DogsStatusUI
+    void CheckDogs() // Use Button to check the click dog
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetMouseButton(0))
         {
-            if (IsStatusActive)
+            // HighLight the dog
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit _hit;
+            if(Physics.Raycast(_ray, out _hit, Mathf.Infinity, LayerDetect))
             {
                 IsStatusActive = !IsStatusActive;
                 StatusUI.SetActive(IsStatusActive);
-                StatusUpdate.Instance.Reset();
-            }
-            else
-            {
-                if (CameraDetect.Instance.IsDogThere)
-                {
-                    IsStatusActive = !IsStatusActive;
-                    StatusUI.SetActive(IsStatusActive);
-                }
-                else
-                {
-                    Debug.Log("No Dog in view");
-                }
+                StatusUpdate.Instance.UpdateStatusText(_hit.collider.gameObject.GetComponent<DogStatus>());
+                //_hit.collider.gameObject.GetComponent<DogStatus>().CanBeChecked = true;
             }
         }
     }
