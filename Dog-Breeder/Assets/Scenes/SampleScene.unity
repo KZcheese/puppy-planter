@@ -3798,10 +3798,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 38
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -10331,15 +10331,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355370359986706008}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecea87678402b844a2a3fb3e505b9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Positions:
-  - {fileID: 4052143055273510123}
-  - {fileID: 7206955817037681266}
-  - {fileID: 6252100821980964228}
+  Positions: {x: 0, y: 0, z: 0}
+  WaitTime: 3
 --- !u!195 &1355370359986706012
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11968,6 +11966,7 @@ GameObject:
   - component: {fileID: 6252100821980964230}
   - component: {fileID: 6252100821980964229}
   - component: {fileID: 6252100821980964231}
+  - component: {fileID: 6252100821980964232}
   m_Layer: 8
   m_Name: dog2
   m_TagString: Untagged
@@ -12029,6 +12028,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &6252100821980964232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252100821980964228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecea87678402b844a2a3fb3e505b9ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Positions: {x: 0, y: 0, z: 0}
+  WaitTime: 2
 --- !u!1 &6355801976363370686
 GameObject:
   m_ObjectHideFlags: 0

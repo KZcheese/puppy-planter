@@ -37,11 +37,6 @@ public class DogStatus : MonoBehaviour
         else
             CheckText.SetActive(false);
 
-        if (CanBeChecked && GameManager.Instance.IsStatusActive)
-            CheckStatusNow = true;
-        else
-            CheckStatusNow = false;
-
         
     }
 
