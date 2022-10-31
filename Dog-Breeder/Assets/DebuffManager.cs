@@ -35,7 +35,8 @@ public class PermanentDebuff : Debuff
 
     public override int Roll(int traitVal)
     {
-        return 1;
+        if (traitVal <= 1 || traitVal >= 9) return 1;
+        else return -1;
     }
 }
 
@@ -49,7 +50,7 @@ public class RiskyDebuff : Debuff
     {
         if (traitVal <= 1 || traitVal >= 9) return Random.value > .5f ? 1 : RollCure(traitVal);
         else if (traitVal <= 2 || traitVal >= 8) return Random.value > .75f ? 1 : RollCure(traitVal);
-        else return 0;
+        else return -1;
     }
 
     public int RollCure(int traitVal)
