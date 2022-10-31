@@ -15,6 +15,12 @@ public class DaySwitchControl : MonoBehaviour
     public string TransText = "";
     public string DebuffText = "";
 
+    public static DaySwitchControl Instance;
+    private void Awake()
+    {
+        if (!Instance) Instance = this;
+    }
+
     void Start()
     {
 
@@ -41,6 +47,7 @@ public class DaySwitchControl : MonoBehaviour
             GameManager.Instance.DogList[i].NewDay();
 
         DemandController.Instance.ShuffleDemands();
+        GameManager.Instance.NewDay();
         TransSceenText.text = TransText + "\n" + DebuffText;
         Time.timeScale = 0;
     }
@@ -69,7 +76,7 @@ public class DaySwitchControl : MonoBehaviour
     {
         Time.timeScale = 1;
         TransportScene.SetActive(false);
-        GameManager.Instance.NewDay();
+        
 
 
 

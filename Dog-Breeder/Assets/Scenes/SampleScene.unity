@@ -12068,6 +12068,7 @@ GameObject:
   - component: {fileID: 6252100821980964229}
   - component: {fileID: 6252100821980964231}
   - component: {fileID: 6252100821980964232}
+  - component: {fileID: 6252100821980964233}
   m_Layer: 8
   m_Name: dog2
   m_TagString: Untagged
@@ -12143,6 +12144,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Positions: {x: 0, y: 0, z: 0}
   WaitTime: 2
+--- !u!195 &6252100821980964233
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252100821980964228}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.20783925
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.27145964
+  m_BaseOffset: 0.13572982
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6355801976363370686
 GameObject:
   m_ObjectHideFlags: 0
