@@ -4053,11 +4053,11 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: 5106040336213236939, guid: 439e9de6bf653904ebc1988a49d62879, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
-  - 50
-  - 50
-  - 30
-  - 70
-  - 30
+  - 20
+  - 20
+  - 80
+  - 80
+  - 80
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: -0.0027920045, y: 0.112211645, z: 0.0008782074}
@@ -12013,11 +12013,11 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: 5106040336213236939, guid: 439e9de6bf653904ebc1988a49d62879, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
-  - 30
-  - 70
-  - 50
-  - 30
-  - 70
+  - 20
+  - 20
+  - 80
+  - 80
+  - 80
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: -0.0027920045, y: 0.112211645, z: 0.0008782074}

@@ -20,6 +20,7 @@ public class DogManager
         foreach (var parents in GameManager.Instance.DogPairDic)
         {
             GameObject newDog = Object.Instantiate(GameManager.Instance.dogPrefab);
+            DogStatus newStatus = newDog.GetComponent<DogStatus>();
             SkinnedMeshRenderer newSkin = newDog.GetComponent<SkinnedMeshRenderer>();
             SkinnedMeshRenderer parSkin1 = GameManager.Instance.GetDog(parents.Key).GetComponent<SkinnedMeshRenderer>();
             SkinnedMeshRenderer parSkin2 = GameManager.Instance.GetDog(parents.Value).GetComponent<SkinnedMeshRenderer>();
@@ -28,33 +29,14 @@ public class DogManager
                 float min = Mathf.Min(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) - 10;
                 float max = Mathf.Max(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) + 10;
                 float value = Mathf.Clamp(Random.Range(min, max), 0, 100);
-                newSkin.SetBlendShapeWeight(i, (int)value);
+                newSkin.SetBlendShapeWeight(i, Mathf.Round(value / 10) * 10);
             }
 
-            //TODO
-            newSkin.GetComponent<DogStatus>().birthday = GameManager.Instance.DayCount;
-            newSkin.GetComponent<DogStatus>().Name = GameManager.Instance.GetDog(parents.Key).PairDogName;
-            newSkin.transform.position = GameManager.Instance.bornSpot.position;
-            CheckDebuff(newDog);
-        }
-    }
-
-    void CheckDebuff(GameObject Dogs)
-    {
-        SkinnedMeshRenderer skin = Dogs.GetComponent<SkinnedMeshRenderer>();
-        for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
-        {
-            if (skin.GetBlendShapeWeight(i) / 10 % 10 >= 6)
-            {
-                foreach (var debuff in DebuffManager.Instance.DebuffList)
-                {
-                    if ((skin.sharedMesh.GetBlendShapeName(i) == debuff.DebuffFromAttribute) && ((int)skin.GetBlendShapeWeight(i) / 10 % 10 >= debuff.AttributeNumber))
-                    {
-                        Dogs.GetComponent<DogStatus>().Debuffs.Add(debuff);
-                    }
-                }
-            }
-
+            newStatus.gender = Random.value > .5f;
+            newStatus.birthday = GameManager.Instance.DayCount;
+            newStatus.Name = GameManager.Instance.GetDog(parents.Key).PairDogName;
+            newDog.transform.position = GameManager.Instance.bornSpot.position;
+            DebuffManager.Instance.InitializeDebuffs(newDog);
         }
     }
 
@@ -64,9 +46,8 @@ public class DogManager
         SkinnedMeshRenderer skin = GameManager.Instance.GetDog(id).GetComponent<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
-            profit += Mathf.Abs(skin.GetBlendShapeWeight(i) - GameManager.Instance.demands[i]);
+            profit += 10 - Mathf.Abs(skin.GetBlendShapeWeight(i) - GameManager.Instance.demands[i]) / 10;
         }
-        profit /= 10;
         return profit;
     }
 

@@ -26,8 +26,8 @@ public class DemandController : MonoBehaviour
     {
         for (int i = 0; i < GameManager.Instance.demands.Length; i++)
         {
-            float val = Random.Range(0, 100);
-            GameManager.Instance.demands[i] = (int)val;
+            int val = Random.Range(0, 11);
+            GameManager.Instance.demands[i] = val * 10;
         }
         UpdateDemand();
     }
@@ -35,6 +35,6 @@ public class DemandController : MonoBehaviour
     void UpdateDemand()
     {
         float[] demands = GameManager.Instance.demands;
-        demandText.text = $"DEMANDs: \nLeg_Length: {demands[0]}\nMuscle: {demands[1]}\nEar_Shape: {demands[2]}\nEye_Shape: {demands[3]}";
+        demandText.text = $"DEMANDs: \nLeg_Length: {demands[0]}\nMuscle: {demands[1]}\nEar_Shape: {demands[2]}\nEye_Shape: {demands[3]}\nNose_Shape: {demands[4]}";
     }
 }
