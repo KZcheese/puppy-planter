@@ -19,6 +19,12 @@ public class CameraMovement : MonoBehaviour
         transform.position = new Vector3(transform.position.x,1.25f, transform.position.z);
     }
 
+    void OnTriggerStay(Collider other)
+     {
+         //For Colliders         
+         transform.position += new Vector3(0, 0.2f, -0.2f);    
+     }
+
     void Movement()
     {
         if (Input.GetKey(KeyCode.W))
