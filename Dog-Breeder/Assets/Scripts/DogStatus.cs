@@ -94,6 +94,7 @@ public class DogStatus : MonoBehaviour
     {
         if (Debuffs != null)
         {
+            DaySwitchControl.Instance.DebuffText += "\n"+Name + "\n";
             SkinnedMeshRenderer skin = GetComponent<SkinnedMeshRenderer>();
             for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
             {
@@ -102,13 +103,22 @@ public class DogStatus : MonoBehaviour
                     for (int j = Debuffs[i].Count - 1; j >= 0; j--)
                     {
                         int res = Debuffs[i][j].Roll((int)skin.GetBlendShapeWeight(i) / 10);
-                        if (res == 1) Debuffs[i][j].Effective(this);
+                        if (res == 1) 
+                            {
+                            Debuffs[i][j].Effective(this);
+                            DaySwitchControl.Instance.DebuffText += Debuffs[i][j].DebuffName + "Effect \n";
+                            } 
                         else if (res == -1)
                         {
                             Debug.Log(Name + "'s " + Debuffs[i][j] + " cured");
+                            DaySwitchControl.Instance.DebuffText += Debuffs[i][j].DebuffName + "Cured \n";
                             Debuffs[i].RemoveAt(j);
                         }
                     }
+                }
+                else
+                {
+                    DaySwitchControl.Instance.DebuffText += "OK";
                 }
             }
         }
