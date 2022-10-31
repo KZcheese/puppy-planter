@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 5934593116816733219}
   - component: {fileID: 5934593116816733216}
   - component: {fileID: 2136005920746684499}
+  - component: {fileID: -6186230579238472037}
   m_Layer: 8
   m_Name: DogPreFab
   m_TagString: Untagged
@@ -482,3 +483,17 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &-6186230579238472037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934593116816733217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecea87678402b844a2a3fb3e505b9ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Positions: {x: 0, y: 0, z: 0}
+  WaitTime: 2

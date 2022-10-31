@@ -6,43 +6,55 @@ using UnityEngine.AI;
 public class DogAutoMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject[] Positions;
-
+    public Vector3 Positions;
+    private bool NeedNewPositon = true;
     private NavMeshAgent _navigation;
-    private int _moveNumber = 0;
+    public float WaitTime = 0;
     void Start()
     {
         _navigation = GetComponent<NavMeshAgent>();
+        Positions = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Positions.Length != 0)
-        {
-            AutoMove();
-        }
+        AutoMove();
 
     }
 
     void AutoMove()
     {
-        if (Vector3.Distance(transform.position, Positions[_moveNumber].transform.position) >= 0.1f)
+        if (Vector3.Distance(transform.position, Positions) >= 0.1f)
         {
-            _navigation.destination = Positions[_moveNumber].transform.position;
-
+            _navigation.destination = Positions;
         }
 
-        if (Vector3.Distance(transform.position, Positions[_moveNumber].transform.position) < 1f)
+        if (Vector3.Distance(transform.position, Positions) < 0.5f)
         {
-            _moveNumber++;
-            if (_moveNumber == Positions.Length)
-                _moveNumber = 0;
+            if (NeedNewPositon)
+            {
+                Invoke("GoNewPosition", WaitTime);
+                NeedNewPositon = false;
+            }
+
+
         }
 
         if (this.GetComponent<DogStatus>().CheckStatusNow)
             _navigation.speed = 0;
         else
-            _navigation.speed = 2;
+            _navigation.speed = 1;
+    }
+
+    void GoNewPosition()
+    {
+
+        float _randomX = Random.Range(-3.5f, 3.5f);
+        float _randomZ = Random.Range(-3.5f, 3.5f);
+
+        Positions = new Vector3(_randomX, 0.36f, _randomZ);
+
+        NeedNewPositon = true;
     }
 }

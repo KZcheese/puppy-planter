@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
                     IsStatusActive = !IsStatusActive;
                     StatusUI.SetActive(IsStatusActive);
                     StatusUpdate.Instance.UpdateStatusText(_hit.collider.gameObject.GetComponent<DogStatus>());
-                    //_hit.collider.gameObject.GetComponent<DogStatus>().CanBeChecked = true;
+                    _hit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
                 }
 
         }
@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
             foreach (var dogs in DogList)
             {
                 dogs.GetComponent<Outline>().OutlineWidth = 0;
+                dogs.GetComponent<DogStatus>().CheckStatusNow = false;
             }
         }
         
