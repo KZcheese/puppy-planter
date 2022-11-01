@@ -28,7 +28,7 @@ public class CameraDetect : MonoBehaviour
 
     }
 
-    void Detect()
+    /*void Detect()
     {
         Ray _cameraRay = new Ray(transform.position, transform.forward);
         RaycastHit _cameraHit;
@@ -46,5 +46,5 @@ public class CameraDetect : MonoBehaviour
                 GameManager.Instance.DogList[i].CanBeChecked = false;
             }
         }
-    }
+    }*/
 }

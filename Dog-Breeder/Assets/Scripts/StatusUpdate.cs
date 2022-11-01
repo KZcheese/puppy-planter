@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StatusUpdate : MonoBehaviour
 {
     public int index = -1;
+    public int DogId;
     public Text statusText;
     public static StatusUpdate Instance;
 
@@ -38,7 +39,7 @@ public class StatusUpdate : MonoBehaviour
     {
         if (GameManager.Instance.DogList.Count > 2)
         {
-            DogManager.Instance.SellDog(GameManager.Instance.DogList[index].DogID);
+            DogManager.Instance.SellDog(DogId);
             GameManager.Instance.IsStatusActive = !GameManager.Instance.IsStatusActive;
             index = -1;
             gameObject.SetActive(false);

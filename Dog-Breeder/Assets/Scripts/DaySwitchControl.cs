@@ -8,11 +8,12 @@ public class DaySwitchControl : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject TransportScene;
+    public GameObject MoneyCal, DebuffCal;
     public Text DayCountText;
 
-    public Text TransSceenText;
+    public Text DayText,SavingText,CostText,FinalValueText,DebText;
 
-    public string TransText = "";
+    public string TransCostText = "";
     public string DebuffText = "";
 
     public static DaySwitchControl Instance;
@@ -29,56 +30,74 @@ public class DaySwitchControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (TransportScene.active)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                MoneyCal.SetActive(false);
+                DebuffCal.SetActive(true);
+            }
+        }
     }
 
     public void GoNextDayButton()
     {
-        TransText = "";
+        TransCostText = "";
         DebuffText = "";
         TransportScene.SetActive(true);
         GameManager.Instance.DayCount += 1;
-        DayCountText.text = "Day: " + GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
+        
 
-        TransText = "Today is a new day. You have money: " + GameManager.Instance.Money + " \n You cost is :\n Day Cost: -" + GameManager.Instance.CostPerDay + "\n";
+        DayText.text = "DAY " + GameManager.Instance.DayCount;
+        SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney+"\n" ;
+        SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney);
+
         CostCalculate();
+        FinalValueText.text = "------------------------------------------------------------\n                                                      " + GameManager.Instance.Money;
 
-        for(int i = 0;i< GameManager.Instance.DogList.Count; i++)
+
+        for (int i = 0;i< GameManager.Instance.DogList.Count; i++)
             GameManager.Instance.DogList[i].NewDay();
 
         DemandController.Instance.ShuffleDemands();
+
         GameManager.Instance.NewDay();
-        TransSceenText.text = TransText + "\n" + DebuffText;
+        DebText.text = DebuffText;
+
         Time.timeScale = 0;
     }
 
     void CostCalculate()
     {
         GameManager.Instance.Money -= GameManager.Instance.CostPerDay;
-
-        if (GameManager.Instance.DayCount == 5)
+        TransCostText += "Food                       -" + GameManager.Instance.CostPerDay+"\n";
+        if (GameManager.Instance.DayCount == 6)
         {
-            GameManager.Instance.DayCount = 0;
+            GameManager.Instance.DayCount = 1;
             GameManager.Instance.WeekCount += 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
-            TransText += "Week Cost: -" + GameManager.Instance.CostPerWeak + "\n";
+            TransCostText += "Rent                       -" + GameManager.Instance.CostPerWeak + "\n";
         }
 
         if (GameManager.Instance.WeekCount == 4)
         {
             GameManager.Instance.MonthCount += 1;
-            GameManager.Instance.WeekCount = 0;
+            GameManager.Instance.WeekCount = 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerMonth;
-            TransText += "Month Cost: -" + GameManager.Instance.CostPerMonth + "\n";
+            TransCostText += "Rent/Month:           -" + GameManager.Instance.CostPerMonth + "\n";
         }
+
+        CostText.text = TransCostText;
     }
     public void GoContinueButton()
     {
         Time.timeScale = 1;
         TransportScene.SetActive(false);
-        
+        GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
+        DayCountText.text = "Day: " + GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
 
-
+        MoneyCal.SetActive(true);
+        DebuffCal.SetActive(false);
 
 
 

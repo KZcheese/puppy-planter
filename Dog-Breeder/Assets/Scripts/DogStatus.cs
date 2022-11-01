@@ -11,7 +11,7 @@ public class DogStatus : MonoBehaviour
     public bool IsBabe = true;
     public string PairDogName;
     public int DogID;
-    public bool CanBeChecked = false;
+    public bool DebuffEffected = false;
     public bool CheckStatusNow = false;
     public GameObject CheckText;
     public bool gender; // true for male, false for female
@@ -39,10 +39,6 @@ public class DogStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CanBeChecked)
-            CheckText.SetActive(true);
-        else
-            CheckText.SetActive(false);
 
         
     }
@@ -92,9 +88,11 @@ public class DogStatus : MonoBehaviour
 
     void RollDebuffs()
     {
+        string _saveText = "";
         if (Debuffs != null)
         {
-            DaySwitchControl.Instance.DebuffText += "\n"+Name + "\n";
+            
+            
             SkinnedMeshRenderer skin = GetComponent<SkinnedMeshRenderer>();
             for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
             {
@@ -106,22 +104,32 @@ public class DogStatus : MonoBehaviour
                         if (res == 1) 
                             {
                             Debuffs[i][j].Effective(this);
-                            DaySwitchControl.Instance.DebuffText += Debuffs[i][j].DebuffName + "Effect \n";
+                            _saveText += "<color=#FF0000>"+ Debuffs[i][j].DebuffName + "            - "+Debuffs[i][j].DebuffEffectHP+ "</color>\n";
+                            DebuffEffected = true;
                             } 
                         else if (res == -1)
                         {
                             Debug.Log(Name + "'s " + Debuffs[i][j] + " cured");
-                            DaySwitchControl.Instance.DebuffText += Debuffs[i][j].DebuffName + "Cured \n";
+                            _saveText += "<color=#FF0000>" + Debuffs[i][j].DebuffName + "                  Cured </color>\n";
                             Debuffs[i].RemoveAt(j);
+                            DebuffEffected = true;
                         }
                     }
                 }
-                else
-                {
-                    DaySwitchControl.Instance.DebuffText += "OK";
-                }
+                
             }
         }
+
+        if (DebuffEffected)
+        {
+            DaySwitchControl.Instance.DebuffText += "\n<color=#FF0000>" + Name + "                                          X</color>" + "\n";
+            DaySwitchControl.Instance.DebuffText += _saveText;
+        }
+        else
+        {
+            DaySwitchControl.Instance.DebuffText += "\n"+Name+ "                                          OK\n";
+        }
+
     }
 
 }

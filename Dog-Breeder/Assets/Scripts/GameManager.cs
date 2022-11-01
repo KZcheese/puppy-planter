@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public float[] demands = new float[5];
-    public float Money;
+    public float Money,YesterdayMoney;
     public int CostPerDay, CostPerWeak, CostPerMonth;
     private void Awake()
     {
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        YesterdayMoney = Money;
     }
 
     // Update is called once per frame
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
                     IsStatusActive = !IsStatusActive;
                     StatusUI.SetActive(IsStatusActive);
                     StatusUpdate.Instance.UpdateStatusText(_hit.collider.gameObject.GetComponent<DogStatus>());
+                StatusUpdate.Instance.DogId = _hit.collider.gameObject.GetComponent<DogStatus>().DogID;
                     _hit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
                 }
 
@@ -236,6 +237,7 @@ public class GameManager : MonoBehaviour
         {
             Instance.DogList[i].IsPair = false;
             Instance.DogList[i].PairDogName = "";
+            Instance.DogList[i].DebuffEffected = false;
         }
     }
 }
