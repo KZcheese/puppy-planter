@@ -21,9 +21,9 @@ public class DogManager
         {
             GameObject newDog = Object.Instantiate(GameManager.Instance.dogPrefab);
             DogStatus newStatus = newDog.GetComponent<DogStatus>();
-            SkinnedMeshRenderer newSkin = newDog.GetComponent<SkinnedMeshRenderer>();
-            SkinnedMeshRenderer parSkin1 = GameManager.Instance.GetDog(parents.Key).GetComponent<SkinnedMeshRenderer>();
-            SkinnedMeshRenderer parSkin2 = GameManager.Instance.GetDog(parents.Value).GetComponent<SkinnedMeshRenderer>();
+            SkinnedMeshRenderer newSkin = newDog.GetComponentInChildren<SkinnedMeshRenderer>();
+            SkinnedMeshRenderer parSkin1 = GameManager.Instance.GetDog(parents.Key).GetComponentInChildren<SkinnedMeshRenderer>();
+            SkinnedMeshRenderer parSkin2 = GameManager.Instance.GetDog(parents.Value).GetComponentInChildren<SkinnedMeshRenderer>();
             for (int i = 0; i < newSkin.sharedMesh.blendShapeCount; i++)
             {
                 float min = Mathf.Min(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) - 10;
@@ -43,12 +43,12 @@ public class DogManager
     public float CalculateProfit(int id)
     {
         float profit = 0;
-        SkinnedMeshRenderer skin = GameManager.Instance.GetDog(id).GetComponent<SkinnedMeshRenderer>();
-        for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
+        SkinnedMeshRenderer skin = GameManager.Instance.GetDog(id).GetComponentInChildren<SkinnedMeshRenderer>();
+        for (int i = 1; i < skin.sharedMesh.blendShapeCount; i++)
         {
             profit += 10 - Mathf.Abs(skin.GetBlendShapeWeight(i) - GameManager.Instance.demands[i]) / 10;
         }
-        return profit;
+        return Mathf.Round(profit);
     }
 
     public void SellDog(int id)
