@@ -154,7 +154,28 @@ MonoBehaviour:
   noseShape: 0
   muscle: 0
   legLength: 0
-  dogDatas: []
+  dogDatas:
+  - pair: 1
+    sell: 0
+    name: 
+    eyeShape: 0
+    noseShape: 0
+    muscle: 0
+    legLength: 0
+  - pair: 1
+    sell: 0
+    name: 
+    eyeShape: 0
+    noseShape: 0
+    muscle: 0
+    legLength: 0
+  - pair: 0
+    sell: 0
+    name: 
+    eyeShape: 0
+    noseShape: 0
+    muscle: 0
+    legLength: 0
 --- !u!4 &33468967
 Transform:
   m_ObjectHideFlags: 0
