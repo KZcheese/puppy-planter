@@ -94,8 +94,34 @@ public class DaySwitchControl : MonoBehaviour
         Time.timeScale = 1;
         TransportScene.SetActive(false);
         GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
-        DayCountText.text = "Day: " + GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
+        int _dayAll = (GameManager.Instance.DayCount + (GameManager.Instance.WeekCount - 1) * 5 + (GameManager.Instance.MonthCount - 1) * 20);
+        
+        int _weekDay = _dayAll % 5;
+        Debug.Log(_weekDay);
+        switch (_weekDay)
+        {
+            case 1:
+                DayCountText.text = "MONDAY";
+                break;
 
+            case 2:
+                DayCountText.text = "TUESDAY";
+                break;
+
+            case 3:
+                DayCountText.text = "WEDNESDAY";
+                break;
+
+            case 4:
+                DayCountText.text = "THURSDAY";
+                break;
+
+            case 5:
+                DayCountText.text = "FRIDAY";
+                break;
+
+        }
+        DayCountText.text += "\n<size=56>DAY " + _dayAll+ "</size>";
         MoneyCal.SetActive(true);
         DebuffCal.SetActive(false);
 
