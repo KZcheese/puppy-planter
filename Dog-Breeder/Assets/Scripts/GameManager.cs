@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
                 _hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;
                 
 
-                if (Input.GetMouseButtonDown(0))
+                if ((Input.GetMouseButtonDown(0))&&(DaySwitchControl.Instance.TransportScene.activeSelf == false))
                 {
                     IsStatusActive = !IsStatusActive;
                     StatusUI.SetActive(IsStatusActive);

@@ -31,8 +31,8 @@ public class DogStatus : MonoBehaviour
         DogID = GameManager.Instance.DogIDNow;
         GameManager.Instance.DogIDNow += 1;
         this.GetComponentInChildren<Text>().text = Name;
-        if (GameManager.Instance.DayCount - birthday != 0)
-            RandomPosition();
+        /*if (GameManager.Instance.DayCount - birthday != 0)
+            RandomPosition();*/
         //Initialize();
     }
 
@@ -104,13 +104,13 @@ public class DogStatus : MonoBehaviour
                         if (res == 1) 
                             {
                             Debuffs[i][j].Effective(this);
-                            _saveText += "<color=#FF0000>"+ Debuffs[i][j].DebuffName + "            - "+Debuffs[i][j].DebuffEffectHP+ "</color>\n";
+                            _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     - " + Debuffs[i][j].DebuffEffectHP+ "</size></color>\n";
                             DebuffEffected = true;
                             } 
                         else if (res == -1)
                         {
                             Debug.Log(Name + "'s " + Debuffs[i][j] + " cured");
-                            _saveText += "<color=#FF0000>" + Debuffs[i][j].DebuffName + "                  Cured </color>\n";
+                            _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     Cured </size></color>\n";
                             Debuffs[i].RemoveAt(j);
                             DebuffEffected = true;
                         }
@@ -122,12 +122,12 @@ public class DogStatus : MonoBehaviour
 
         if (DebuffEffected)
         {
-            DaySwitchControl.Instance.DebuffText += "\n<color=#FF0000>" + Name + "                                          X</color>" + "\n";
+            DaySwitchControl.Instance.DebuffText += "<color=#FF0000>" + Name + "                                          X</color>" + "\n";
             DaySwitchControl.Instance.DebuffText += _saveText;
         }
         else
         {
-            DaySwitchControl.Instance.DebuffText += "\n"+Name+ "                                          OK\n";
+            DaySwitchControl.Instance.DebuffText += Name+ "                                          OK\n";
         }
 
     }

@@ -30,7 +30,7 @@ public class DaySwitchControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TransportScene.active)
+        if (TransportScene.activeSelf)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -48,12 +48,12 @@ public class DaySwitchControl : MonoBehaviour
         GameManager.Instance.DayCount += 1;
         
 
-        DayText.text = "DAY " + GameManager.Instance.DayCount;
-        SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney+"\n" ;
-        SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney);
+        DayText.text = "DAY " + (GameManager.Instance.DayCount-1 + (GameManager.Instance.WeekCount-1)*5+ (GameManager.Instance.MonthCount - 1)*20);
+        SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney.ToString("c2") + "\n" ;
+        SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney).ToString("c2");
 
         CostCalculate();
-        FinalValueText.text = "------------------------------------------------------------\n                                                      " + GameManager.Instance.Money;
+        FinalValueText.text = "------------------------------------------------------------\n                                                      " + GameManager.Instance.Money.ToString("c2");
 
 
         for (int i = 0;i< GameManager.Instance.DogList.Count; i++)
@@ -70,21 +70,21 @@ public class DaySwitchControl : MonoBehaviour
     void CostCalculate()
     {
         GameManager.Instance.Money -= GameManager.Instance.CostPerDay;
-        TransCostText += "Food                       -" + GameManager.Instance.CostPerDay+"\n";
+        TransCostText += "Food                       -" + GameManager.Instance.CostPerDay.ToString("c2") + "\n";
         if (GameManager.Instance.DayCount == 6)
         {
             GameManager.Instance.DayCount = 1;
             GameManager.Instance.WeekCount += 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
-            TransCostText += "Rent                       -" + GameManager.Instance.CostPerWeak + "\n";
+            TransCostText += "Rent                       -" + GameManager.Instance.CostPerWeak.ToString("c2") + "\n";
         }
 
-        if (GameManager.Instance.WeekCount == 4)
+        if (GameManager.Instance.WeekCount == 5)
         {
             GameManager.Instance.MonthCount += 1;
             GameManager.Instance.WeekCount = 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerMonth;
-            TransCostText += "Rent/Month:           -" + GameManager.Instance.CostPerMonth + "\n";
+            TransCostText += "Rent/Month:           -" + GameManager.Instance.CostPerMonth.ToString("c2") + "\n";
         }
 
         CostText.text = TransCostText;
