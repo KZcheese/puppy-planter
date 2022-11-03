@@ -34,8 +34,10 @@ public class DogManager
 
             newStatus.gender = Random.value > .5f;
             newStatus.birthday = GameManager.Instance.DayCount;
+            newStatus.isAdult = false;
             newStatus.Name = GameManager.Instance.GetDog(parents.Key).PairDogName;
             newDog.transform.position = GameManager.Instance.bornSpot.position;
+            newDog.transform.localScale = new Vector3(.5f, .5f, .5f);
             DebuffManager.Instance.InitializeDebuffs(newDog);
         }
     }

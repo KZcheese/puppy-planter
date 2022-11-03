@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject dogPrefab;
     public Transform bornSpot;
+    public Transform outSpot;
 
     public GameObject DayUI;
     public GameObject PhoneUI,StatusUI;

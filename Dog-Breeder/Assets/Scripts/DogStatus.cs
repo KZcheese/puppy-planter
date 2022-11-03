@@ -8,7 +8,6 @@ public class DogStatus : MonoBehaviour
     public string Name;
     public int HP;
     public bool IsPair = false;
-    public bool IsBabe = true;
     public string PairDogName;
     public int DogID;
     public bool DebuffEffected = false;
@@ -16,7 +15,7 @@ public class DogStatus : MonoBehaviour
     public GameObject CheckText;
     public bool gender; // true for male, false for female
     public int birthday;
-
+    public bool isAdult;
     public List<List<Debuff>> Debuffs = new List<List<Debuff>> { null, null, null, null, null };
 
     private void Awake()
@@ -70,20 +69,46 @@ public class DogStatus : MonoBehaviour
         return description;
     }
 
-    void RandomPosition()
+    void RandomPosition(bool isAdult)
     {
-        float _randomX = Random.Range(-3.5f, 3.5f);
-        float _randomZ = Random.Range(-3.5f, 3.5f);
-        float _randomEulerY = Random.Range(0f, 360f);
+        if (isAdult)
+        {
+            float _randomX = Random.Range(-1.5f, 1.5f);
+            float _randomZ = Random.Range(-1.5f, 1.5f);
+            float _randomEulerY = Random.Range(0f, 360f);
 
-        transform.position = new Vector3(_randomX, 0.36f, _randomZ);
-        transform.rotation = Quaternion.Euler(new Vector3(0, _randomEulerY, 0));
+            transform.position += new Vector3(_randomX, 0f, _randomZ);
+            transform.rotation = Quaternion.Euler(new Vector3(0, _randomEulerY, 0));
+        }
+        else
+        {
+            float _randomX = Random.Range(-.2f, .2f);
+            float _randomZ = Random.Range(-.5f, .5f);
+            float _randomEulerY = Random.Range(0f, 360f);
+
+            transform.position += new Vector3(_randomX, 0f, _randomZ);
+            transform.rotation = Quaternion.Euler(new Vector3(0, _randomEulerY, 0));
+        }
     }
 
     public void NewDay()
     {
-        RandomPosition();
+        CheckAge();
+        RandomPosition(isAdult);
         RollDebuffs();
+    }
+
+    void CheckAge()
+    {
+        if (GameManager.Instance.DayCount - birthday > 5)
+        {
+            transform.position = GameManager.Instance.outSpot.position;
+            isAdult = true;
+        }
+        else
+        {
+            transform.localScale += new Vector3(.1f, .1f, .1f);
+        }
     }
 
     void RollDebuffs()

@@ -13,14 +13,28 @@ public class DogAutoMove : MonoBehaviour
     void Start()
     {
         _navigation = GetComponent<NavMeshAgent>();
-        Positions = transform.position;
+        _navigation.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        AutoMove();
-
+        if (GetComponent<DogStatus>().isAdult)
+        {
+            if (!_navigation.enabled)
+            {
+                Positions = transform.position;
+                _navigation.enabled = true;
+            }
+            AutoMove();
+        }
+        else
+        {
+            if (_navigation.enabled)
+            {
+                _navigation.enabled = false;
+            }
+        }
     }
 
     void AutoMove()
@@ -35,10 +49,9 @@ public class DogAutoMove : MonoBehaviour
             if (NeedNewPositon)
             {
                 Invoke("GoNewPosition", WaitTime);
-                NeedNewPositon = false;
+                GetComponent<Animator>().SetBool("Walk", false);
+                
             }
-
-
         }
 
         if (this.GetComponent<DogStatus>().CheckStatusNow)
@@ -56,5 +69,6 @@ public class DogAutoMove : MonoBehaviour
         Positions = new Vector3(_randomX, 0.36f, _randomZ);
 
         NeedNewPositon = true;
+        GetComponent<Animator>().SetBool("Walk", true);
     }
 }
