@@ -77,6 +77,12 @@ public class DaySwitchControl : MonoBehaviour
             GameManager.Instance.WeekCount += 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
             TransCostText += "Rent                       -" + GameManager.Instance.CostPerWeak.ToString("c2") + "\n";
+
+            foreach(var dog in GameManager.Instance.DogList)
+            {
+                dog.HP -= 1;
+            }
+           
         }
 
         if (GameManager.Instance.WeekCount == 5)
@@ -94,8 +100,33 @@ public class DaySwitchControl : MonoBehaviour
         Time.timeScale = 1;
         TransportScene.SetActive(false);
         GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
-        DayCountText.text = "Day: " + GameManager.Instance.DayCount + " Week: " + GameManager.Instance.WeekCount + " Month: " + GameManager.Instance.MonthCount;
+        int _dayAll = (GameManager.Instance.DayCount + (GameManager.Instance.WeekCount - 1) * 5 + (GameManager.Instance.MonthCount - 1) * 20);
+        
+        int _weekDay = _dayAll % 5;
+        switch (_weekDay)
+        {
+            case 1:
+                DayCountText.text = "MONDAY";
+                break;
 
+            case 2:
+                DayCountText.text = "TUESDAY";
+                break;
+
+            case 3:
+                DayCountText.text = "WEDNESDAY";
+                break;
+
+            case 4:
+                DayCountText.text = "THURSDAY";
+                break;
+
+            case 5:
+                DayCountText.text = "FRIDAY";
+                break;
+
+        }
+        DayCountText.text += "\n<size=56>DAY " + _dayAll+ "</size>";
         MoneyCal.SetActive(true);
         DebuffCal.SetActive(false);
 

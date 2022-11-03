@@ -14,7 +14,8 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if(GameManager.Instance.IsPhoneActive == false)
+            Movement();
         
         transform.position = new Vector3(transform.position.x,1.25f, transform.position.z);
     }

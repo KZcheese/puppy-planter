@@ -35,6 +35,6 @@ public class DemandController : MonoBehaviour
     void UpdateDemand()
     {
         float[] demands = GameManager.Instance.demands;
-        demandText.text = $"DEMANDs: \nLeg_Length: {demands[0]}\nMuscle: {demands[1]}\nEar_Shape: {demands[2]}\nEye_Shape: {demands[3]}\nNose_Shape: {demands[4]}";
+        demandText.text = $"<size=30>D E M A N D</size>: \nMuscle: {demands[1]}\nEar_Shape: {demands[2]}\nEye_Shape: {demands[3]}\nNose_Shape: {demands[4]}";
     }
 }

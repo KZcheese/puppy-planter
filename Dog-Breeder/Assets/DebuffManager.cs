@@ -91,13 +91,14 @@ public class DebuffManager : MonoBehaviour
         // Keep the same order as blendershape
 
         //Leg
+        /*
         RiskyDebuff footInfections = new RiskyDebuff("Foot infections", "Due to more skin folds", 1, false);
         PermanentDebuff cripplingBackPain = new PermanentDebuff("Crippling back pain", "", 1, false);
         RiskyDebuff arthritis = new RiskyDebuff("Arthritis", "", 1, true);
         PermanentDebuff legsBreakEasily = new PermanentDebuff("Legs break easily", "", 1, true);
         List<Debuff> legDebuffs_small = new List<Debuff> { footInfections, cripplingBackPain};
         List<Debuff> legDebuffs_big = new List<Debuff> { arthritis, legsBreakEasily };
-        debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(legDebuffs_small, legDebuffs_big));
+        debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(legDebuffs_small, legDebuffs_big));*/
 
         //Muscle
         RandomDebuff difficultyEating = new RandomDebuff("DifficultyEating", "Due to pain in gums, teeth etc therefore gums bleed sometimes while dog is eating", 1, false);
@@ -132,7 +133,7 @@ public class DebuffManager : MonoBehaviour
     public void InitializeDebuffs(GameObject newDog)
     {
         DogStatus status = newDog.GetComponent<DogStatus>();
-        SkinnedMeshRenderer skin = newDog.GetComponent<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer skin = newDog.GetComponentInChildren<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
             int val = (int)skin.GetBlendShapeWeight(i) / 10;
