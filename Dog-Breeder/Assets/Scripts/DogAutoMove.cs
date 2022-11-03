@@ -34,37 +34,27 @@ public class DogAutoMove : MonoBehaviour
         {
             if (NeedNewPositon)
             {
-                NeedNewPositon = false;
                 Invoke("GoNewPosition", WaitTime);
-                this.GetComponent<Animator>().enabled = false;
-                
+                NeedNewPositon = false;
             }
 
 
         }
 
-        /*if (this.GetComponent<DogStatus>().CheckStatusNow)
+        if (this.GetComponent<DogStatus>().CheckStatusNow)
             _navigation.speed = 0;
         else
-            _navigation.speed = 1;*/
+            _navigation.speed = 1;
     }
 
-    public void GoNewPosition()
+    void GoNewPosition()
     {
 
         float _randomX = Random.Range(-3.5f, 3.5f);
-        while (_randomX < -2f)
-            _randomX = Random.Range(-3.5f, 3.5f);
-        
-            
-
         float _randomZ = Random.Range(-3.5f, 3.5f);
-        while ((_randomZ < -2.6f)&& (_randomZ > 1f))
-            _randomZ = Random.Range(-3.5f, 3.5f);
 
-        Positions = new Vector3(_randomX, transform.position.y, _randomZ);
+        Positions = new Vector3(_randomX, 0.36f, _randomZ);
 
         NeedNewPositon = true;
-        this.GetComponent<Animator>().enabled = true;
     }
 }
