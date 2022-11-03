@@ -13,7 +13,7 @@ public class DogAutoMove : MonoBehaviour
     void Start()
     {
         _navigation = GetComponent<NavMeshAgent>();
-        Positions = transform.position;
+        _navigation.enabled = false;
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class DogAutoMove : MonoBehaviour
         {
             if (!_navigation.enabled)
             {
+                Positions = transform.position;
                 _navigation.enabled = true;
             }
             AutoMove();
