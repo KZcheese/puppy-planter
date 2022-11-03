@@ -53,19 +53,30 @@ public class PhoneControl : MonoBehaviour
     
     public void PairScreenButton()
     {
+        List<Dropdown.OptionData> maleDogList = new List<Dropdown.OptionData>();
+        List<Dropdown.OptionData> femaleDogList = new List<Dropdown.OptionData>();
 
-
-        List<Dropdown.OptionData> ListOptions = new List<Dropdown.OptionData>();
-        
         for (int i = 0; i < GameManager.Instance.DogList.Count; i++)
-            ListOptions.Add(new Dropdown.OptionData(GameManager.Instance.DogList[i].Name + " " + GameManager.Instance.DogList[i].DogID));
-
+        {
+            DogStatus dog = GameManager.Instance.DogList[i];
+            if (dog.isAdult)
+            {
+                if (dog.gender)
+                {
+                    maleDogList.Add(new Dropdown.OptionData(dog.Name + " " + dog.DogID));
+                }
+                else
+                {
+                    femaleDogList.Add(new Dropdown.OptionData(dog.Name + " " + dog.DogID));
+                }
+            }
+        }
         for (int i = 0; i < 2; i++)
         {
             PairScreen.transform.GetChild(i).GetComponent<Dropdown>().ClearOptions();
-            PairScreen.transform.GetChild(i).GetComponent<Dropdown>().AddOptions(ListOptions);
         }
-
+        PairScreen.transform.GetChild(0).GetComponent<Dropdown>().AddOptions(maleDogList);
+        PairScreen.transform.GetChild(1).GetComponent<Dropdown>().AddOptions(femaleDogList);
 
         MainScreen.SetActive(false);
         PairScreen.SetActive(true);

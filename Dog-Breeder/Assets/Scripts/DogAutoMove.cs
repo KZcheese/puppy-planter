@@ -19,8 +19,21 @@ public class DogAutoMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AutoMove();
-
+        if (GetComponent<DogStatus>().isAdult)
+        {
+            if (!_navigation.enabled)
+            {
+                _navigation.enabled = true;
+            }
+            AutoMove();
+        }
+        else
+        {
+            if (_navigation.enabled)
+            {
+                _navigation.enabled = false;
+            }
+        }
     }
 
     void AutoMove()
@@ -36,11 +49,9 @@ public class DogAutoMove : MonoBehaviour
             {
                 NeedNewPositon = false;
                 Invoke("GoNewPosition", WaitTime);
-                this.GetComponent<Animator>().enabled = false;
+                GetComponent<Animator>().SetBool("Walk", false);
                 
             }
-
-
         }
 
         /*if (this.GetComponent<DogStatus>().CheckStatusNow)
@@ -65,6 +76,6 @@ public class DogAutoMove : MonoBehaviour
         Positions = new Vector3(_randomX, transform.position.y, _randomZ);
 
         NeedNewPositon = true;
-        this.GetComponent<Animator>().enabled = true;
+        GetComponent<Animator>().SetBool("Walk", true);
     }
 }

@@ -91,22 +91,16 @@ public class DebuffManager : MonoBehaviour
         // Keep the same order as blendershape
 
         //Leg
-        /*
-        RiskyDebuff footInfections = new RiskyDebuff("Foot infections", "Due to more skin folds", 1, false);
-        PermanentDebuff cripplingBackPain = new PermanentDebuff("Crippling back pain", "", 1, false);
-        RiskyDebuff arthritis = new RiskyDebuff("Arthritis", "", 1, true);
-        PermanentDebuff legsBreakEasily = new PermanentDebuff("Legs break easily", "", 1, true);
-        List<Debuff> legDebuffs_small = new List<Debuff> { footInfections, cripplingBackPain};
-        List<Debuff> legDebuffs_big = new List<Debuff> { arthritis, legsBreakEasily };
-        debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(legDebuffs_small, legDebuffs_big));*/
+        //RiskyDebuff footInfections = new RiskyDebuff("Foot infections", "Due to more skin folds", 1, false);
+        //PermanentDebuff cripplingBackPain = new PermanentDebuff("Crippling back pain", "", 1, false);
+        //RiskyDebuff arthritis = new RiskyDebuff("Arthritis", "", 1, true);
+        //PermanentDebuff legsBreakEasily = new PermanentDebuff("Legs break easily", "", 1, true);
+        //List<Debuff> legDebuffs_small = new List<Debuff> { footInfections, cripplingBackPain};
+        //List<Debuff> legDebuffs_big = new List<Debuff> { arthritis, legsBreakEasily };
+        //debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(legDebuffs_small, legDebuffs_big));
 
-        //Muscle
-        RandomDebuff difficultyEating = new RandomDebuff("DifficultyEating", "Due to pain in gums, teeth etc therefore gums bleed sometimes while dog is eating", 1, false);
-        PermanentDebuff thyroidDisease = new PermanentDebuff("Thyroid disease", "", 1, false);
-        PermanentDebuff limitedMobility = new PermanentDebuff("Limited mobility", "Hip dysplasia", 1, true);
-        List<Debuff> muscleDebuffs_small = new List<Debuff>() { difficultyEating, thyroidDisease };
-        List<Debuff> muscleDebuffs_big = new List<Debuff>() { limitedMobility };
-        debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(muscleDebuffs_small, muscleDebuffs_big));
+        //Cheek
+        debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>());
 
         //Ear TODO
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>());
@@ -119,6 +113,14 @@ public class DebuffManager : MonoBehaviour
         List<Debuff> eyeDebuffs_small = new List<Debuff> { blindness, cherryEyes };
         List<Debuff> eyeDebuffs_big = new List<Debuff> { ulceration_cornea, dryEyes };
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(eyeDebuffs_small, eyeDebuffs_big));
+
+        //Muscle
+        RandomDebuff difficultyEating = new RandomDebuff("DifficultyEating", "Due to pain in gums, teeth etc therefore gums bleed sometimes while dog is eating", 1, false);
+        PermanentDebuff thyroidDisease = new PermanentDebuff("Thyroid disease", "", 1, false);
+        PermanentDebuff limitedMobility = new PermanentDebuff("Limited mobility", "Hip dysplasia", 1, true);
+        List<Debuff> muscleDebuffs_small = new List<Debuff>() { difficultyEating, thyroidDisease };
+        List<Debuff> muscleDebuffs_big = new List<Debuff>() { limitedMobility };
+        debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(muscleDebuffs_small, muscleDebuffs_big));
 
         //Nose
         RiskyDebuff skinInfection = new RiskyDebuff("Skin infection", "Due to more skin folds", 1, false);

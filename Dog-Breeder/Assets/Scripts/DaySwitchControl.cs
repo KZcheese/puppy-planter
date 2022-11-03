@@ -48,7 +48,7 @@ public class DaySwitchControl : MonoBehaviour
         GameManager.Instance.DayCount += 1;
         
 
-        DayText.text = "DAY " + (GameManager.Instance.DayCount-1 + (GameManager.Instance.WeekCount-1)*5+ (GameManager.Instance.MonthCount - 1)*20);
+        DayText.text = "DAY " + GameManager.Instance.DayCount;
         SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney.ToString("c2") + "\n" ;
         SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney).ToString("c2");
 
@@ -71,9 +71,8 @@ public class DaySwitchControl : MonoBehaviour
     {
         GameManager.Instance.Money -= GameManager.Instance.CostPerDay;
         TransCostText += "Food                       -" + GameManager.Instance.CostPerDay.ToString("c2") + "\n";
-        if (GameManager.Instance.DayCount == 6)
+        if (GameManager.Instance.DayCount % 6 == 0)
         {
-            GameManager.Instance.DayCount = 1;
             GameManager.Instance.WeekCount += 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
             TransCostText += "Rent                       -" + GameManager.Instance.CostPerWeak.ToString("c2") + "\n";
@@ -85,10 +84,9 @@ public class DaySwitchControl : MonoBehaviour
            
         }
 
-        if (GameManager.Instance.WeekCount == 5)
+        if (GameManager.Instance.WeekCount % 5 == 0)
         {
             GameManager.Instance.MonthCount += 1;
-            GameManager.Instance.WeekCount = 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerMonth;
             TransCostText += "Rent/Month:           -" + GameManager.Instance.CostPerMonth.ToString("c2") + "\n";
         }
@@ -100,7 +98,7 @@ public class DaySwitchControl : MonoBehaviour
         Time.timeScale = 1;
         TransportScene.SetActive(false);
         GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
-        int _dayAll = (GameManager.Instance.DayCount + (GameManager.Instance.WeekCount - 1) * 5 + (GameManager.Instance.MonthCount - 1) * 20);
+        int _dayAll = GameManager.Instance.DayCount;
         
         int _weekDay = _dayAll % 5;
         switch (_weekDay)
@@ -121,7 +119,7 @@ public class DaySwitchControl : MonoBehaviour
                 DayCountText.text = "THURSDAY";
                 break;
 
-            case 5:
+            case 0:
                 DayCountText.text = "FRIDAY";
                 break;
 
