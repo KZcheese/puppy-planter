@@ -76,12 +76,6 @@ public class DaySwitchControl : MonoBehaviour
             GameManager.Instance.WeekCount += 1;
             GameManager.Instance.Money -= GameManager.Instance.CostPerWeak;
             TransCostText += "Rent                       -" + GameManager.Instance.CostPerWeak.ToString("c2") + "\n";
-
-            foreach(var dog in GameManager.Instance.DogList)
-            {
-                dog.HP -= 1;
-            }
-           
         }
 
         if (GameManager.Instance.WeekCount % 5 == 0)

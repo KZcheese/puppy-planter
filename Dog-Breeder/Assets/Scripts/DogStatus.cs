@@ -12,6 +12,7 @@ public class DogStatus : MonoBehaviour
     public int DogID;
     public bool DebuffEffected = false;
     public bool CheckStatusNow = false;
+    public GameObject CheckText;
     public bool gender; // true for male, false for female
     public int birthday;
     public bool isAdult;
@@ -47,8 +48,7 @@ public class DogStatus : MonoBehaviour
     {
         string description = Name + " is a " + (GameManager.Instance.DayCount - birthday) + "-day old " + (gender ? "male" : "female") + " dog.\n\n";
         description += $"HP: {HP}\nDebuffs:\n";
-        
-        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer skin = GetComponent<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
             if (Debuffs[i] != null)
@@ -60,9 +60,9 @@ public class DogStatus : MonoBehaviour
                 description += "\n";
             }
         }
-        for (int i = 1; i < skin.sharedMesh.blendShapeCount; i++)
+        for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
-            description += skin.sharedMesh.GetBlendShapeName(i) + ": " + Mathf.Round(skin.GetBlendShapeWeight(i)) + "\n";
+            description += skin.sharedMesh.GetBlendShapeName(i) + ": " + skin.GetBlendShapeWeight(i) + "\n";
         }
         description += $"\nProfit if sell: {DogManager.Instance.CalculateProfit(DogID)}\n";
 
@@ -118,7 +118,7 @@ public class DogStatus : MonoBehaviour
         {
             
             
-            SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+            SkinnedMeshRenderer skin = GetComponent<SkinnedMeshRenderer>();
             for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
             {
                 if (Debuffs[i] != null)

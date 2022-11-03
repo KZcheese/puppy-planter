@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         YesterdayMoney = Money;
-        DemandController.Instance.ShuffleDemands();
     }
 
     // Update is called once per frame

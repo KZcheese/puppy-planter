@@ -135,7 +135,7 @@ public class DebuffManager : MonoBehaviour
     public void InitializeDebuffs(GameObject newDog)
     {
         DogStatus status = newDog.GetComponent<DogStatus>();
-        SkinnedMeshRenderer skin = newDog.GetComponentInChildren<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer skin = newDog.GetComponent<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
             int val = (int)skin.GetBlendShapeWeight(i) / 10;
