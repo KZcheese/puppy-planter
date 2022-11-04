@@ -71,6 +71,9 @@ public class GameManager : MonoBehaviour
             LinePairDogs();
 
         moneyText.text = Money.ToString("c2"); // 2dp currency;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     void LinePairDogs()
