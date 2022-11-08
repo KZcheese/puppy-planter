@@ -29,7 +29,7 @@ public class PhoneControl : MonoBehaviour
 
     public void OnCheckDogListButton()
     {
-        DogCountText.text = "You have " + GameManager.Instance.DogList.Count + "/" + GameManager.Instance.DogCapMax + "Dogs. ";
+        
         for( int i =0;i < GameManager.Instance.DogList.Count; i++)
         {
             DogListImgs.transform.GetChild(i).GetComponentInChildren<Text>().text = GameManager.Instance.DogList[i].Name;

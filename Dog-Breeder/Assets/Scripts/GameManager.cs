@@ -7,9 +7,6 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public int DayCount = 1; // The day of the game, add 1 every day 
-    public int WeekCount = 1;
-    public int MonthCount = 1;
 
     
 
@@ -25,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     public Text moneyText;
 
-    public int DogCapMax = 10;
 
     public List<DogStatus> DogList = new List<DogStatus>();
 
@@ -37,16 +33,24 @@ public class GameManager : MonoBehaviour
 
     public int DogIDNow = 1000;
 
+
+    public int CostPerDay, CostPerWeak, CostPerMonth;
     //public List<PairInfo> pairInfos = new List<PairInfo>();
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
 
     [HideInInspector]
     public float[] demands = new float[5];
     public float Money,YesterdayMoney;
-    public int CostPerDay, CostPerWeak, CostPerMonth;
+    public int DayCount = 1; // The day of the game, add 1 every day 
+    public int WeekCount = 1;
+    public int MonthCount = 1;
     private void Awake()
     {
         if (!Instance) Instance = this;
+
+        PhoneUI.SetActive(IsPhoneActive = true);
+        PhoneUI.SetActive(IsPhoneActive = false);
+
     }
 
     void Start()
@@ -59,7 +63,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         TakeMyPhone();
-        CheckDogs();
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -103,37 +106,7 @@ public class GameManager : MonoBehaviour
             _lineRenderer.SetPosition(1, Vector3.zero);
         }
     }
-    void CheckDogs() // Use Click to check the click dog
-    {
-        
-            Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit _hit;
-            if(Physics.Raycast(_ray, out _hit, Mathf.Infinity, LayerDetect))
-            {
-                
-                _hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;
-                
 
-                if ((Input.GetMouseButtonDown(0))&&(DaySwitchControl.Instance.TransportScene.activeSelf == false))
-                {
-                    IsStatusActive = !IsStatusActive;
-                    StatusUI.SetActive(IsStatusActive);
-                    StatusUpdate.Instance.UpdateStatusText(_hit.collider.gameObject.GetComponent<DogStatus>());
-                StatusUpdate.Instance.DogId = _hit.collider.gameObject.GetComponent<DogStatus>().DogID;
-                    _hit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
-                }
-
-        }
-        else
-        {
-            foreach (var dogs in DogList)
-            {
-                dogs.GetComponent<Outline>().OutlineWidth = 0;
-                dogs.GetComponent<DogStatus>().CheckStatusNow = false;
-            }
-        }
-        
-    }
 
 
     void TakeMyPhone() // Bag

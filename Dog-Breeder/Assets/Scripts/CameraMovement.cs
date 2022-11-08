@@ -5,10 +5,12 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public float MoveSpeed,RotateSpeed;
+
+    private Rigidbody _rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,30 +30,18 @@ public class CameraMovement : MonoBehaviour
 
     void Movement()
     {
-        if (Input.GetKey(KeyCode.W))
+        float _horizontalMove = Input.GetAxis("Horizontal");
+        float _verticalMove = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0, 0, MoveSpeed * Time.deltaTime);
+            _rigidbody.velocity = transform.forward * _verticalMove * MoveSpeed;
         }
-        if (Input.GetKey(KeyCode.S))
+
+        if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0, 0, -MoveSpeed * Time.deltaTime);
+            _rigidbody.velocity = transform.right * _horizontalMove * MoveSpeed;
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-MoveSpeed * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
-        }
-        //if (Input.GetKey(KeyCode.LeftControl))
-        //{
-        //    transform.Translate(0, -MoveSpeed * Time.deltaTime, 0);
-        //}
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
-        //}
 
         if (Input.GetMouseButton(1))
         {

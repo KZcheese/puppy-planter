@@ -49,4 +49,10 @@ public class StatusUpdate : MonoBehaviour
             Debug.Log("Only 2 dog left, you should not sell them");
         }
     }
+
+    public void ExitStatusScene()
+    {
+        GameManager.Instance.IsStatusActive = false;
+        GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
+    }
 }

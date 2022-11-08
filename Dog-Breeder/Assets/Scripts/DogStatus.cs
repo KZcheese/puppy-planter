@@ -29,8 +29,6 @@ public class DogStatus : MonoBehaviour
         DogID = GameManager.Instance.DogIDNow;
         GameManager.Instance.DogIDNow += 1;
         this.GetComponentInChildren<Text>().text = Name;
-        /*if (GameManager.Instance.DayCount - birthday != 0)
-            RandomPosition();*/
         //Initialize();
     }
 
@@ -100,7 +98,7 @@ public class DogStatus : MonoBehaviour
 
     void CheckAge()
     {
-        if (GameManager.Instance.DayCount - birthday > 5)
+        if (GameManager.Instance.DayCount - birthday >= 5)
         {
             transform.position = GameManager.Instance.outSpot.position;
             isAdult = true;

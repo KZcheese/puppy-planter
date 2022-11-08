@@ -42,6 +42,12 @@ public class DaySwitchControl : MonoBehaviour
 
     public void GoNextDayButton()
     {
+
+        GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive = false);
+        GameManager.Instance.PhoneUI.SetActive(GameManager.Instance.IsPhoneActive = false);
+
+       
+
         TransCostText = "";
         DebuffText = "";
         TransportScene.SetActive(true);
@@ -127,7 +133,7 @@ public class DaySwitchControl : MonoBehaviour
         DayCountText.text += "\n<size=56>DAY " + _dayAll+ "</size>";
         MoneyCal.SetActive(true);
         DebuffCal.SetActive(false);
-
+        PhoneControl.Instance.PairScreenButton();
 
 
     }
