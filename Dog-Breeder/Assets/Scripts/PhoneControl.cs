@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PhoneControl : MonoBehaviour
 {
-    public GameObject DogListScreen,ShopScreen,MainScreen,PairScreen;
+    public GameObject MainScreen,PairScreen;
     public GameObject DogListImgs;
     public Text DogCountText,PairListText, DogName;
     // Start is called before the first frame update
@@ -27,25 +27,10 @@ public class PhoneControl : MonoBehaviour
 
     }
 
-    public void OnCheckDogListButton()
-    {
-        
-        for( int i =0;i < GameManager.Instance.DogList.Count; i++)
-        {
-            DogListImgs.transform.GetChild(i).GetComponentInChildren<Text>().text = GameManager.Instance.DogList[i].Name;
-            DogListImgs.transform.GetChild(i).GetComponent<ButtonControl>().DogIndex = i;
-        }
-        
 
-        MainScreen.SetActive(false);
-        DogListScreen.SetActive(true);
-
-    }
 
     public void GoBackMainScreenButton()
     {
-        ShopScreen.SetActive(false);
-        DogListScreen.SetActive(false);
         PairScreen.SetActive(false);
         MainScreen.SetActive(true);
 

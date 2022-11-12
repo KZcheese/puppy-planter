@@ -55,10 +55,17 @@ public class DogAutoMove : MonoBehaviour
             }
         }
 
-        /*if (this.GetComponent<DogStatus>().CheckStatusNow)
+        if ((this.GetComponent<DogStatus>().CheckStatusNow)&&(NeedNewPositon))
+        {
             _navigation.speed = 0;
-        else
-            _navigation.speed = 1;*/
+            GetComponent<Animator>().SetBool("Walk", false);
+        }
+
+        else if ((!this.GetComponent<DogStatus>().CheckStatusNow) && (NeedNewPositon))
+        {
+            _navigation.speed = 1;
+            GetComponent<Animator>().SetBool("Walk", true);
+        }
     }
 
     public void GoNewPosition()

@@ -30,14 +30,7 @@ public class DaySwitchControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TransportScene.activeSelf)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                MoneyCal.SetActive(false);
-                DebuffCal.SetActive(true);
-            }
-        }
+
     }
 
     public void GoNextDayButton()
@@ -101,39 +94,49 @@ public class DaySwitchControl : MonoBehaviour
     }
     public void GoContinueButton()
     {
-        Time.timeScale = 1;
-        TransportScene.SetActive(false);
-        GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
-        int _dayAll = GameManager.Instance.DayCount;
-        
-        int _weekDay = _dayAll % 5;
-        switch (_weekDay)
+
+        if (MoneyCal.activeSelf)
         {
-            case 1:
-                DayCountText.text = "MONDAY";
-                break;
-
-            case 2:
-                DayCountText.text = "TUESDAY";
-                break;
-
-            case 3:
-                DayCountText.text = "WEDNESDAY";
-                break;
-
-            case 4:
-                DayCountText.text = "THURSDAY";
-                break;
-
-            case 0:
-                DayCountText.text = "FRIDAY";
-                break;
-
+            MoneyCal.SetActive(false);
+            DebuffCal.SetActive(true);
         }
-        DayCountText.text += "\n<size=56>DAY " + _dayAll+ "</size>";
-        MoneyCal.SetActive(true);
-        DebuffCal.SetActive(false);
-        PhoneControl.Instance.PairScreenButton();
+        else
+        {
+            Time.timeScale = 1;
+            TransportScene.SetActive(false);
+            GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
+            int _dayAll = GameManager.Instance.DayCount;
+
+            int _weekDay = _dayAll % 5;
+            switch (_weekDay)
+            {
+                case 1:
+                    DayCountText.text = "MONDAY";
+                    break;
+
+                case 2:
+                    DayCountText.text = "TUESDAY";
+                    break;
+
+                case 3:
+                    DayCountText.text = "WEDNESDAY";
+                    break;
+
+                case 4:
+                    DayCountText.text = "THURSDAY";
+                    break;
+
+                case 0:
+                    DayCountText.text = "FRIDAY";
+                    break;
+
+            }
+            DayCountText.text += "\n<size=56>DAY " + _dayAll + "</size>";
+            MoneyCal.SetActive(true);
+            DebuffCal.SetActive(false);
+            PhoneControl.Instance.PairScreenButton();
+        }
+
 
 
     }

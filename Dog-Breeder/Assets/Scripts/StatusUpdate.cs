@@ -9,6 +9,7 @@ public class StatusUpdate : MonoBehaviour
     public int DogId;
     public Text statusText;
     public static StatusUpdate Instance;
+    public DogStatus Dog;
 
     // Start is called before the first frame update
     private void Awake()
@@ -26,7 +27,7 @@ public class StatusUpdate : MonoBehaviour
 
     }
 
-    public void UpdateStatusText(DogStatus Dog)
+    public void UpdateStatusText()
     {
         statusText.text = Dog.GetDescription();
     }
@@ -54,5 +55,6 @@ public class StatusUpdate : MonoBehaviour
     {
         GameManager.Instance.IsStatusActive = false;
         GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
+        Dog.CheckStatusNow = false;
     }
 }

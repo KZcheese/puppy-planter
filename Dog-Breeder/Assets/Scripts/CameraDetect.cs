@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CameraDetect : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class CameraDetect : MonoBehaviour
             {
                 GameManager.Instance.IsStatusActive = true;
                 GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
-                StatusUpdate.Instance.UpdateStatusText(_cameraHit.collider.gameObject.GetComponent<DogStatus>());
+                StatusUpdate.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();
                 StatusUpdate.Instance.DogId = _cameraHit.collider.gameObject.GetComponent<DogStatus>().DogID;
                 _cameraHit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
             }
@@ -49,7 +50,7 @@ public class CameraDetect : MonoBehaviour
             foreach (var dogs in GameManager.Instance.DogList)
             {
                 dogs.GetComponent<Outline>().OutlineWidth = 0;
-                dogs.GetComponent<DogStatus>().CheckStatusNow = false;
+
             }
         }
     }
