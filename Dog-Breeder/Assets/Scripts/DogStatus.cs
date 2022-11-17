@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DogStatus : MonoBehaviour
 {
     public string Name;
-    public int HP;
+    public float HP;
     public bool IsPair = false;
     public string PairDogName;
     public int DogID;
@@ -36,7 +36,7 @@ public class DogStatus : MonoBehaviour
     void Update()
     {
 
-        
+
     }
 
 
@@ -45,7 +45,7 @@ public class DogStatus : MonoBehaviour
     {
         string description = Name + " is a " + (GameManager.Instance.DayCount - birthday) + "-day old " + (gender ? "male" : "female") + " dog.\n\n";
         description += $"HP: {HP}\nDebuffs:\n";
-        
+
         SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
         for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
         {
@@ -114,8 +114,8 @@ public class DogStatus : MonoBehaviour
         string _saveText = "";
         if (Debuffs != null)
         {
-            
-            
+
+
             SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
             for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
             {
@@ -123,23 +123,13 @@ public class DogStatus : MonoBehaviour
                 {
                     for (int j = Debuffs[i].Count - 1; j >= 0; j--)
                     {
-                        int res = Debuffs[i][j].Roll((int)skin.GetBlendShapeWeight(i) / 10);
-                        if (res == 1) 
-                            {
-                            Debuffs[i][j].Effective(this);
-                            _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     - " + Debuffs[i][j].DebuffEffectHP+ "</size></color>\n";
-                            DebuffEffected = true;
-                            } 
-                        else if (res == -1)
-                        {
-                            Debug.Log(Name + "'s " + Debuffs[i][j] + " cured");
-                            _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     Cured </size></color>\n";
-                            Debuffs[i].RemoveAt(j);
-                            DebuffEffected = true;
-                        }
+                        Debuffs[i][j].RollDamage(skin.GetBlendShapeWeight(i));
+                        Debuffs[i][j].Effective(this);
+                        _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     - " + Debuffs[i][j].damage.ToString("c2") + "</size></color>\n";
+                        DebuffEffected = true;
                     }
                 }
-                
+
             }
         }
 
@@ -150,7 +140,7 @@ public class DogStatus : MonoBehaviour
         }
         else
         {
-            DaySwitchControl.Instance.DebuffText += Name+ "                                          OK\n";
+            DaySwitchControl.Instance.DebuffText += Name + "                                          OK\n";
         }
 
     }

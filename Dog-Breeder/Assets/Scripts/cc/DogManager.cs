@@ -29,7 +29,7 @@ public class DogManager
                 float min = Mathf.Min(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) - 10;
                 float max = Mathf.Max(parSkin1.GetBlendShapeWeight(i), parSkin2.GetBlendShapeWeight(i)) + 10;
                 float value = Mathf.Clamp(Random.Range(min, max), 0, 100);
-                newSkin.SetBlendShapeWeight(i, Mathf.Round(value / 10) * 10);
+                newSkin.SetBlendShapeWeight(i, value);
             }
 
             newStatus.gender = Random.value > .5f;

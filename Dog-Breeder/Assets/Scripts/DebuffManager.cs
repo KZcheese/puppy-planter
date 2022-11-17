@@ -6,72 +6,69 @@ public abstract class Debuff
 {
     public string DebuffName;
     public string DebuffDescription;
-    public int DebuffEffectHP;
     public bool due22big;
+    public float damage = 0;
 
-    public Debuff(string DebuffName, string DebuffDescription, int DebuffEffectHP, bool due22big)
+    public Debuff(string DebuffName, string DebuffDescription, bool due22big)
     {
         this.DebuffName = DebuffName;
         this.DebuffDescription = DebuffDescription;
-        this.DebuffEffectHP = DebuffEffectHP;
         this.due22big = due22big;
     }
 
-    //1 for sickness, 0 for common, -1 for cure
-    public abstract int Roll(int traitVal);
+    public float ComputeSeverity(float traitVal)
+    {
+        float severity = Mathf.Abs(traitVal - 50);
+        return severity * severity / 2500;
+    }
+
+    public abstract void RollDamage(float traitVal);
 
     public void Effective(DogStatus dog)
     {
-        dog.HP -= DebuffEffectHP;
-        Debug.Log(dog.Name + " got " + DebuffName);
+        if (damage > 0)
+        {
+            dog.HP -= damage;
+            Debug.Log(dog.Name + " got " + DebuffName);
+        }
     }
 }
 
 public class PermanentDebuff : Debuff
 {
-    public PermanentDebuff(string DebuffName, string DebuffDescription, int DebuffEffectHP, bool due22big) : base(DebuffName, DebuffDescription, DebuffEffectHP, due22big)
-    {
-    }
+    public PermanentDebuff(string DebuffName, string DebuffDescription, bool due22big) : base(DebuffName, DebuffDescription, due22big) { }
 
-    public override int Roll(int traitVal)
+    public override void RollDamage(float traitVal)
     {
-        if (traitVal <= 1 || traitVal >= 9) return 1;
-        else return -1;
+        float severity = ComputeSeverity(traitVal);
+        if (severity > 0.5) damage = severity * 5;
+        else damage = 0;
     }
 }
 
 public class RiskyDebuff : Debuff
 {
-    public RiskyDebuff(string DebuffName, string DebuffDescription, int DebuffEffectHP, bool due22big) : base(DebuffName, DebuffDescription, DebuffEffectHP, due22big)
-    {
-    }
+    public RiskyDebuff(string DebuffName, string DebuffDescription, bool due22big) : base(DebuffName, DebuffDescription, due22big) { }
 
-    public override int Roll(int traitVal)
+    public override void RollDamage(float traitVal)
     {
-        if (traitVal <= 1 || traitVal >= 9) return Random.value > .5f ? 1 : RollCure(traitVal);
-        else if (traitVal <= 2 || traitVal >= 8) return Random.value > .75f ? 1 : RollCure(traitVal);
-        else return -1;
-    }
-
-    public int RollCure(int traitVal)
-    {
-        if (traitVal <= 1 || traitVal >= 9) return Random.value > .75f ? -1 : 0;
-        else if (traitVal <= 2 || traitVal >= 8) return Random.value > .5f ? -1 : 0;
-        else return -1;
+        float random = Random.value;
+        float severity = ComputeSeverity(traitVal);
+        if (damage > 0) damage = !(random > severity) ? 10 : 0;
+        else damage = random < severity / 2 ? 10 : 0;
     }
 }
 
 public class RandomDebuff : Debuff
 {
-    public RandomDebuff(string DebuffName, string DebuffDescription, int DebuffEffectHP, bool due22big) : base(DebuffName, DebuffDescription, DebuffEffectHP, due22big)
-    {
-    }
+    public RandomDebuff(string DebuffName, string DebuffDescription, bool due22big) : base(DebuffName, DebuffDescription, due22big) { }
 
-    public override int Roll(int traitVal)
+    public override void RollDamage(float traitVal)
     {
-        if (traitVal <= 1 || traitVal >= 9) return Random.value > .5f ? 1 : 0;
-        else if (traitVal <= 2 || traitVal >= 8) return Random.value > .75f ? 1 : 0;
-        else return 0;
+        float random = Random.value;
+        float severity = ComputeSeverity(traitVal);
+        if (severity > .25f) damage = severity > random ? random * 15 : .0f;
+        else damage = 0;
     }
 }
 
@@ -106,27 +103,27 @@ public class DebuffManager : MonoBehaviour
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>());
 
         //Eye
-        PermanentDebuff blindness = new PermanentDebuff("Blindness", "", 1, false);
-        RiskyDebuff cherryEyes = new RiskyDebuff("Cherry Eyes", "Eye becomes inflamed and swollen", 1, false);
-        RandomDebuff ulceration_cornea = new RandomDebuff("Ulceration of cornea", "Leading to trouble seeing", 1, true);
-        RiskyDebuff dryEyes = new RiskyDebuff("Dry eyes", "Leading to conjunctivitis", 1, true);
+        PermanentDebuff blindness = new PermanentDebuff("Blindness", "", false);
+        RiskyDebuff cherryEyes = new RiskyDebuff("Cherry Eyes", "Eye becomes inflamed and swollen", false);
+        RandomDebuff ulceration_cornea = new RandomDebuff("Ulceration of cornea", "Leading to trouble seeing", true);
+        RiskyDebuff dryEyes = new RiskyDebuff("Dry eyes", "Leading to conjunctivitis", true);
         List<Debuff> eyeDebuffs_small = new List<Debuff> { blindness, cherryEyes };
         List<Debuff> eyeDebuffs_big = new List<Debuff> { ulceration_cornea, dryEyes };
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(eyeDebuffs_small, eyeDebuffs_big));
 
         //Muscle
-        RandomDebuff difficultyEating = new RandomDebuff("DifficultyEating", "Due to pain in gums, teeth etc therefore gums bleed sometimes while dog is eating", 1, false);
-        PermanentDebuff thyroidDisease = new PermanentDebuff("Thyroid disease", "", 1, false);
-        PermanentDebuff limitedMobility = new PermanentDebuff("Limited mobility", "Hip dysplasia", 1, true);
+        RandomDebuff difficultyEating = new RandomDebuff("DifficultyEating", "Due to pain in gums, teeth etc therefore gums bleed sometimes while dog is eating", false);
+        PermanentDebuff thyroidDisease = new PermanentDebuff("Thyroid disease", "", false);
+        PermanentDebuff limitedMobility = new PermanentDebuff("Limited mobility", "Hip dysplasia", true);
         List<Debuff> muscleDebuffs_small = new List<Debuff>() { difficultyEating, thyroidDisease };
         List<Debuff> muscleDebuffs_big = new List<Debuff>() { limitedMobility };
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(muscleDebuffs_small, muscleDebuffs_big));
 
         //Nose
-        RiskyDebuff skinInfection = new RiskyDebuff("Skin infection", "Due to more skin folds", 1, false);
-        PermanentDebuff dentalCrowdingNMisallignment = new PermanentDebuff("Dental crowding", "Dental crowding and misalignment of teeth leads to hurting dog’s mouth when they eat", 1, false);
-        RandomDebuff nasalMites = new RandomDebuff("Nasal mites", "", 1, true);
-        RiskyDebuff fungalInfections = new RiskyDebuff("Fungal infections", "", 1, true);
+        RiskyDebuff skinInfection = new RiskyDebuff("Skin infection", "Due to more skin folds", false);
+        PermanentDebuff dentalCrowdingNMisallignment = new PermanentDebuff("Dental crowding", "Dental crowding and misalignment of teeth leads to hurting dog’s mouth when they eat", false);
+        RandomDebuff nasalMites = new RandomDebuff("Nasal mites", "", true);
+        RiskyDebuff fungalInfections = new RiskyDebuff("Fungal infections", "", true);
         List<Debuff> noseDebuffs_small = new List<Debuff> { skinInfection, dentalCrowdingNMisallignment };
         List<Debuff> noseDebuffs_big = new List<Debuff> { nasalMites, fungalInfections };
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(noseDebuffs_small, noseDebuffs_big));
