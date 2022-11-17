@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float MoveSpeed,RotateSpeed;
+    public float MoveSpeed,RotateSpeed,Height;
 
     private Rigidbody _rigidbody;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
         if(GameManager.Instance.IsPhoneActive == false)
             Movement();
         
-        transform.position = new Vector3(transform.position.x,1.25f, transform.position.z);
+        transform.position = new Vector3(transform.position.x,Height, transform.position.z);
     }
 
     void OnTriggerStay(Collider other)
