@@ -8,6 +8,7 @@ public class DaySwitchControl : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject TransportScene;
+    public GameObject LostScene;
     public GameObject MoneyCal, DebuffCal;
     public Text DayCountText;
 
@@ -49,8 +50,9 @@ public class DaySwitchControl : MonoBehaviour
 
         DayText.text = "DAY " + GameManager.Instance.DayCount;
         SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney.ToString("c2") + "\n" ;
-        SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney).ToString("c2");
-
+        SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney + GameManager.Instance.TodayUpdateCost).ToString("c2") + "\n";
+        if(GameManager.Instance.TodayUpdateCost != 0)
+            SavingText.text += "UpdateFee                    " +  GameManager.Instance.TodayUpdateCost.ToString("c2");
         CostCalculate();
         FinalValueText.text = "------------------------------------------------------------\n                                                      " + GameManager.Instance.Money.ToString("c2");
 
@@ -94,6 +96,7 @@ public class DaySwitchControl : MonoBehaviour
     }
     public void GoContinueButton()
     {
+        GameManager.Instance.TodayUpdateCost = 0;
 
         if (MoneyCal.activeSelf)
         {
@@ -102,42 +105,55 @@ public class DaySwitchControl : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1;
-            TransportScene.SetActive(false);
-            GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
-            int _dayAll = GameManager.Instance.DayCount;
-
-            int _weekDay = _dayAll % 5;
-            switch (_weekDay)
+            if (GameManager.Instance.Money < 0)
+                LostSceneActicve();
+            else
             {
-                case 1:
-                    DayCountText.text = "MONDAY";
-                    break;
+                Time.timeScale = 1;
+                TransportScene.SetActive(false);
+                GameManager.Instance.YesterdayMoney = GameManager.Instance.Money;
+                int _dayAll = GameManager.Instance.DayCount;
 
-                case 2:
-                    DayCountText.text = "TUESDAY";
-                    break;
+                int _weekDay = _dayAll % 5;
+                switch (_weekDay)
+                {
+                    case 1:
+                        DayCountText.text = "MONDAY";
+                        break;
 
-                case 3:
-                    DayCountText.text = "WEDNESDAY";
-                    break;
+                    case 2:
+                        DayCountText.text = "TUESDAY";
+                        break;
 
-                case 4:
-                    DayCountText.text = "THURSDAY";
-                    break;
+                    case 3:
+                        DayCountText.text = "WEDNESDAY";
+                        break;
 
-                case 0:
-                    DayCountText.text = "FRIDAY";
-                    break;
+                    case 4:
+                        DayCountText.text = "THURSDAY";
+                        break;
 
+                    case 0:
+                        DayCountText.text = "FRIDAY";
+                        break;
+
+                }
+                DayCountText.text += "\n<size=56>DAY " + _dayAll + "</size>";
+                MoneyCal.SetActive(true);
+                DebuffCal.SetActive(false);
+                PhoneControl.Instance.PairScreenButton();
             }
-            DayCountText.text += "\n<size=56>DAY " + _dayAll + "</size>";
-            MoneyCal.SetActive(true);
-            DebuffCal.SetActive(false);
-            PhoneControl.Instance.PairScreenButton();
+
         }
 
 
 
+    }
+
+    public void LostSceneActicve()
+    {
+        MoneyCal.SetActive(false);
+        DebuffCal.SetActive(false);
+        LostScene.SetActive(true);
     }
 }

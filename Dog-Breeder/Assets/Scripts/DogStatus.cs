@@ -125,7 +125,13 @@ public class DogStatus : MonoBehaviour
                     {
                         Debuffs[i][j].RollDamage(skin.GetBlendShapeWeight(i));
                         Debuffs[i][j].Effective(this);
-                        _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     - " + Debuffs[i][j].damage.ToString("c2") + "</size></color>\n";
+                        if((HP <= 0)&&(this.gameObject.activeSelf == true)) // If dog dead
+                        {
+                            Debug.Log(Name + " Dead");
+                            GameManager.Instance.DogList.Remove(this);
+                            this.gameObject.SetActive(false);
+                        }
+                        _saveText += "<color=#FF0000><size=18>" + Debuffs[i][j].DebuffName + "                     - " + Debuffs[i][j].damage + "</size></color>\n";
                         DebuffEffected = true;
                     }
                 }
