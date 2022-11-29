@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int DogIDNow = 1000;
-
+    public int MaxDogNumber;
 
     public int CostPerDay, CostPerWeak, CostPerMonth;
     //public List<PairInfo> pairInfos = new List<PairInfo>();
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public int DayCount = 1; // The day of the game, add 1 every day 
     public int WeekCount = 1;
     public int MonthCount = 1;
+    public int TodayUpdateCost = 0;
     private void Awake()
     {
         if (!Instance) Instance = this;
@@ -113,8 +114,18 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            IsPhoneActive = !IsPhoneActive;
-            PhoneUI.SetActive(IsPhoneActive);
+            if (IsPhoneActive)
+            {
+                IsPhoneActive = !IsPhoneActive;
+                PhoneControl.Instance.GoBackMainScreenButton();
+                PhoneUI.SetActive(IsPhoneActive);
+            }
+            else
+            {
+                IsPhoneActive = !IsPhoneActive;
+                PhoneUI.SetActive(IsPhoneActive);
+            }
+            
         }
     }
 

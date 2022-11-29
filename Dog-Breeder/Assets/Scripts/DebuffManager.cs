@@ -41,7 +41,7 @@ public class PermanentDebuff : Debuff
     public override void RollDamage(float traitVal)
     {
         float severity = ComputeSeverity(traitVal);
-        if (severity > 0.5) damage = severity * 5;
+        if (severity > 0.5) damage = Mathf.Round(severity * 5);
         else damage = 0;
     }
 }
@@ -67,7 +67,7 @@ public class RandomDebuff : Debuff
     {
         float random = Random.value;
         float severity = ComputeSeverity(traitVal);
-        if (severity > .25f) damage = severity > random ? random * 15 : .0f;
+        if (severity > .25f) damage = severity > random ? Mathf.Round(random * 15) : .0f;
         else damage = 0;
     }
 }
@@ -85,16 +85,7 @@ public class DebuffManager : MonoBehaviour
     }
     void Start()
     {
-        // Keep the same order as blendershape
 
-        //Leg
-        //RiskyDebuff footInfections = new RiskyDebuff("Foot infections", "Due to more skin folds", 1, false);
-        //PermanentDebuff cripplingBackPain = new PermanentDebuff("Crippling back pain", "", 1, false);
-        //RiskyDebuff arthritis = new RiskyDebuff("Arthritis", "", 1, true);
-        //PermanentDebuff legsBreakEasily = new PermanentDebuff("Legs break easily", "", 1, true);
-        //List<Debuff> legDebuffs_small = new List<Debuff> { footInfections, cripplingBackPain};
-        //List<Debuff> legDebuffs_big = new List<Debuff> { arthritis, legsBreakEasily };
-        //debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>(legDebuffs_small, legDebuffs_big));
 
         //Cheek
         debuffList.Add(new KeyValuePair<List<Debuff>, List<Debuff>>());

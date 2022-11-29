@@ -31,7 +31,7 @@ public class DogManager
                 float value = Mathf.Clamp(Random.Range(min, max), 0, 100);
                 newSkin.SetBlendShapeWeight(i, value);
             }
-
+            newStatus.HP = 10;
             newStatus.gender = Random.value > .5f;
             newStatus.birthday = GameManager.Instance.DayCount;
             newStatus.isAdult = false;

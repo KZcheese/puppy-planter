@@ -35,12 +35,13 @@ public class CameraDetect : MonoBehaviour
         if (Physics.Raycast(_cameraRay, out _cameraHit, DetectDistance, LayerDetect))
         {
             _cameraHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;
-            if ((Input.GetMouseButtonDown(0)) && (DaySwitchControl.Instance.TransportScene.activeSelf == false))
+            if ((Input.GetMouseButtonDown(0)) && (DaySwitchControl.Instance.TransportScene.activeSelf == false) && (GameManager.Instance.IsPhoneActive == false))
             {
                 GameManager.Instance.IsStatusActive = true;
                 GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
                 StatusUpdate.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();
                 StatusUpdate.Instance.DogId = _cameraHit.collider.gameObject.GetComponent<DogStatus>().DogID;
+                StatusUpdate.Instance.UpdateStatusText();
                 _cameraHit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
             }
         }

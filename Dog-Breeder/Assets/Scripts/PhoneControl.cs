@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PhoneControl : MonoBehaviour
 {
     public GameObject MainScreen,PairScreen;
-    public GameObject DogListImgs;
-    public Text DogCountText,PairListText, DogName;
+    public Text PairListText, DogName, UpdatePenText;
+    public int UpdatePenCost;
     // Start is called before the first frame update
 
     public static PhoneControl Instance;
@@ -25,6 +25,7 @@ public class PhoneControl : MonoBehaviour
     {
         ShowPairList();
 
+        UpdatePenText.text = "You have "+ GameManager.Instance.DogList.Count+ "/"+ GameManager.Instance.MaxDogNumber+ " Dogs\nSpend " + UpdatePenCost + " to update pen";
     }
 
 
@@ -74,9 +75,9 @@ public class PhoneControl : MonoBehaviour
 
         int _firstDogID = int.Parse(PairScreen.transform.GetChild(0).GetComponent<Dropdown>().options[_firstDropDownValue].text.Split(' ')[1]);
         int _secondDogID = int.Parse(PairScreen.transform.GetChild(1).GetComponent<Dropdown>().options[_secondDropDownValue].text.Split(' ')[1]);
-        if(GameManager.Instance.DogList.Count > 5)
+        if(GameManager.Instance.DogList.Count > GameManager.Instance.MaxDogNumber)
         {
-            Debug.Log("You only can have 5 dogs, cant pair now, sell some dogs");
+            Debug.Log("You only can have "+ GameManager.Instance.MaxDogNumber + " dogs, cant pair now, sell some dogs");
         }
         else
         {
@@ -107,5 +108,10 @@ public class PhoneControl : MonoBehaviour
         PairListText.text = _pairDogList;
     }
      
-
+    public void UpdatePenButton()
+    {
+        GameManager.Instance.Money -= UpdatePenCost;
+        GameManager.Instance.TodayUpdateCost += UpdatePenCost;
+        GameManager.Instance.MaxDogNumber += 1;
+    }
 }
