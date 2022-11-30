@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
     public int WeekCount = 1;
     public int MonthCount = 1;
     public int TodayUpdateCost = 0;
+
+    //[HideInInspector]
+    //public bool UIpop = false;
+
     private void Awake()
     {
         if (!Instance) Instance = this;

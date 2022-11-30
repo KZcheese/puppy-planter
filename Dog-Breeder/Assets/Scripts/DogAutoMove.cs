@@ -10,6 +10,8 @@ public class DogAutoMove : MonoBehaviour
     private bool NeedNewPositon = true;
     private NavMeshAgent _navigation;
     public float WaitTime = 0;
+    private bool init = false;
+
     void Start()
     {
         _navigation = GetComponent<NavMeshAgent>();
@@ -21,12 +23,21 @@ public class DogAutoMove : MonoBehaviour
     {
         if (GetComponent<DogStatus>().isAdult)
         {
-            if (!_navigation.enabled)
+            if (GameManager.Instance.IsPhoneActive)
+            {
+                _navigation.enabled = false;
+                GetComponent<Animator>().SetBool("Walk", false);
+            }
+            else
+            {
+                _navigation.enabled = true;
+                AutoMove();
+            }
+            if (!init)
             {
                 Positions = transform.position;
-                _navigation.enabled = true;
+                init = true;
             }
-            AutoMove();
         }
         else
         {
