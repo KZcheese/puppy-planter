@@ -71,12 +71,12 @@ public class DaySwitchControl : MonoBehaviour
 
     void CostCalculate()
     {
-        int newDogCost = GameManager.Instance.DogPairDic.Count * GameManager.Instance.CostPerDog;    
-        GameManager.Instance.Money -= newDogCost;
+        int dogCost = GameManager.Instance.DogList.Count * GameManager.Instance.CostPerDog;    
+        GameManager.Instance.Money -= dogCost;
         GameManager.Instance.newDogCount = 0;
-        TransCostText += "New Dog                    -" + newDogCost.ToString("c2") + "\n";
+        TransCostText += "Dog Cost                   -" + dogCost.ToString("c2") + "\n";
         GameManager.Instance.Money -= GameManager.Instance.CostPerDay;
-        TransCostText += "Food                       -" + GameManager.Instance.CostPerDay.ToString("c2") + "\n";
+        TransCostText += "Daily Cost                 -" + GameManager.Instance.CostPerDay.ToString("c2") + "\n";
         if (GameManager.Instance.DayCount % 6 == 0)
         {
             GameManager.Instance.WeekCount += 1;
