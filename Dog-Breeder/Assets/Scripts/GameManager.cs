@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public int DogIDNow = 1000;
     public int MaxDogNumber;
 
-    public int CostPerDay, CostPerWeak, CostPerMonth;
+    public int CostPerDog, CostPerDay, CostPerWeak, CostPerMonth;
     //public List<PairInfo> pairInfos = new List<PairInfo>();
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
 
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
     public int WeekCount = 1;
     public int MonthCount = 1;
     public int TodayUpdateCost = 0;
+
+    public int newDogCount = 0;
 
     //[HideInInspector]
     //public bool UIpop = false;

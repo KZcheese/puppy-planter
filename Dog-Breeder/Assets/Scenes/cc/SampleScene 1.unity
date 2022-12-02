@@ -381,8 +381,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 160, y: 300}
+  m_AnchoredPosition: {x: 0, y: 40}
+  m_SizeDelta: {x: 286.9, y: 354.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12698916
 MonoBehaviour:
@@ -406,7 +406,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 11
+    m_FontSize: 19
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1134,6 +1134,7 @@ MonoBehaviour:
   IsStatusActive: 0
   DogIDNow: 1000
   MaxDogNumber: 5
+  CostPerDog: 5
   CostPerDay: 10
   CostPerWeak: 100
   CostPerMonth: 1000
@@ -1155,6 +1156,7 @@ MonoBehaviour:
   WeekCount: 1
   MonthCount: 1
   TodayUpdateCost: 0
+  newDogCount: 0
 --- !u!4 &130765173
 Transform:
   m_ObjectHideFlags: 0
@@ -1803,8 +1805,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171, y: 7}
-  m_SizeDelta: {x: 300, y: 400}
+  m_AnchoredPosition: {x: 170.3551, y: 7}
+  m_SizeDelta: {x: 397.4, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251112205
 MonoBehaviour:
@@ -9840,8 +9842,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: -3}
-  m_SizeDelta: {x: 400, y: 500}
+  m_AnchoredPosition: {x: -295.40002, y: -3}
+  m_SizeDelta: {x: 498.1, y: 697.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502904292
 MonoBehaviour:

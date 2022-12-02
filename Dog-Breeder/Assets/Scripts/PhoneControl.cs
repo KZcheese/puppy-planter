@@ -26,6 +26,7 @@ public class PhoneControl : MonoBehaviour
         ShowPairList();
 
         UpdatePenText.text = "You have "+ GameManager.Instance.DogList.Count+ "/"+ GameManager.Instance.MaxDogNumber+ " Dogs\nSpend " + UpdatePenCost + " to update pen";
+        
     }
 
 
