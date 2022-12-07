@@ -43,6 +43,7 @@ public class CameraDetect : MonoBehaviour
                 StatusUpdate.Instance.DogId = _cameraHit.collider.gameObject.GetComponent<DogStatus>().DogID;
                 StatusUpdate.Instance.UpdateStatusText();
                 _cameraHit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
+                CameraMovement.Instance._moveMode = false;
             }
         }
         else

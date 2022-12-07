@@ -10,6 +10,7 @@ public class DaySwitchControl : MonoBehaviour
     public GameObject TransportScene;
     public GameObject LostScene;
     public GameObject MoneyCal, DebuffCal;
+    public GameObject AimPoint;
     public Text DayCountText;
 
     public Text DayText,SavingText,CostText,FinalValueText,DebText;
@@ -36,7 +37,8 @@ public class DaySwitchControl : MonoBehaviour
 
     public void GoNextDayButton()
     {
-
+        AimPoint.SetActive(false);
+        CameraMovement.Instance._moveMode = false;
         GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive = false);
         GameManager.Instance.PhoneUI.SetActive(GameManager.Instance.IsPhoneActive = false);
 
@@ -101,6 +103,7 @@ public class DaySwitchControl : MonoBehaviour
     }
     public void GoContinueButton()
     {
+
         GameManager.Instance.TodayUpdateCost = 0;
 
         if (MoneyCal.activeSelf)
@@ -147,6 +150,8 @@ public class DaySwitchControl : MonoBehaviour
                 MoneyCal.SetActive(true);
                 DebuffCal.SetActive(false);
                 PhoneControl.Instance.PairScreenButton();
+                AimPoint.SetActive(true);
+                CameraMovement.Instance._moveMode = true;
             }
 
         }

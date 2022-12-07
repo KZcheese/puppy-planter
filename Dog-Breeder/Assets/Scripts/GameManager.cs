@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public Transform bornSpot;
     public Transform outSpot;
 
-    public GameObject DayUI;
     public GameObject PhoneUI,StatusUI;
     public GameObject Lines;
 
@@ -80,10 +79,12 @@ public class GameManager : MonoBehaviour
         if (IsPairLineActive)
             LinePairDogs();
 
+
+
         moneyText.text = Money.ToString("c2"); // 2dp currency;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+        /*if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();*/
     }
 
     void LinePairDogs()
@@ -125,11 +126,13 @@ public class GameManager : MonoBehaviour
                 IsPhoneActive = !IsPhoneActive;
                 PhoneControl.Instance.GoBackMainScreenButton();
                 PhoneUI.SetActive(IsPhoneActive);
+                CameraMovement.Instance._moveMode = true;
             }
             else
             {
                 IsPhoneActive = !IsPhoneActive;
                 PhoneUI.SetActive(IsPhoneActive);
+                CameraMovement.Instance._moveMode = false;
             }
             
         }

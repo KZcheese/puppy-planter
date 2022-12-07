@@ -56,5 +56,6 @@ public class StatusUpdate : MonoBehaviour
         GameManager.Instance.IsStatusActive = false;
         GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
         Dog.CheckStatusNow = false;
+        CameraMovement.Instance._moveMode = true;
     }
 }
