@@ -26,21 +26,21 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_moveMode)
-        {
-            Cursor.visible = false;
-            if (GameManager.Instance.IsPhoneActive == false)
-                Movement();
-        }
-        else
-        {
-            Cursor.visible = true;
-        }
+        //if (_moveMode)
+        //{
+        //    Cursor.visible = false;
+        //    if (GameManager.Instance.IsPhoneActive == false)
+        //        Movement();
+        //}
+        //else
+        //{
+        //    Cursor.visible = true;
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            _moveMode = !_moveMode;
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //    _moveMode = !_moveMode;
 
-
+        Movement();
         transform.position = new Vector3(transform.position.x,Height, transform.position.z);
     }
 

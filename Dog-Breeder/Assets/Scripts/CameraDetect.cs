@@ -7,6 +7,7 @@ public class CameraDetect : MonoBehaviour
 {
     public LayerMask LayerDetect;
     public float DetectDistance;
+    public float doorDetectableDistance;
 
     public static CameraDetect Instance;
     // Start is called before the first frame update
@@ -53,6 +54,14 @@ public class CameraDetect : MonoBehaviour
             {
                 dogs.GetComponent<Outline>().OutlineWidth = 0;
 
+            }
+        }
+
+        if (Physics.Raycast(_cameraRay, out _cameraHit, doorDetectableDistance, LayerMask.GetMask("Door")))
+        {
+            if (Input.GetMouseButtonDown(0) && !DaySwitchControl.Instance.TransportScene.activeSelf && !GameManager.Instance.IsPhoneActive)
+            {
+                DaySwitchControl.Instance.GoNextDayButton();
             }
         }
     }

@@ -7,6 +7,8 @@ public class DaySwitchControl : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public Transform startPoint;
+
     public GameObject TransportScene;
     public GameObject LostScene;
     public GameObject MoneyCal, DebuffCal;
@@ -37,8 +39,8 @@ public class DaySwitchControl : MonoBehaviour
 
     public void GoNextDayButton()
     {
-        AimPoint.SetActive(false);
-        CameraMovement.Instance._moveMode = false;
+        //AimPoint.SetActive(false);
+        //CameraMovement.Instance._moveMode = false;
         GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive = false);
         GameManager.Instance.PhoneUI.SetActive(GameManager.Instance.IsPhoneActive = false);
 
@@ -66,7 +68,6 @@ public class DaySwitchControl : MonoBehaviour
 
         GameManager.Instance.NewDay();
         DebText.text = DebuffText;
-
 
         Time.timeScale = 0;
     }
@@ -150,8 +151,11 @@ public class DaySwitchControl : MonoBehaviour
                 MoneyCal.SetActive(true);
                 DebuffCal.SetActive(false);
                 PhoneControl.Instance.PairScreenButton();
-                AimPoint.SetActive(true);
-                CameraMovement.Instance._moveMode = true;
+
+                Camera.main.transform.position = startPoint.position;
+                Camera.main.transform.rotation = startPoint.rotation;
+                //AimPoint.SetActive(true);
+                //CameraMovement.Instance._moveMode = true;
             }
 
         }
