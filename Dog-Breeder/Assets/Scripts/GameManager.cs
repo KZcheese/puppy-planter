@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform bornSpot;
     public Transform outSpot;
 
-    public GameObject PhoneUI,StatusUI;
+    public GameObject PhoneUI,StatusUI,RentReminderUI;
     public GameObject Lines;
 
     public LayerMask LayerDetect;
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TakeMyPhone();
+        OpenMainMenu();
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    void TakeMyPhone() // Bag
+    void OpenMainMenu() // Bag
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -237,6 +237,11 @@ public class GameManager : MonoBehaviour
             Instance.DogList[i].PairDogName = "";
             Instance.DogList[i].DebuffEffected = false;
         }
+    }
+
+    public void OpenRentReminderUI()
+    {
+        RentReminderUI.SetActive(true);
     }
 
 

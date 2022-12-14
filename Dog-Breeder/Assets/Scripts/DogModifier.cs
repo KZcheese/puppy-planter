@@ -13,6 +13,10 @@ public class DogModifier : MonoBehaviour
     public TextMeshProUGUI _muscleSize;
     public TextMeshProUGUI noseSize;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (!Instance) Instance = this;
+    }
     void Start()
     {
         

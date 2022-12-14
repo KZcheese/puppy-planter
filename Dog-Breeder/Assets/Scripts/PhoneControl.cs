@@ -25,7 +25,7 @@ public class PhoneControl : MonoBehaviour
     {
         ShowPairList();
 
-        UpdatePenText.text = "You have "+ GameManager.Instance.DogList.Count+ "/"+ GameManager.Instance.MaxDogNumber+ " Dogs\nSpend " + UpdatePenCost + " to update pen";
+        UpdatePenText.text = "You have "+ GameManager.Instance.DogList.Count+ "/"+ GameManager.Instance.MaxDogNumber+ " Dogs\nSpend " + UpdatePenCost.ToString("c2") + " to update pen";
         
     }
 
@@ -101,8 +101,8 @@ public class PhoneControl : MonoBehaviour
         string _pairDogList = "";
         foreach (var key in GameManager.Instance.DogPairDic.Keys)
         {
-            string _pairDogName1 = GameManager.Instance.DogList[GameManager.Instance.FindDogIndex(key)].name;
-            string _pairDogName2 = GameManager.Instance.DogList[GameManager.Instance.FindDogIndex(GameManager.Instance.DogPairDic[key])].name;
+            string _pairDogName1 = GameManager.Instance.DogList[GameManager.Instance.FindDogIndex(key)].Name;
+            string _pairDogName2 = GameManager.Instance.DogList[GameManager.Instance.FindDogIndex(GameManager.Instance.DogPairDic[key])].Name;
             string _pairDogs = _pairDogName1 + " pair with " + _pairDogName2 + "\n";
             _pairDogList += _pairDogs;
         }

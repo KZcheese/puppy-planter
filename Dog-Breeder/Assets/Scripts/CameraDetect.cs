@@ -10,6 +10,8 @@ public class CameraDetect : MonoBehaviour
     public float doorDetectableDistance;
 
     public static CameraDetect Instance;
+
+    
     // Start is called before the first frame update
 
     private void Awake()
@@ -46,10 +48,19 @@ public class CameraDetect : MonoBehaviour
                 GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
                 StatusUpdate.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();
                 StatusUpdate.Instance.DogId = _cameraHit.collider.gameObject.GetComponent<DogStatus>().DogID;
+                DogModifier.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();
                 StatusUpdate.Instance.UpdateStatusText();
                 _cameraHit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;
                 CameraMovement.Instance._moveMode = false;
             }
+        }else if (Physics.Raycast(_cameraRay, out _cameraHit, doorDetectableDistance, LayerMask.GetMask("NoteBook")))
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameManager.Instance.OpenRentReminderUI();
+                CameraMovement.Instance._moveMode = false;
+            }
+                
         }
         else
         {
