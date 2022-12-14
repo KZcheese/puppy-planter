@@ -50,7 +50,6 @@ public class DaySwitchControl : MonoBehaviour
         DebuffText = "";
         TransportScene.SetActive(true);
         GameManager.Instance.DayCount += 1;
-        
 
         DayText.text = "DAY " + GameManager.Instance.DayCount;
         SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney.ToString("c2") + "\n" ;

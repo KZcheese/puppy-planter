@@ -17,8 +17,14 @@ public class DogStatus : MonoBehaviour
     public bool gender; // true for male, false for female
     public int birthday;
     public bool isAdult;
-    private int isearModded = 0;
+    
+    private int earModded = 0;
+    private int eyeModded = 0;
+    private int muscleModded = 0;
+    private int noseModded = 0;
+    
     public List<List<Debuff>> Debuffs = new List<List<Debuff>> { null, null, null, null, null };
+
 
     private void Awake()
     {
@@ -115,20 +121,102 @@ public class DogStatus : MonoBehaviour
         return (Mathf.Round(skin.GetBlendShapeWeight(4)).ToString());
     }
 
-    public void Mod_DogEarSize()
+   public void Mod_DogEarSizeInc()
     {
-        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-        if (isearModded < 5 && (GameManager.Instance.DayCount - birthday)<5)
+        if (earModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
         {
-            skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) + 1);
-            isearModded += 1;
-        }
-        else if (isearModded == 5)
-        {
-            return;
+            if (earModded == (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) + 1);
+                earModded++;
+            }
         }
     }
-
+    public void Mod_DogEarSizeDec()
+    {
+        if (earModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (earModded == (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) - 1);
+                earModded++;
+            }
+        }
+    }
+    public void Mod_DogEyeSizeInc()
+    {
+        if (eyeModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (eyeModded != (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(2, Mathf.Round(skin.GetBlendShapeWeight(2)) + 1);
+                eyeModded++;
+            }
+        }
+    }
+    public void Mod_DogEyeSizeDec()
+    {
+        if (eyeModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (eyeModded != (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(2, Mathf.Round(skin.GetBlendShapeWeight(2)) - 1);
+                eyeModded++;
+            }
+        }
+    }
+    public void Mod_DogMuscleSizeInc()
+    {
+        if (muscleModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (muscleModded != (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(3, Mathf.Round(skin.GetBlendShapeWeight(3)) + 1);
+                muscleModded++;
+            }
+        }
+    }
+    public void Mod_DogMuscleSizeDec()
+    {
+        if (muscleModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (muscleModded != (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(3, Mathf.Round(skin.GetBlendShapeWeight(3)) - 1);
+                muscleModded++;
+            }
+        }
+    }
+    public void Mod_DogNoseSizeInc()
+    {
+        if (noseModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (noseModded != (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(4, Mathf.Round(skin.GetBlendShapeWeight(4)) + 1);
+                noseModded++;
+            }
+        }
+    }
+    public void Mod_DogNoseSizeDec()
+    {
+        if (noseModded < 5 && (GameManager.Instance.DayCount - birthday) < 5)
+        {
+            if (noseModded != (GameManager.Instance.DayCount - birthday))
+            {
+                SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+                skin.SetBlendShapeWeight(4, Mathf.Round(skin.GetBlendShapeWeight(4)) - 1);
+                noseModded++;
+            }
+        }
+    }
 
     void RandomPosition(bool isAdult)
     {

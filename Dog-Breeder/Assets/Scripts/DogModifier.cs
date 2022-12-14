@@ -28,9 +28,44 @@ public class DogModifier : MonoBehaviour
         
     }
 
-    public void earMod()
+    public void earInc()
     {
-        Dog.Mod_DogEarSize();
+        Dog.Mod_DogEarSizeInc();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void earDec()
+    {
+        Dog.Mod_DogEarSizeDec();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void eyeInc()
+    {
+        Dog.Mod_DogEyeSizeInc();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void eyeDec()
+    {
+        Dog.Mod_DogEyeSizeDec();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void muscleInc()
+    {
+        Dog.Mod_DogMuscleSizeDec();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void muscleDec()
+    {
+        Dog.Mod_DogMuscleSizeDec();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void noseInc()
+    {
+        Dog.Mod_DogNoseSizeDec();
+        StatusUpdate.Instance.UpdateStatusText();
+    }
+    public void noseDec()
+    {
+        Dog.Mod_DogNoseSizeDec();
         StatusUpdate.Instance.UpdateStatusText();
     }
 }

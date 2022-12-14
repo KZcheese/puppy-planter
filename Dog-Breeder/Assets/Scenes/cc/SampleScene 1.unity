@@ -212,7 +212,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 29.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 31.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 31.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 29.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &305346347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 32
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3692,7 +3692,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 445234244}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
-        m_MethodName: earMod
+        m_MethodName: earInc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3754,9 +3754,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dog: {fileID: 0}
   _earSize: {fileID: 1554584567}
-  _eyeSize: {fileID: 1181129604}
-  _muscleSize: {fileID: 1357498442}
-  noseSize: {fileID: 2056932}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 0}
 --- !u!1 &456046732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,7 +4555,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 31.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5346,6 +5346,7 @@ GameObject:
   - component: {fileID: 697701243}
   - component: {fileID: 697701242}
   - component: {fileID: 697701241}
+  - component: {fileID: 697701244}
   m_Layer: 5
   m_Name: nose_increase
   m_TagString: Untagged
@@ -5456,6 +5457,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697701239}
   m_CullTransparentMesh: 1
+--- !u!114 &697701244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697701239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 0}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 2056932}
 --- !u!1 &700223813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,7 +5559,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 32
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6255,7 +6273,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.5
+  m_fontSize: 29.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7848,7 +7866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &986840881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7920,6 +7938,7 @@ GameObject:
   - component: {fileID: 987833995}
   - component: {fileID: 987833994}
   - component: {fileID: 987833993}
+  - component: {fileID: 987833996}
   m_Layer: 5
   m_Name: muscle_decrease
   m_TagString: Untagged
@@ -7991,7 +8010,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 987833994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 987833996}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: muscleDec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &987833994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8030,6 +8061,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987833991}
   m_CullTransparentMesh: 1
+--- !u!114 &987833996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987833991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 0}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 1357498442}
+  noseSize: {fileID: 0}
 --- !u!1 &1007904476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8049,7 +8097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1007904477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8894,7 +8942,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 31.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9332,6 +9380,7 @@ GameObject:
   - component: {fileID: 1160394873}
   - component: {fileID: 1160394872}
   - component: {fileID: 1160394871}
+  - component: {fileID: 1160394874}
   m_Layer: 5
   m_Name: eyes_increase
   m_TagString: Untagged
@@ -9403,7 +9452,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1160394872}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1160394874}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: eyeInc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1160394872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9442,6 +9503,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160394869}
   m_CullTransparentMesh: 1
+--- !u!114 &1160394874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160394869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 0}
+  _eyeSize: {fileID: 1181129604}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 0}
 --- !u!1 &1166017622
 GameObject:
   m_ObjectHideFlags: 0
@@ -9612,7 +9690,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.15
+  m_fontSize: 29.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10332,6 +10410,7 @@ GameObject:
   - component: {fileID: 1252297574}
   - component: {fileID: 1252297573}
   - component: {fileID: 1252297572}
+  - component: {fileID: 1252297575}
   m_Layer: 5
   m_Name: nose_decrease
   m_TagString: Untagged
@@ -10442,6 +10521,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252297570}
   m_CullTransparentMesh: 1
+--- !u!114 &1252297575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252297570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 0}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 2056932}
 --- !u!1 &1255010499
 GameObject:
   m_ObjectHideFlags: 0
@@ -11936,6 +12032,7 @@ GameObject:
   - component: {fileID: 1355245546}
   - component: {fileID: 1355245545}
   - component: {fileID: 1355245544}
+  - component: {fileID: 1355245547}
   m_Layer: 5
   m_Name: eyes_decrease
   m_TagString: Untagged
@@ -12007,7 +12104,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1355245545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1355245547}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: eyeDec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1355245545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12046,6 +12155,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355245542}
   m_CullTransparentMesh: 1
+--- !u!114 &1355245547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355245542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 0}
+  _eyeSize: {fileID: 1181129604}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 0}
 --- !u!1 &1357498440
 GameObject:
   m_ObjectHideFlags: 0
@@ -12133,7 +12259,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 29.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12413,7 +12539,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 31.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14144,7 +14270,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 29.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14410,6 +14536,7 @@ GameObject:
   - component: {fileID: 1597160379}
   - component: {fileID: 1597160378}
   - component: {fileID: 1597160377}
+  - component: {fileID: 1597160380}
   m_Layer: 5
   m_Name: muscle_increase
   m_TagString: Untagged
@@ -14481,7 +14608,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1597160378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1597160380}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: muscleInc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1597160378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14520,6 +14659,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597160375}
   m_CullTransparentMesh: 1
+--- !u!114 &1597160380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597160375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 0}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 1357498442}
+  noseSize: {fileID: 0}
 --- !u!1 &1607386049
 GameObject:
   m_ObjectHideFlags: 0
@@ -15043,7 +15199,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 29.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15180,7 +15336,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.95
+  m_fontSize: 24.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15397,7 +15553,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 30.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15740,7 +15896,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 31.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15991,7 +16147,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.7
+  m_fontSize: 30.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17179,6 +17335,7 @@ GameObject:
   - component: {fileID: 2028920480}
   - component: {fileID: 2028920479}
   - component: {fileID: 2028920478}
+  - component: {fileID: 2028920481}
   m_Layer: 5
   m_Name: ears_decrease
   m_TagString: Untagged
@@ -17250,7 +17407,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2028920479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2028920481}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: earDec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2028920479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17289,6 +17458,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028920476}
   m_CullTransparentMesh: 1
+--- !u!114 &2028920481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028920476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 1554584567}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 0}
 --- !u!1 &2039108890
 GameObject:
   m_ObjectHideFlags: 0
