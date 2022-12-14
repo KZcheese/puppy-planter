@@ -31,6 +31,7 @@ public class StatusUpdate : MonoBehaviour
     {
         statusText.text = Dog.GetDescription();
     }
+
     public void Reset()
     {
         index = -1;

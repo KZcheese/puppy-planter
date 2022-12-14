@@ -14,7 +14,10 @@ public class CameraDetect : MonoBehaviour
 
     private void Awake()
     {
-        if (!Instance) Instance = this;
+        if (!Instance)
+        {
+            Instance = this;
+        }
     }
 
     void Start()
@@ -32,12 +35,15 @@ public class CameraDetect : MonoBehaviour
     void Detect()
     {
         Ray _cameraRay = new Ray(transform.position, transform.forward);
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);*/
         RaycastHit _cameraHit;
         if (Physics.Raycast(_cameraRay, out _cameraHit, DetectDistance, LayerDetect))
         {
             _cameraHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;
+            /*_cameraHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;*/
             if ((Input.GetMouseButtonDown(0)) && (DaySwitchControl.Instance.TransportScene.activeSelf == false) && (GameManager.Instance.IsPhoneActive == false))
             {
+                Debug.Log(GameManager.Instance.checking);
                 GameManager.Instance.IsStatusActive = true;
                 GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
                 StatusUpdate.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();

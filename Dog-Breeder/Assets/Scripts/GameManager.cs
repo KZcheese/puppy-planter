@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-
-
     
 
     public GameObject dogPrefab;
@@ -29,6 +28,8 @@ public class GameManager : MonoBehaviour
     public bool IsStatusActive = false;
 
     public static GameManager Instance;
+
+    public string checking = "The reference is working";
 
     public int DogIDNow = 1000;
     public int MaxDogNumber;
@@ -238,4 +239,6 @@ public class GameManager : MonoBehaviour
             Instance.DogList[i].DebuffEffected = false;
         }
     }
+
+   
 }

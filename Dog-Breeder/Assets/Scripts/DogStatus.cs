@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class DogStatus : MonoBehaviour
 {
@@ -16,6 +18,16 @@ public class DogStatus : MonoBehaviour
     public int birthday;
     public bool isAdult;
     public List<List<Debuff>> Debuffs = new List<List<Debuff>> { null, null, null, null, null };
+    /*public TMP_Text _doggyname;
+    public TMP_Text _doggyage;
+    public TMP_Text _doggygender;
+    public Canvas mycanvas;
+    public TMP_Text _cheekSize;
+    public TMP_Text _eyeSize;
+    public TMP_Text _earSize;
+    public TMP_Text _muscleSize;
+    public TMP_Text _noseSize;
+*/
 
     private void Awake()
     {
@@ -35,8 +47,17 @@ public class DogStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+       /* if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100.0f))
+                if (hit.transform != null)
+                {
+                    mycanvas.transform.gameObject.SetActive(true);
+                    Display();
+                }
+        }*/
     }
 
 
@@ -66,6 +87,23 @@ public class DogStatus : MonoBehaviour
 
         return description;
     }
+
+   /* public void Display()
+    {
+        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        _doggyname.text = Name;
+        _doggyage.text = (GameManager.Instance.DayCount - birthday).ToString();
+        _doggygender.text = (gender ? "male" : "female");
+        mycanvas.transform.gameObject.SetActive(true);
+        _cheekSize.text = Mathf.Round(skin.GetBlendShapeWeight(0)).ToString();
+        _eyeSize.text = Mathf.Round(skin.GetBlendShapeWeight(1)).ToString();
+        _earSize.text = Mathf.Round(skin.GetBlendShapeWeight(2)).ToString();
+        _muscleSize.text = Mathf.Round(skin.GetBlendShapeWeight(4)).ToString();
+        _noseSize.text = Mathf.Round(skin.GetBlendShapeWeight(5)).ToString();
+
+        mycanvas.transform.gameObject.SetActive(true);
+    }
+*/
 
     void RandomPosition(bool isAdult)
     {

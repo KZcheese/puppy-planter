@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 130765173}
   - component: {fileID: 130765172}
   - component: {fileID: 130765174}
+  - component: {fileID: 130765175}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -606,6 +607,7 @@ MonoBehaviour:
   IsPairLineActive: 1
   IsStatusActive: 0
   DogIDNow: 1000
+  MaxDogNumber: 0
   CostPerDay: 10
   CostPerWeak: 0
   CostPerMonth: 0
@@ -626,6 +628,7 @@ MonoBehaviour:
   DayCount: 1
   WeekCount: 1
   MonthCount: 1
+  TodayUpdateCost: 0
 --- !u!4 &130765173
 Transform:
   m_ObjectHideFlags: 0
@@ -639,7 +642,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &130765174
 MonoBehaviour:
@@ -653,6 +656,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb8166063178344aa1d910a6398eb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &130765175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130765171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa8ad9c53cc1db49abe008b858e01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DogStatusUI: {fileID: 0}
 --- !u!1 &132214390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &305346345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TransportScene: {fileID: 87409852}
+  LostScene: {fileID: 0}
   MoneyCal: {fileID: 0}
   DebuffCal: {fileID: 0}
   DayCountText: {fileID: 658800208}
@@ -1607,7 +1624,7 @@ RectTransform:
   - {fileID: 2134962706}
   - {fileID: 87409855}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3120,6 +3137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3202,8 +3220,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!64 &723356251
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4421,6 +4459,8 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194234}
+  - component: {fileID: 963194233}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4492,7 +4532,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 183.72, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -4554,6 +4594,55 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
+--- !u!114 &963194234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &964049482
 GameObject:
   m_ObjectHideFlags: 0
@@ -6724,7 +6813,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431952657
 GameObject:
@@ -7099,7 +7188,7 @@ RectTransform:
   m_Children:
   - {fileID: 251112204}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7999,10 +8088,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainScreen: {fileID: 959541674}
   PairScreen: {fileID: 1056975160}
-  DogListImgs: {fileID: 1225629645}
-  DogCountText: {fileID: 1267386919}
   PairListText: {fileID: 311642468}
   DogName: {fileID: 1447316958}
+  UpdatePenText: {fileID: 0}
+  UpdatePenCost: 0
 --- !u!114 &1648922693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8078,7 +8167,7 @@ RectTransform:
   m_Children:
   - {fileID: 1502904291}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9069,7 +9158,7 @@ PrefabInstance:
     - target: {fileID: 4755344302326647542, guid: e88d733fd5ee8c74da44398bb2ec487a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4755344302326647542, guid: e88d733fd5ee8c74da44398bb2ec487a,
         type: 3}
@@ -10163,7 +10252,7 @@ Transform:
   - {fileID: 592664080984536259}
   - {fileID: 5220279181219917584}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &554370787495094575
 MeshRenderer:
@@ -10585,6 +10674,7 @@ GameObject:
   - component: {fileID: 1355370359986706012}
   - component: {fileID: 1355370359986706011}
   - component: {fileID: 1355370359986706013}
+  - component: {fileID: 6053865102336881436}
   m_Layer: 8
   m_Name: dog1
   m_TagString: Untagged
@@ -10614,6 +10704,10 @@ MonoBehaviour:
   gender: 1
   birthday: 1
   isAdult: 0
+  _doggyname: {fileID: 0}
+  _doggyage: {fileID: 0}
+  _doggygender: {fileID: 0}
+  mycanvas: {fileID: 0}
 --- !u!65 &1355370359986706010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10884,7 +10978,7 @@ Transform:
   m_Children:
   - {fileID: 1791768249}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 26.71, z: 0}
 --- !u!33 &1929802416405760659
 MeshFilter:
@@ -12356,6 +12450,35 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0010124482, y: -0.029374763, z: 0.0015456453}
     m_Extent: {x: 0.10517746, y: 0.16510458, z: 0.20629361}
   m_DirtyAABB: 0
+--- !u!114 &6053865102336881436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355370359986706008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1355370359986706009}
+          m_TargetAssemblyTypeName: DogStatus, Assembly-CSharp
+          m_MethodName: Display
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &6187763433942576921
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12422,6 +12545,7 @@ GameObject:
   - component: {fileID: 6252100821980964231}
   - component: {fileID: 6252100821980964232}
   - component: {fileID: 6252100821980964233}
+  - component: {fileID: 6739703079490961215}
   m_Layer: 8
   m_Name: dog2
   m_TagString: Untagged
@@ -12464,6 +12588,10 @@ MonoBehaviour:
   gender: 0
   birthday: 1
   isAdult: 0
+  _doggyname: {fileID: 0}
+  _doggyage: {fileID: 0}
+  _doggygender: {fileID: 0}
+  mycanvas: {fileID: 0}
 --- !u!114 &6252100821980964231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12743,8 +12871,37 @@ Transform:
   m_Children:
   - {fileID: 1050624047}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6739703079490961215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252100821980964228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6252100821980964230}
+          m_TargetAssemblyTypeName: DogStatus, Assembly-CSharp
+          m_MethodName: Display
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!33 &6776404320568320483
 MeshFilter:
   m_ObjectHideFlags: 0
