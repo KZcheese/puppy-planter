@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
 
     public List<DogStatus> DogList = new List<DogStatus>();
-
+    
     public bool IsPhoneActive = false;
     public bool IsPairLineActive = true;
     public bool IsStatusActive = false;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public int CostPerDog, CostPerDay, CostPerWeak, CostPerMonth;
     //public List<PairInfo> pairInfos = new List<PairInfo>();
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
-
+    public List<int> ReminderPopDaysList = new List<int>();
     [HideInInspector]
     public float[] demands = new float[5];
     public float Money,YesterdayMoney;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         PhoneUI.SetActive(IsPhoneActive = true);
         PhoneUI.SetActive(IsPhoneActive = false);
-
+        
     }
 
     void Start()
@@ -241,6 +241,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenRentReminderUI()
     {
+        CameraMovement.Instance._moveMode = false;
         RentReminderUI.SetActive(true);
     }
 

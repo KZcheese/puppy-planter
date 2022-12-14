@@ -39,8 +39,8 @@ public class DaySwitchControl : MonoBehaviour
 
     public void GoNextDayButton()
     {
-        //AimPoint.SetActive(false);
-        //CameraMovement.Instance._moveMode = false;
+        AimPoint.SetActive(false);
+        CameraMovement.Instance._moveMode = false;
         GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive = false);
         GameManager.Instance.PhoneUI.SetActive(GameManager.Instance.IsPhoneActive = false);
 
@@ -154,8 +154,9 @@ public class DaySwitchControl : MonoBehaviour
 
                 Camera.main.transform.position = startPoint.position;
                 Camera.main.transform.rotation = startPoint.rotation;
-                //AimPoint.SetActive(true);
-                //CameraMovement.Instance._moveMode = true;
+                AimPoint.SetActive(true);
+                CameraMovement.Instance._moveMode = true;
+                ReminderPopUp(GameManager.Instance.DayCount);
             }
 
         }
@@ -164,6 +165,11 @@ public class DaySwitchControl : MonoBehaviour
 
     }
 
+    void ReminderPopUp(int Day)
+    {
+        if (GameManager.Instance.ReminderPopDaysList.Contains(Day))
+            GameManager.Instance.OpenRentReminderUI();
+    }
     public void LostSceneActicve()
     {
         MoneyCal.SetActive(false);

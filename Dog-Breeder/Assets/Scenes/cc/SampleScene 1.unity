@@ -1276,6 +1276,7 @@ MonoBehaviour:
   CostPerDay: 10
   CostPerWeak: 100
   CostPerMonth: 1000
+  ReminderPopDaysList: 0a0000000f0000001b0000001c0000001d000000
   demands:
   - 0
   - 0
@@ -8050,7 +8051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1007904477
 MonoBehaviour:
   m_ObjectHideFlags: 0
