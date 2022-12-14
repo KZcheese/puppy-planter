@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StatusUpdate : MonoBehaviour
 {
     public int index = -1;
     public int DogId;
-    public Text statusText;
+   /* public Text statusText;*/
+    public TextMeshProUGUI doggyname;
+    public TextMeshProUGUI doggyage;
+    public TextMeshProUGUI doggygen;
+    public TextMeshProUGUI earSize;
+    public TextMeshProUGUI eyeSize;
+    public TextMeshProUGUI muscleSize;
+    public TextMeshProUGUI noseSize;
     public static StatusUpdate Instance;
     public DogStatus Dog;
 
@@ -29,7 +37,15 @@ public class StatusUpdate : MonoBehaviour
 
     public void UpdateStatusText()
     {
-        statusText.text = Dog.GetDescription();
+       /* statusText.text = Dog.GetDescription();*/
+        doggyname.text = Dog.Dog_Name();
+        doggyage.text = Dog.Dog_Age();
+        doggygen.text = Dog.Dog_Gen();
+        earSize.text = Dog.DogEar_Size();
+        eyeSize.text = Dog.DogEye_Size();
+        muscleSize.text = Dog.DogMuscle_Size();
+        noseSize.text = Dog.DogNose_Size();
+
     }
 
     public void Reset()

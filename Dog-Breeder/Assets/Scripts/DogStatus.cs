@@ -17,17 +17,8 @@ public class DogStatus : MonoBehaviour
     public bool gender; // true for male, false for female
     public int birthday;
     public bool isAdult;
+    private int isearModded = 0;
     public List<List<Debuff>> Debuffs = new List<List<Debuff>> { null, null, null, null, null };
-    /*public TMP_Text _doggyname;
-    public TMP_Text _doggyage;
-    public TMP_Text _doggygender;
-    public Canvas mycanvas;
-    public TMP_Text _cheekSize;
-    public TMP_Text _eyeSize;
-    public TMP_Text _earSize;
-    public TMP_Text _muscleSize;
-    public TMP_Text _noseSize;
-*/
 
     private void Awake()
     {
@@ -47,17 +38,7 @@ public class DogStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100.0f))
-                if (hit.transform != null)
-                {
-                    mycanvas.transform.gameObject.SetActive(true);
-                    Display();
-                }
-        }*/
+      
     }
 
 
@@ -68,7 +49,7 @@ public class DogStatus : MonoBehaviour
         description += $"HP: {HP}\nDebuffs:\n";
 
         SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-        for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++)
+        for (int i = 1; i < skin.sharedMesh.blendShapeCount; i++)
         {
             if (Debuffs[i] != null)
             {
@@ -94,16 +75,60 @@ public class DogStatus : MonoBehaviour
         _doggyname.text = Name;
         _doggyage.text = (GameManager.Instance.DayCount - birthday).ToString();
         _doggygender.text = (gender ? "male" : "female");
-        mycanvas.transform.gameObject.SetActive(true);
-        _cheekSize.text = Mathf.Round(skin.GetBlendShapeWeight(0)).ToString();
-        _eyeSize.text = Mathf.Round(skin.GetBlendShapeWeight(1)).ToString();
-        _earSize.text = Mathf.Round(skin.GetBlendShapeWeight(2)).ToString();
-        _muscleSize.text = Mathf.Round(skin.GetBlendShapeWeight(4)).ToString();
-        _noseSize.text = Mathf.Round(skin.GetBlendShapeWeight(5)).ToString();
-
-        mycanvas.transform.gameObject.SetActive(true);
+        _earSize.text = Mathf.Round(skin.GetBlendShapeWeight(1)).ToString();
+        _eyeSize.text = Mathf.Round(skin.GetBlendShapeWeight(2)).ToString();
+        _muscleSize.text = Mathf.Round(skin.GetBlendShapeWeight(3)).ToString();
+        _noseSize.text = Mathf.Round(skin.GetBlendShapeWeight(4)).ToString();
     }
 */
+   public string Dog_Name()
+    {
+        return Name;
+    }
+
+    public string Dog_Age()
+    {
+        return (GameManager.Instance.DayCount - birthday).ToString();
+    }
+    public string Dog_Gen()
+    {
+        return (gender ? "male" : "female");
+    }
+    public string DogEar_Size()
+    {
+        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        return (Mathf.Round(skin.GetBlendShapeWeight(1)).ToString());
+    }
+    public string DogEye_Size()
+    {
+        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        return (Mathf.Round(skin.GetBlendShapeWeight(2)).ToString());
+    }
+    public string DogMuscle_Size()
+    {
+        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        return (Mathf.Round(skin.GetBlendShapeWeight(3)).ToString());
+    }
+    public string DogNose_Size()
+    {
+        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        return (Mathf.Round(skin.GetBlendShapeWeight(4)).ToString());
+    }
+
+    public void Mod_DogEarSize()
+    {
+        SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        if (isearModded < 5 && (GameManager.Instance.DayCount - birthday)<5)
+        {
+            skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) + 1);
+            isearModded += 1;
+        }
+        else if (isearModded == 5)
+        {
+            return;
+        }
+    }
+
 
     void RandomPosition(bool isAdult)
     {

@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
-    public string checking = "The reference is working";
-
     public int DogIDNow = 1000;
     public int MaxDogNumber;
 
@@ -47,6 +45,7 @@ public class GameManager : MonoBehaviour
     public int TodayUpdateCost = 0;
 
     public int newDogCount = 0;
+
 
     //[HideInInspector]
     //public bool UIpop = false;
@@ -240,5 +239,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   
+
 }

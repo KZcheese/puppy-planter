@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ExitButton : MonoBehaviour
 {
-    public Canvas DogStatusUI;
     public void ExitfromUI()
     {
-        DogStatusUI.transform.gameObject.SetActive(false);
+        GameManager.Instance.IsStatusActive = false;
+        GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
     }
 }
