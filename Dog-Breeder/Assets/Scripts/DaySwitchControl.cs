@@ -52,12 +52,12 @@ public class DaySwitchControl : MonoBehaviour
         GameManager.Instance.DayCount += 1;
 
         DayText.text = "DAY " + GameManager.Instance.DayCount;
-        SavingText.text = "Savings                 " + GameManager.Instance.YesterdayMoney.ToString("c2") + "\n" ;
+        SavingText.text = "Savings                     " + GameManager.Instance.YesterdayMoney.ToString("c2") + "\n" ;
         SavingText.text += "Sales                        " + (GameManager.Instance.Money - GameManager.Instance.YesterdayMoney + GameManager.Instance.TodayUpdateCost).ToString("c2") + "\n";
         if(GameManager.Instance.TodayUpdateCost != 0)
             SavingText.text += "UpdateFee                    " +  GameManager.Instance.TodayUpdateCost.ToString("c2");
         CostCalculate();
-        FinalValueText.text = "------------------------------------------------------------\n                                                      " + GameManager.Instance.Money.ToString("c2");
+        FinalValueText.text = "-----------------------------------------------\n                                       " + GameManager.Instance.Money.ToString("c2");
 
 
         for (int i = 0;i< GameManager.Instance.DogList.Count; i++)
