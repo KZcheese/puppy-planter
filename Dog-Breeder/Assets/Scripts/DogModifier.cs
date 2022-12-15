@@ -50,7 +50,7 @@ public class DogModifier : MonoBehaviour
     }
     public void muscleInc()
     {
-        Dog.Mod_DogMuscleSizeDec();
+        Dog.Mod_DogMuscleSizeInc();
         StatusUpdate.Instance.UpdateStatusText();
     }
     public void muscleDec()
@@ -60,7 +60,7 @@ public class DogModifier : MonoBehaviour
     }
     public void noseInc()
     {
-        Dog.Mod_DogNoseSizeDec();
+        Dog.Mod_DogNoseSizeInc();
         StatusUpdate.Instance.UpdateStatusText();
     }
     public void noseDec()
