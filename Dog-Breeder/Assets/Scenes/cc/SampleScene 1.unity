@@ -7488,7 +7488,7 @@ MonoBehaviour:
   MoveSpeed: 5
   RotateSpeed: 2
   Height: 2
-  _moveMode: 1
+  _moveMode: 0
 --- !u!65 &963194230
 BoxCollider:
   m_ObjectHideFlags: 0

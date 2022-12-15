@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float MoveSpeed,RotateSpeed,Height;
+    public float MoveSpeed, RotateSpeed, Height;
 
     public bool _moveMode = true;
     private Rigidbody _rigidbody;
@@ -20,7 +20,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         _rigidbody = this.GetComponent<Rigidbody>();
-        
+
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class CameraMovement : MonoBehaviour
             Cursor.visible = true;
         }
 
-        transform.position = new Vector3(transform.position.x,Height, transform.position.z);
+        transform.position = new Vector3(transform.position.x, Height, transform.position.z);
     }
 
 
@@ -46,15 +46,7 @@ public class CameraMovement : MonoBehaviour
         float _horizontalMove = Input.GetAxis("Horizontal");
         float _verticalMove = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.S))
-        {
-            _rigidbody.velocity = transform.forward * _verticalMove * MoveSpeed;
-        }
-
-        if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D))
-        {
-            _rigidbody.velocity = transform.right * _horizontalMove * MoveSpeed;
-        }
+        _rigidbody.velocity = transform.forward * _verticalMove * MoveSpeed + transform.right * _horizontalMove * MoveSpeed;
 
 
         float _horizontal = Input.GetAxis("Mouse X");
