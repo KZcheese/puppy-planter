@@ -9,7 +9,11 @@ public class AudioMgr : SingletonMono<AudioMgr>
     [SerializeField]
     private AudioClip nextUI,
                       nextDay,
+                      sellUI,
+                      notebook,
                       playerMove,
+                      dogBark,
+                      dogWhining,
                       openDoor;
     [SerializeField]
     private AudioClip StartMenuBgm,
