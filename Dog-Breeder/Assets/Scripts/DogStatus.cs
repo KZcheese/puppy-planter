@@ -117,7 +117,7 @@ public class DogStatus : MonoBehaviour
             if (earModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) + 1);
+                skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) + 10);
                 earModded++;
             }
         }
@@ -129,7 +129,7 @@ public class DogStatus : MonoBehaviour
             if (earModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) - 1);
+                skin.SetBlendShapeWeight(1, Mathf.Round(skin.GetBlendShapeWeight(1)) - 10);
                 earModded++;
             }
         }
@@ -141,7 +141,7 @@ public class DogStatus : MonoBehaviour
             if (eyeModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(2, Mathf.Round(skin.GetBlendShapeWeight(2)) + 1);
+                skin.SetBlendShapeWeight(2, Mathf.Round(skin.GetBlendShapeWeight(2)) + 10);
                 eyeModded++;
             }
         }
@@ -153,7 +153,7 @@ public class DogStatus : MonoBehaviour
             if (eyeModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(2, Mathf.Round(skin.GetBlendShapeWeight(2)) - 1);
+                skin.SetBlendShapeWeight(2, Mathf.Round(skin.GetBlendShapeWeight(2)) - 10);
                 eyeModded++;
             }
         }
@@ -165,7 +165,7 @@ public class DogStatus : MonoBehaviour
             if (muscleModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(3, Mathf.Round(skin.GetBlendShapeWeight(3)) + 1);
+                skin.SetBlendShapeWeight(3, Mathf.Round(skin.GetBlendShapeWeight(3)) + 10);
                 muscleModded++;
             }
         }
@@ -177,7 +177,7 @@ public class DogStatus : MonoBehaviour
             if (muscleModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(3, Mathf.Round(skin.GetBlendShapeWeight(3)) - 1);
+                skin.SetBlendShapeWeight(3, Mathf.Round(skin.GetBlendShapeWeight(3)) - 10);
                 muscleModded++;
             }
         }
@@ -189,7 +189,7 @@ public class DogStatus : MonoBehaviour
             if (noseModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(4, Mathf.Round(skin.GetBlendShapeWeight(4)) + 1);
+                skin.SetBlendShapeWeight(4, Mathf.Round(skin.GetBlendShapeWeight(4)) + 10);
                 noseModded++;
             }
         }
@@ -201,7 +201,7 @@ public class DogStatus : MonoBehaviour
             if (noseModded == (GameManager.Instance.DayCount - birthday))
             {
                 SkinnedMeshRenderer skin = GetComponentInChildren<SkinnedMeshRenderer>();
-                skin.SetBlendShapeWeight(4, Mathf.Round(skin.GetBlendShapeWeight(4)) - 1);
+                skin.SetBlendShapeWeight(4, Mathf.Round(skin.GetBlendShapeWeight(4)) - 10);
                 noseModded++;
             }
         }
