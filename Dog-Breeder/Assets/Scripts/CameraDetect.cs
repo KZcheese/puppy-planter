@@ -10,6 +10,8 @@ public class CameraDetect : MonoBehaviour
     public float doorDetectableDistance;
     public GameObject CMVcam1, CMVcam2,ModifierTable;
     public static CameraDetect Instance;
+
+    
     public GameObject Dog;
     
     // Start is called before the first frame update
@@ -44,12 +46,14 @@ public class CameraDetect : MonoBehaviour
             if ((Input.GetMouseButtonDown(0)) && (DaySwitchControl.Instance.TransportScene.activeSelf == false) && (GameManager.Instance.IsPhoneActive == false))
             {
                 Dog = _cameraHit.collider.gameObject;
+                
                 CMVcam1.SetActive(true);
                 ModifierTable.SetActive(true);
                 GameManager.Instance.IsStatusActive = true;
                 GameManager.Instance.StatusUI.SetActive(GameManager.Instance.IsStatusActive);
                 StatusUpdate.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();
                 StatusUpdate.Instance.DogId = _cameraHit.collider.gameObject.GetComponent<DogStatus>().DogID;
+                StatusUpdate.Instance.ProfitText.text = StatusUpdate.Instance.Dog.GetDescription();
                 DogModifier.Instance.Dog = _cameraHit.collider.gameObject.GetComponent<DogStatus>();
                 StatusUpdate.Instance.UpdateStatusText();
                 _cameraHit.collider.gameObject.GetComponent<DogStatus>().CheckStatusNow = true;

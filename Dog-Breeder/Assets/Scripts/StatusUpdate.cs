@@ -18,7 +18,7 @@ public class StatusUpdate : MonoBehaviour
     public TextMeshProUGUI noseSize;
     public static StatusUpdate Instance;
     public DogStatus Dog;
-
+    public Text ProfitText;
     // Start is called before the first frame update
     private void Awake()
     {

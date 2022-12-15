@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class ExitButton : MonoBehaviour
 {
-    public void ExitfromUI()
+    public static ExitButton Instance;
+
+    private void Awake()
+    {
+        if (!Instance) Instance = this;
+    }
+
+        public void ExitfromUI()
     {
         GameManager.Instance.IsStatusActive = false;
         CameraMovement.Instance._moveMode = true;

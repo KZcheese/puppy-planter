@@ -48,7 +48,7 @@ public class DogManager
         SkinnedMeshRenderer skin = GameManager.Instance.GetDog(id).GetComponentInChildren<SkinnedMeshRenderer>();
         for (int i = 1; i < skin.sharedMesh.blendShapeCount; i++)
         {
-            profit += 10 - Mathf.Abs(skin.GetBlendShapeWeight(i) - GameManager.Instance.demands[i]) / 10;
+            profit += 10 - Mathf.Abs(skin.GetBlendShapeWeight(i) - GameManager.Instance.demands[i])/10;
         }
         return Mathf.Round(profit);
     }
@@ -58,6 +58,7 @@ public class DogManager
         GameManager.Instance.Money += CalculateProfit(id);
         Object.Destroy(GameManager.Instance.GetDog(id).gameObject);
         GameManager.Instance.DogList.Remove(GameManager.Instance.GetDog(id));
+        ExitButton.Instance.ExitfromUI();
     }
 }
 
