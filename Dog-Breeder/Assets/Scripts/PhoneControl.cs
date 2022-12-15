@@ -112,7 +112,7 @@ public class PhoneControl : MonoBehaviour
      
     public void UpdatePenButton()
     {
-        if(GameManager.Instance.MaxDogNumber + 1 <= GameManager.Instance.MaxPenCap)
+        if((GameManager.Instance.MaxDogNumber + 1 <= GameManager.Instance.MaxPenCap) &&(GameManager.Instance.Money - UpdatePenCost>0))
         {
             GameManager.Instance.Money -= UpdatePenCost;
             GameManager.Instance.TodayUpdateCost += UpdatePenCost;

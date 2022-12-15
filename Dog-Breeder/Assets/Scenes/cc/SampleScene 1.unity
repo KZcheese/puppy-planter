@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50b98828ff87534c851ec09910fe3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dogPrefab: {fileID: 4940375530266552144, guid: 18c9dcf36b3e122419e2eb522d9ade37,
+  dogPrefab: {fileID: 3922933753897003718, guid: 0c9296e3891c78246ad8a0f2c3148711,
     type: 3}
   bornSpot: {fileID: 163471377}
   outSpot: {fileID: 1545541664}
@@ -25048,7 +25048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3903070493477678219
 Transform:
   m_ObjectHideFlags: 0
@@ -25115,7 +25115,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6797816232913564295, guid: 39f349b9d1aadf24284be22f8d999ef7, type: 3}
+  - {fileID: 2100000, guid: 5d3b9481cf3ed8145be0263a402110a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
