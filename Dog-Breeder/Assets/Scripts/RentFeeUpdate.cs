@@ -12,7 +12,7 @@ public class RentFeeUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RentFeeText.text = "Hello Dear Player, hope everything is well :))\nJust a friendly reminder, you need to pay " + GameManager.Instance.CostPerMonth.ToString("c3") + " after " + (30 - GameManager.Instance.DayCount) + " days.";
+        RentFeeText.text = "This is a reminder that your rent of " + GameManager.Instance.CostPerMonth.ToString("c3") + " at the end of the month.\n" + (30 - GameManager.Instance.DayCount) + " days remain.";
     }
 
     public void Quit()
