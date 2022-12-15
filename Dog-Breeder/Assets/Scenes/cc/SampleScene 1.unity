@@ -1272,6 +1272,7 @@ MonoBehaviour:
   IsStatusActive: 0
   DogIDNow: 1000
   MaxDogNumber: 5
+  MaxPenCap: 10
   CostPerDog: 5
   CostPerDay: 10
   CostPerWeak: 100

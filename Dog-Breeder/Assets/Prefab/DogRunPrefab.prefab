@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: C
-  HP: 10
+  HP: 100
   IsPair: 0
   PairDogName: 
   DogID: 0

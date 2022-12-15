@@ -67,6 +67,7 @@ public class PhoneControl : MonoBehaviour
 
         MainScreen.SetActive(false);
         PairScreen.SetActive(true);
+        
     }
 
     public void PairDogButton()
@@ -111,9 +112,14 @@ public class PhoneControl : MonoBehaviour
      
     public void UpdatePenButton()
     {
-        GameManager.Instance.Money -= UpdatePenCost;
-        GameManager.Instance.TodayUpdateCost += UpdatePenCost;
-        GameManager.Instance.MaxDogNumber += 1;
+        if(GameManager.Instance.MaxDogNumber + 1 <= GameManager.Instance.MaxPenCap)
+        {
+            GameManager.Instance.Money -= UpdatePenCost;
+            GameManager.Instance.TodayUpdateCost += UpdatePenCost;
+            GameManager.Instance.MaxDogNumber += 1;
+        }
+ 
+
     }
 
     public void CloseMainMenu()

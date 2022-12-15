@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public int DogIDNow = 1000;
     public int MaxDogNumber;
-
+    public int MaxPenCap;
     public int CostPerDog, CostPerDay, CostPerWeak, CostPerMonth;
     //public List<PairInfo> pairInfos = new List<PairInfo>();
     public Dictionary<int,int> DogPairDic = new Dictionary<int , int>();
@@ -123,10 +123,14 @@ public class GameManager : MonoBehaviour
         {
             if (IsPhoneActive)
             {
-                IsPhoneActive = !IsPhoneActive;
-                PhoneControl.Instance.GoBackMainScreenButton();
-                PhoneUI.SetActive(IsPhoneActive);
-                CameraMovement.Instance._moveMode = true;
+                if (!PhoneControl.Instance.PairScreen.activeSelf)
+                {
+                    IsPhoneActive = !IsPhoneActive;
+                    PhoneControl.Instance.GoBackMainScreenButton();
+                    PhoneUI.SetActive(IsPhoneActive);
+                    CameraMovement.Instance._moveMode = true;
+                }
+
             }
             else
             {
