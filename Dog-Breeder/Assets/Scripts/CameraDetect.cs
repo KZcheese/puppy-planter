@@ -68,6 +68,7 @@ public class CameraDetect : MonoBehaviour
             }
         }else if (Physics.Raycast(_cameraRay, out _cameraHit, doorDetectableDistance, LayerMask.GetMask("NoteBook")))
         {
+            _cameraHit.collider.gameObject.GetComponentInParent<Outline>().OutlineWidth = 10;
             if (Input.GetMouseButtonDown(0))
             {
                 GameManager.Instance.OpenRentReminderUI();
@@ -83,14 +84,21 @@ public class CameraDetect : MonoBehaviour
                 dogs.GetComponent<Outline>().OutlineWidth = 0;
 
             }
+
+            GameObject.Find("NoteBook").GetComponent<Outline>().OutlineWidth = 0;
         }
 
         if (Physics.Raycast(_cameraRay, out _cameraHit, doorDetectableDistance, LayerMask.GetMask("Door")))
         {
+            _cameraHit.collider.gameObject.GetComponentInParent<Outline>().OutlineWidth = 10;
             if (Input.GetMouseButtonDown(0) && !DaySwitchControl.Instance.TransportScene.activeSelf && !GameManager.Instance.IsPhoneActive)
             {
                 DaySwitchControl.Instance.GoNextDayButton();
             }
+        }
+        else
+        {
+            GameObject.Find("Door").GetComponent<Outline>().OutlineWidth = 0;
         }
     }
 }
