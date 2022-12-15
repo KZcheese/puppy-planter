@@ -21945,7 +21945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: B
-  HP: 10
+  HP: 100
   IsPair: 0
   PairDogName: 
   DogID: 0
@@ -23839,7 +23839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: A
-  HP: 10
+  HP: 100
   IsPair: 0
   PairDogName: 
   DogID: 0
