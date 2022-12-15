@@ -28434,6 +28434,7 @@ GameObject:
   - component: {fileID: 1903977355698622709}
   - component: {fileID: 4504924470099887837}
   - component: {fileID: 6702958769807924900}
+  - component: {fileID: 7059268846490293468}
   m_Layer: 8
   m_Name: DogsNameText
   m_TagString: Untagged
@@ -28441,6 +28442,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7059268846490293468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059268846490293467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dfff1e3c8bdc094e9c576b6211f8208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7062955059234333061
 Transform:
   m_ObjectHideFlags: 0
