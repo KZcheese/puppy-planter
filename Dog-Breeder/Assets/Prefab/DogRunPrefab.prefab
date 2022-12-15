@@ -511,7 +511,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6797816232913564295, guid: 39f349b9d1aadf24284be22f8d999ef7, type: 3}
+  - {fileID: 2100000, guid: 5d3b9481cf3ed8145be0263a402110a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -566,7 +566,7 @@ SkinnedMeshRenderer:
   - {fileID: 712772875075188407}
   m_BlendShapeWeights:
   - 35.5
-  - 52.8
+  - 99
   - 59.1
   - 50.8
   - 56.7
@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8895206185855787212
 MonoBehaviour:
   m_ObjectHideFlags: 0
