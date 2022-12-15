@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.027, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 290, y: 0.19105911}
+  m_AnchoredPosition: {x: 412, y: 0.19105911}
   m_SizeDelta: {x: 1.5040436, y: -0.38212967}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056932
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.8
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.75
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.65
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3617,7 +3617,6 @@ GameObject:
   - component: {fileID: 445234243}
   - component: {fileID: 445234242}
   - component: {fileID: 445234241}
-  - component: {fileID: 445234244}
   m_Layer: 5
   m_Name: ears_increase
   m_TagString: Untagged
@@ -3641,11 +3640,11 @@ RectTransform:
   m_Father: {fileID: 1554584569}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56, y: -1.2212}
-  m_SizeDelta: {x: -33.6805, y: 2.4424}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -127.1, y: -1.2212105}
+  m_SizeDelta: {x: 128.3195, y: 90.4424}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &445234241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,7 +3689,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445234244}
+      - m_Target: {fileID: 1353715208}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
         m_MethodName: earInc
         m_Mode: 1
@@ -3740,23 +3739,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445234239}
   m_CullTransparentMesh: 1
---- !u!114 &445234244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445234239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 1554584567}
-  _eyeSize: {fileID: 0}
-  _muscleSize: {fileID: 0}
-  noseSize: {fileID: 0}
 --- !u!1 &456046732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,6 +4235,86 @@ MonoBehaviour:
   muscleSize: {fileID: 1357498442}
   noseSize: {fileID: 2056932}
   Dog: {fileID: 0}
+--- !u!1 &515713577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515713578}
+  - component: {fileID: 515713580}
+  - component: {fileID: 515713579}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &515713578
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515713577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1529772950}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &515713579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515713577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: X
+--- !u!222 &515713580
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515713577}
+  m_CullTransparentMesh: 1
 --- !u!1 &525681466
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,7 +4617,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.25
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5346,7 +5408,6 @@ GameObject:
   - component: {fileID: 697701243}
   - component: {fileID: 697701242}
   - component: {fileID: 697701241}
-  - component: {fileID: 697701244}
   m_Layer: 5
   m_Name: nose_increase
   m_TagString: Untagged
@@ -5372,7 +5433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56, y: -1.2212}
+  m_AnchoredPosition: {x: -145, y: -1.2212}
   m_SizeDelta: {x: -33.6805, y: 2.4424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697701241
@@ -5418,7 +5479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 697701242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1353715208}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: noseInc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &697701242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5457,23 +5530,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697701239}
   m_CullTransparentMesh: 1
---- !u!114 &697701244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697701239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 0}
-  _eyeSize: {fileID: 0}
-  _muscleSize: {fileID: 0}
-  noseSize: {fileID: 2056932}
 --- !u!1 &700223813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5559,7 +5615,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6273,7 +6329,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.9
+  m_fontSize: 70.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7938,7 +7994,6 @@ GameObject:
   - component: {fileID: 987833995}
   - component: {fileID: 987833994}
   - component: {fileID: 987833993}
-  - component: {fileID: 987833996}
   m_Layer: 5
   m_Name: muscle_decrease
   m_TagString: Untagged
@@ -7962,11 +8017,11 @@ RectTransform:
   m_Father: {fileID: 1357498441}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 55, y: -1.2212}
-  m_SizeDelta: {x: -33.6805, y: 2.4424}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 160, y: -1.2211914}
+  m_SizeDelta: {x: 207.3195, y: 84.4424}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &987833993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8011,7 +8066,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 987833996}
+      - m_Target: {fileID: 1353715208}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
         m_MethodName: muscleDec
         m_Mode: 1
@@ -8061,23 +8116,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987833991}
   m_CullTransparentMesh: 1
---- !u!114 &987833996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987833991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 0}
-  _eyeSize: {fileID: 0}
-  _muscleSize: {fileID: 1357498442}
-  noseSize: {fileID: 0}
 --- !u!1 &1007904476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8097,7 +8135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1007904477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8942,7 +8980,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.25
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9380,7 +9418,6 @@ GameObject:
   - component: {fileID: 1160394873}
   - component: {fileID: 1160394872}
   - component: {fileID: 1160394871}
-  - component: {fileID: 1160394874}
   m_Layer: 5
   m_Name: eyes_increase
   m_TagString: Untagged
@@ -9404,11 +9441,11 @@ RectTransform:
   m_Father: {fileID: 1181129603}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56, y: -1.2212}
-  m_SizeDelta: {x: -33.6805, y: 2.4424}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -129, y: -1.2211952}
+  m_SizeDelta: {x: 128.3195, y: 80.4424}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1160394871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9453,7 +9490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1160394874}
+      - m_Target: {fileID: 1353715208}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
         m_MethodName: eyeInc
         m_Mode: 1
@@ -9503,23 +9540,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160394869}
   m_CullTransparentMesh: 1
---- !u!114 &1160394874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160394869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 0}
-  _eyeSize: {fileID: 1181129604}
-  _muscleSize: {fileID: 0}
-  noseSize: {fileID: 0}
 --- !u!1 &1166017622
 GameObject:
   m_ObjectHideFlags: 0
@@ -9638,11 +9658,11 @@ RectTransform:
   m_Father: {fileID: 771046656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.027, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 290, y: 0.19105911}
-  m_SizeDelta: {x: 1.5040436, y: -0.38212967}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 422, y: 0.1910553}
+  m_SizeDelta: {x: 162.50404, y: 77.617874}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1181129604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9690,7 +9710,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.55
+  m_fontSize: 69.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10410,7 +10430,6 @@ GameObject:
   - component: {fileID: 1252297574}
   - component: {fileID: 1252297573}
   - component: {fileID: 1252297572}
-  - component: {fileID: 1252297575}
   m_Layer: 5
   m_Name: nose_decrease
   m_TagString: Untagged
@@ -10436,7 +10455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 55, y: -1.2212}
+  m_AnchoredPosition: {x: 149, y: -1.2212}
   m_SizeDelta: {x: -33.6805, y: 2.4424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252297572
@@ -10482,7 +10501,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1252297573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1353715208}
+        m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
+        m_MethodName: noseDec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1252297573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10521,23 +10552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252297570}
   m_CullTransparentMesh: 1
---- !u!114 &1252297575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252297570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 0}
-  _eyeSize: {fileID: 0}
-  _muscleSize: {fileID: 0}
-  noseSize: {fileID: 2056932}
 --- !u!1 &1255010499
 GameObject:
   m_ObjectHideFlags: 0
@@ -11945,6 +11959,7 @@ GameObject:
   - component: {fileID: 1353715205}
   - component: {fileID: 1353715207}
   - component: {fileID: 1353715206}
+  - component: {fileID: 1353715208}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -12020,6 +12035,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353715204}
   m_CullTransparentMesh: 1
+--- !u!114 &1353715208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353715204}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 0}
+  _earSize: {fileID: 1554584567}
+  _eyeSize: {fileID: 0}
+  _muscleSize: {fileID: 0}
+  noseSize: {fileID: 0}
 --- !u!1 &1355245542
 GameObject:
   m_ObjectHideFlags: 0
@@ -12032,7 +12064,6 @@ GameObject:
   - component: {fileID: 1355245546}
   - component: {fileID: 1355245545}
   - component: {fileID: 1355245544}
-  - component: {fileID: 1355245547}
   m_Layer: 5
   m_Name: eyes_decrease
   m_TagString: Untagged
@@ -12056,11 +12087,11 @@ RectTransform:
   m_Father: {fileID: 1181129603}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 55, y: -1.2212}
-  m_SizeDelta: {x: -33.6805, y: 2.4424}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 162, y: -1.2211952}
+  m_SizeDelta: {x: 128.3195, y: 80.4424}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1355245544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12105,7 +12136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1355245547}
+      - m_Target: {fileID: 1353715208}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
         m_MethodName: eyeDec
         m_Mode: 1
@@ -12155,23 +12186,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355245542}
   m_CullTransparentMesh: 1
---- !u!114 &1355245547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355245542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 0}
-  _eyeSize: {fileID: 1181129604}
-  _muscleSize: {fileID: 0}
-  noseSize: {fileID: 0}
 --- !u!1 &1357498440
 GameObject:
   m_ObjectHideFlags: 0
@@ -12207,11 +12221,11 @@ RectTransform:
   m_Father: {fileID: 1670322637}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.027, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 271, y: -0.19107056}
-  m_SizeDelta: {x: 1.5040436, y: -0.38212967}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 385, y: -0.19107056}
+  m_SizeDelta: {x: 240.50404, y: 81.617874}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1357498442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12259,7 +12273,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.1
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12539,7 +12553,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.75
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13957,6 +13971,140 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522493737}
   m_Mesh: {fileID: 5305871256624515941, guid: 5e20400e00550084d832ebb9d9d0b70c, type: 3}
+--- !u!1 &1529772949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1529772950}
+  - component: {fileID: 1529772953}
+  - component: {fileID: 1529772952}
+  - component: {fileID: 1529772951}
+  m_Layer: 5
+  m_Name: QuitMainMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1529772950
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529772949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 515713578}
+  m_Father: {fileID: 1648922696}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -73, y: 323}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1529772951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529772949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1529772952}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1648922692}
+        m_TargetAssemblyTypeName: PhoneControl, Assembly-CSharp
+        m_MethodName: CloseMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1529772952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529772949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1529772953
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529772949}
+  m_CullTransparentMesh: 1
 --- !u!1 &1532080743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5770634479784780433, guid: 269dec0834a4335479c1c95c5db78823,
@@ -14270,7 +14418,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.35
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14306,7 +14454,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -19.223206, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14337,11 +14485,11 @@ RectTransform:
   m_Father: {fileID: 264006557}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.027, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 290, y: 0.19105911}
-  m_SizeDelta: {x: 1.5040436, y: -0.38212967}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 419.1, y: 0.19104004}
+  m_SizeDelta: {x: 162.50404, y: 87.617874}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!4 &1557637393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4a8a74df567aad34f9b278f80a93c219,
@@ -14536,7 +14684,6 @@ GameObject:
   - component: {fileID: 1597160379}
   - component: {fileID: 1597160378}
   - component: {fileID: 1597160377}
-  - component: {fileID: 1597160380}
   m_Layer: 5
   m_Name: muscle_increase
   m_TagString: Untagged
@@ -14560,11 +14707,11 @@ RectTransform:
   m_Father: {fileID: 1357498441}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56, y: -1.2212}
-  m_SizeDelta: {x: -33.6805, y: 2.4424}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -134, y: -1.2211914}
+  m_SizeDelta: {x: 207.3195, y: 84.4424}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1597160377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14609,7 +14756,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1597160380}
+      - m_Target: {fileID: 1353715208}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
         m_MethodName: muscleInc
         m_Mode: 1
@@ -14659,23 +14806,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597160375}
   m_CullTransparentMesh: 1
---- !u!114 &1597160380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597160375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 0}
-  _eyeSize: {fileID: 0}
-  _muscleSize: {fileID: 1357498442}
-  noseSize: {fileID: 0}
 --- !u!1 &1607386049
 GameObject:
   m_ObjectHideFlags: 0
@@ -15105,6 +15235,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1502904291}
+  - {fileID: 1529772950}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15199,7 +15330,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.4
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15336,7 +15467,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.05
+  m_fontSize: 64.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15553,7 +15684,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.7
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15896,7 +16027,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16147,7 +16278,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.15
+  m_fontSize: 70.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17335,7 +17466,6 @@ GameObject:
   - component: {fileID: 2028920480}
   - component: {fileID: 2028920479}
   - component: {fileID: 2028920478}
-  - component: {fileID: 2028920481}
   m_Layer: 5
   m_Name: ears_decrease
   m_TagString: Untagged
@@ -17359,11 +17489,11 @@ RectTransform:
   m_Father: {fileID: 1554584569}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 55, y: -1.2212}
-  m_SizeDelta: {x: -33.6805, y: 2.4424}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 163.74023, y: -1.2212105}
+  m_SizeDelta: {x: 128.3195, y: 90.4424}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2028920478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17408,7 +17538,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2028920481}
+      - m_Target: {fileID: 1353715208}
         m_TargetAssemblyTypeName: DogModifier, Assembly-CSharp
         m_MethodName: earDec
         m_Mode: 1
@@ -17458,23 +17588,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028920476}
   m_CullTransparentMesh: 1
---- !u!114 &2028920481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028920476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733da2677409c848809d7b16236af87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dog: {fileID: 0}
-  _earSize: {fileID: 1554584567}
-  _eyeSize: {fileID: 0}
-  _muscleSize: {fileID: 0}
-  noseSize: {fileID: 0}
 --- !u!1 &2039108890
 GameObject:
   m_ObjectHideFlags: 0

@@ -115,4 +115,12 @@ public class PhoneControl : MonoBehaviour
         GameManager.Instance.TodayUpdateCost += UpdatePenCost;
         GameManager.Instance.MaxDogNumber += 1;
     }
+
+    public void CloseMainMenu()
+    {
+        GoBackMainScreenButton();
+        GameManager.Instance.IsPhoneActive = false;
+        GameManager.Instance.PhoneUI.SetActive(GameManager.Instance.IsPhoneActive);
+        CameraMovement.Instance._moveMode = true;
+    }
 }
