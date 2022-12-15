@@ -17754,7 +17754,7 @@ MonoBehaviour:
   PairListText: {fileID: 311642468}
   DogName: {fileID: 1447316958}
   UpdatePenText: {fileID: 1079897231}
-  UpdatePenCost: 10
+  UpdatePenCost: 100
 --- !u!114 &1648922693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25048,7 +25048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3903070493477678219
 Transform:
   m_ObjectHideFlags: 0

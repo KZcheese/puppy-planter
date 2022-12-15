@@ -117,6 +117,7 @@ public class PhoneControl : MonoBehaviour
             GameManager.Instance.Money -= UpdatePenCost;
             GameManager.Instance.TodayUpdateCost += UpdatePenCost;
             GameManager.Instance.MaxDogNumber += 1;
+            UpdatePenCost = UpdatePenCost * 2;
         }
  
 
