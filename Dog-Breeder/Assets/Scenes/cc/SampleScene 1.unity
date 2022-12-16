@@ -12750,14 +12750,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: '<size=30>D E M A N D</size>
+  m_Text: '<size=30>DEMAND</size>
 
-    muscle_big: 0
+    muscle mass: 0
 
-    nose_small: 0
+    nose size: 0
 
-    nose_big:
-    0
+    eye
+    size: 0
 
 '
 --- !u!222 &1290576518

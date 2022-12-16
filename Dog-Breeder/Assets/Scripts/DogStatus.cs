@@ -52,7 +52,7 @@ public class DogStatus : MonoBehaviour
     public string GetDescription()
     {
 
-        return "Profit if sell: "+DogManager.Instance.CalculateProfit(DogID);
+        return "Sale Price: "+DogManager.Instance.CalculateProfit(DogID);
     }
 
 

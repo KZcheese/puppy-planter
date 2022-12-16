@@ -61,8 +61,8 @@ MonoBehaviour:
   m_SupportsLightLayers: 0
   m_DebugLevel: 0
   m_UseAdaptivePerformance: 1
-  m_ColorGradingMode: 0
-  m_ColorGradingLutSize: 64
+  m_ColorGradingMode: 1
+  m_ColorGradingLutSize: 65
   m_UseFastSRGBLinearConversion: 0
   m_ShadowType: 1
   m_LocalShadowsSupported: 0
