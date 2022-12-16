@@ -45,6 +45,7 @@ public class CameraDetect : MonoBehaviour
             _cameraHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 4;
             if ((Input.GetMouseButtonDown(0)) && (DaySwitchControl.Instance.TransportScene.activeSelf == false) && (GameManager.Instance.IsPhoneActive == false))
             {
+                AudioMgr.Instance.PlayFx(AudioFxType.DogBark);
                 Dog = _cameraHit.collider.gameObject;
                 
                 CMVcam1.SetActive(true);

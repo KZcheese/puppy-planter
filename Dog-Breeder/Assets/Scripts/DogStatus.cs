@@ -44,10 +44,8 @@ public class DogStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        transform.Find("DogHeadCanvas").transform.LookAt(Camera.main.transform);
     }
-
-
 
     public string GetDescription()
     {

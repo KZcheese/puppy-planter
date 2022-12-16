@@ -56,6 +56,7 @@ public class AudioMgr : SingletonMono<AudioMgr>
             AudioFxType.NextDay => nextDay,
             AudioFxType.PlayerMove => playerMove,
             AudioFxType.OpenDoor => openDoor,
+            AudioFxType.DogBark => dogBark,
             _ => null
         };
         fxSource.Play();
@@ -88,6 +89,7 @@ public enum AudioFxType
     NextUI,
     NextDay,
     PlayerMove,
+    DogBark,
     OpenDoor
 }
 public enum AudioBgmType

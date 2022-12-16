@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AudioMgr.Instance.PlayGameBgm(AudioBgmType.RoomBgm);
+
         YesterdayMoney = Money;
         DemandController.Instance.ShuffleDemands();
     }
