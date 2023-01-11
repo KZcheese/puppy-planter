@@ -1,25 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonControl : MonoBehaviour
-{
+public class ButtonControl : MonoBehaviour {
     // Start is called before the first frame update
     public int DogIndex;
-    void Start()
-    {
-        this.GetComponent<Button>().onClick.AddListener(CheckDogStatusButton);
+
+    private void Start() {
+        GetComponent<Button>().onClick.AddListener(CheckDogStatusButton);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
     }
 
-    public void CheckDogStatusButton()
-    {
+    public void CheckDogStatusButton() {
         Debug.Log(GameManager.Instance.DogList[DogIndex].Name);
         ///GameManager.Instance.DogList[]
     }

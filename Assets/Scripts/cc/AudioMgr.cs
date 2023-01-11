@@ -1,57 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioMgr : SingletonMono<AudioMgr>
-{
+public class AudioMgr : SingletonMono<AudioMgr> {
     [SerializeField] public AudioSource bgmSource, fxSource;
 
-    [SerializeField]
-    private AudioClip nextUI,
-                      nextDay,
-                      sellUI,
-                      notebook,
-                      playerMove,
-                      dogBark,
-                      dogWhining,
-                      openDoor;
-    [SerializeField]
-    private AudioClip StartMenuBgm,
-                      RoomBgm;
+    [SerializeField] private AudioClip nextUI,
+        nextDay,
+        sellUI,
+        notebook,
+        playerMove,
+        dogBark,
+        dogWhining,
+        openDoor;
+
+    [SerializeField] private AudioClip StartMenuBgm,
+        RoomBgm;
 
 
-    public float BgmVolumn
-    {
+    public float BgmVolumn {
         get => bgmSource.volume;
         set => bgmSource.volume = Mathf.Clamp01(value);
     }
 
     public bool IsBgmPlaying => bgmSource.isPlaying;
 
-    public void PlayBgm() => bgmSource.UnPause();
 
-    public void PauseBgm() => bgmSource.Pause();
+    public float FxVolumn {
+        get => fxSource.volume;
+        set => fxSource.volume = Mathf.Clamp01(value);
+    }
+
+    public void PlayBgm() {
+        bgmSource.UnPause();
+    }
+
+    public void PauseBgm() {
+        bgmSource.Pause();
+    }
 
 
-    protected override void OnInstanceAwake()
-    {
+    protected override void OnInstanceAwake() {
         DontDestroyOnLoad(this);
         //bgmSource.Play();
     }
 
 
-    public float FxVolumn
-    {
-        get => fxSource.volume;
-        set => fxSource.volume = Mathf.Clamp01(value);
-    }
-
-
-    public void PlayFx(AudioFxType fx)
-    {
+    public void PlayFx(AudioFxType fx) {
         fxSource.Stop();
-        fxSource.clip = fx switch
-        {
+        fxSource.clip = fx switch {
             AudioFxType.NextUI => nextUI,
             AudioFxType.NextDay => nextDay,
             AudioFxType.PlayerMove => playerMove,
@@ -62,18 +57,15 @@ public class AudioMgr : SingletonMono<AudioMgr>
         fxSource.Play();
     }
 
-    public void ClickUI()
-    {
+    public void ClickUI() {
         fxSource.Stop();
         fxSource.clip = nextUI;
         fxSource.Play();
     }
 
-    public void PlayGameBgm(AudioBgmType bgm)
-    {
+    public void PlayGameBgm(AudioBgmType bgm) {
         bgmSource.Stop();
-        bgmSource.clip = bgm switch
-        {
+        bgmSource.clip = bgm switch {
             AudioBgmType.StartMenuBgm => StartMenuBgm,
             AudioBgmType.RoomBgm => RoomBgm,
             _ => null
@@ -83,8 +75,7 @@ public class AudioMgr : SingletonMono<AudioMgr>
 }
 
 
-public enum AudioFxType
-{
+public enum AudioFxType {
     //
     NextUI,
     NextDay,
@@ -92,8 +83,8 @@ public enum AudioFxType
     DogBark,
     OpenDoor
 }
-public enum AudioBgmType
-{
+
+public enum AudioBgmType {
     StartMenuBgm,
     RoomBgm
 }

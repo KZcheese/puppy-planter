@@ -1,23 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ExitButton : MonoBehaviour
-{
+public class ExitButton : MonoBehaviour {
     public static ExitButton Instance;
 
-    private void Awake()
-    {
+    private void Awake() {
         if (!Instance) Instance = this;
     }
 
-        public void ExitfromUI()
-    {
+    public void ExitfromUI() {
         GameManager.Instance.IsStatusActive = false;
         CameraMovement.Instance._moveMode = true;
         StatusUpdate.Instance.Dog.CheckStatusNow = false;
-        
+
         CameraDetect.Instance.CMVcam2.SetActive(true);
         CameraDetect.Instance.CMVcam1.SetActive(false);
         CameraDetect.Instance.ModifierTable.SetActive(false);
@@ -27,8 +21,7 @@ public class ExitButton : MonoBehaviour
         //Camera.main.transform.rotation= Quaternion.Euler(Camera.main.transform.rotation.x, Camera.main.transform.rotation.y, 0);
     }
 
-    void CloseCMVcam()
-    {
+    private void CloseCMVcam() {
         CameraDetect.Instance.CMVcam2.SetActive(false);
     }
 }

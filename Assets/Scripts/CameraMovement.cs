@@ -1,39 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
-{
+public class CameraMovement : MonoBehaviour {
+    public static CameraMovement Instance;
     public float MoveSpeed, RotateSpeed, Height;
 
     public bool _moveMode = true;
-    private Rigidbody _rigidbody;
 
-    public static CameraMovement Instance;
+    private Rigidbody _rigidbody;
     // Start is called before the first frame update
 
-    private void Awake()
-    {
+    private void Awake() {
         if (!Instance) Instance = this;
-
     }
-    void Start()
-    {
-        _rigidbody = this.GetComponent<Rigidbody>();
 
+    private void Start() {
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (_moveMode)
-        {
+    private void Update() {
+        if (_moveMode) {
             Cursor.visible = false;
             if (GameManager.Instance.IsPhoneActive == false)
                 Movement();
         }
-        else
-        {
+        else {
             Cursor.visible = true;
         }
 
@@ -41,22 +32,20 @@ public class CameraMovement : MonoBehaviour
     }
 
 
-    void Movement()
-    {
-        float _horizontalMove = Input.GetAxis("Horizontal");
-        float _verticalMove = Input.GetAxis("Vertical");
+    private void Movement() {
+        var _horizontalMove = Input.GetAxis("Horizontal");
+        var _verticalMove = Input.GetAxis("Vertical");
 
-        _rigidbody.velocity = transform.forward * _verticalMove * MoveSpeed + transform.right * _horizontalMove * MoveSpeed;
+        _rigidbody.velocity = transform.forward * _verticalMove * MoveSpeed +
+                              transform.right * _horizontalMove * MoveSpeed;
 
 
-        float _horizontal = Input.GetAxis("Mouse X");
-        float _vertical = Input.GetAxis("Mouse Y");
+        var _horizontal = Input.GetAxis("Mouse X");
+        var _vertical = Input.GetAxis("Mouse Y");
 
-        Vector3 _cameraAngles = transform.eulerAngles;
+        var _cameraAngles = transform.eulerAngles;
         _cameraAngles.x -= _vertical * RotateSpeed;
         _cameraAngles.y += _horizontal * RotateSpeed;
         Camera.main.transform.eulerAngles = _cameraAngles;
-
-
     }
 }

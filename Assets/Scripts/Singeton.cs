@@ -1,21 +1,19 @@
 using UnityEngine;
 
-
-public abstract class SingletonMono<T> : MonoBehaviour where T : SingletonMono<T>
-{
+public abstract class SingletonMono<T> : MonoBehaviour where T : SingletonMono<T> {
     public static T Instance { get; private set; }
 
-    protected virtual void OnInstanceAwake() { }
 
-
-    private void Awake()
-    {
-        if (Instance != null)
+    private void Awake() {
+        if (Instance != null) {
             Destroy(this);
-        else
-        {
+        }
+        else {
             Instance = (T)this;
             OnInstanceAwake();
         }
+    }
+
+    protected virtual void OnInstanceAwake() {
     }
 }

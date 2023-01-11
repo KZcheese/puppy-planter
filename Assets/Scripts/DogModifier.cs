@@ -1,70 +1,63 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
-public class DogModifier : MonoBehaviour
-{
-    public DogStatus Dog;
+public class DogModifier : MonoBehaviour {
     public static DogModifier Instance;
+    public DogStatus Dog;
     public TextMeshProUGUI _earSize;
     public TextMeshProUGUI _eyeSize;
     public TextMeshProUGUI _muscleSize;
+
     public TextMeshProUGUI noseSize;
+
     // Start is called before the first frame update
-    private void Awake()
-    {
+    private void Awake() {
         if (!Instance) Instance = this;
     }
-    void Start()
-    {
-        
+
+    private void Start() {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
     }
 
-    public void earInc()
-    {
+    public void earInc() {
         Dog.Mod_DogEarSizeInc();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void earDec()
-    {
+
+    public void earDec() {
         Dog.Mod_DogEarSizeDec();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void eyeInc()
-    {
+
+    public void eyeInc() {
         Dog.Mod_DogEyeSizeInc();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void eyeDec()
-    {
+
+    public void eyeDec() {
         Dog.Mod_DogEyeSizeDec();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void muscleInc()
-    {
+
+    public void muscleInc() {
         Dog.Mod_DogMuscleSizeInc();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void muscleDec()
-    {
+
+    public void muscleDec() {
         Dog.Mod_DogMuscleSizeDec();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void noseInc()
-    {
+
+    public void noseInc() {
         Dog.Mod_DogNoseSizeInc();
         StatusUpdate.Instance.UpdateStatusText();
     }
-    public void noseDec()
-    {
+
+    public void noseDec() {
         Dog.Mod_DogNoseSizeDec();
         StatusUpdate.Instance.UpdateStatusText();
     }
