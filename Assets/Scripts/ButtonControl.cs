@@ -15,6 +15,6 @@ public class ButtonControl : MonoBehaviour {
 
     public void CheckDogStatusButton() {
         Debug.Log(GameManager.Instance.DogList[DogIndex].Name);
-        ///GameManager.Instance.DogList[]
+        //GameManager.Instance.DogList[]
     }
 }
