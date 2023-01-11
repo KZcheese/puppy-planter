@@ -5,14 +5,14 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-/Dog-Breeder/[Ll]ibrary/
-/Dog-Breeder/[Tt]emp/
-/Dog-Breeder/[Oo]bj/
-/Dog-Breeder/[Bb]uild/
-/Dog-Breeder/[Bb]uilds/
-/Dog-Breeder/[Ll]ogs/
-/Dog-Breeder/[Uu]ser[Ss]ettings/
-/Dog-Breeder/Assets/Scripts/.idea/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/Assets/Scripts/.idea/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
